@@ -17,6 +17,7 @@ namespace MultiMedia
             InitializeComponent();
             //this.WindowState = FormWindowState.Maximized;
             youtube1.Visible = false;
+            movie1.Visible = false;
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -75,6 +76,15 @@ namespace MultiMedia
             bntColor();
             bntCinema.Normalcolor = Color.FromArgb(0, 102, 204);
             bntCinema.Textcolor = Color.Yellow;
+            movie1.Enabled = true;
+            movie1.Visible = true;
+            youtube1.Visible = false;
+            youtube1.Enabled = false;
+            //footBall.Visible = false;
+            //footBall.Enabled = false;
+            //tv1.Visible = false;
+            //tv1.Enabled = false;
+            //tv1.axVLCPlugin21.playlist.stop();
         }
 
         private void bntTV_Click(object sender, EventArgs e)

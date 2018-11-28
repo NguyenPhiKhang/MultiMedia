@@ -91,5 +91,11 @@ namespace MultiMedia.Youtube_module
                 axVLCPlugin21.playlist.play();
             }
         }
+
+        //private void youtube_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if (e.KeyCode == Keys.Enter)
+        //        bunifuImageButton1_Click(sender,e);
+        //}
     }
 }

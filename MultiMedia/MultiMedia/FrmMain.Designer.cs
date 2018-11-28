@@ -43,6 +43,7 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.animator1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.youtube1 = new MultiMedia.Youtube_module.youtube();
+            this.movie1 = new MultiMedia.Movie_module.Movie();
             this.pnMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bntMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
@@ -305,12 +306,23 @@
             this.youtube1.Size = new System.Drawing.Size(1037, 726);
             this.youtube1.TabIndex = 1;
             // 
+            // movie1
+            // 
+            this.movie1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.animator1.SetDecoration(this.movie1, BunifuAnimatorNS.DecorationType.None);
+            this.movie1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.movie1.Location = new System.Drawing.Point(209, 0);
+            this.movie1.Name = "movie1";
+            this.movie1.Size = new System.Drawing.Size(1037, 726);
+            this.movie1.TabIndex = 2;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(1246, 726);
+            this.Controls.Add(this.movie1);
             this.Controls.Add(this.youtube1);
             this.Controls.Add(this.pnMenu);
             this.animator1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
@@ -340,6 +352,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton bntTV;
         private BunifuAnimatorNS.BunifuTransition animator1;
         private Youtube_module.youtube youtube1;
+        private Movie_module.Movie movie1;
     }
 }
 
