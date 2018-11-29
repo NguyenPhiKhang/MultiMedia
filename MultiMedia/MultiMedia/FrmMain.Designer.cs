@@ -44,7 +44,6 @@
             this.animator1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.youtube1 = new MultiMedia.Youtube_module.youtube();
             this.movie1 = new MultiMedia.Movie_module.Movie();
-            this.footBall = new MultiMedia.Football_module.Football();
             this.pnMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bntMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
@@ -303,7 +302,6 @@
             this.animator1.SetDecoration(this.youtube1, BunifuAnimatorNS.DecorationType.None);
             this.youtube1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.youtube1.Location = new System.Drawing.Point(209, 0);
-            this.youtube1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.youtube1.Name = "youtube1";
             this.youtube1.Size = new System.Drawing.Size(1037, 726);
             this.youtube1.TabIndex = 1;
@@ -314,21 +312,9 @@
             this.animator1.SetDecoration(this.movie1, BunifuAnimatorNS.DecorationType.None);
             this.movie1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.movie1.Location = new System.Drawing.Point(209, 0);
-            this.movie1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.movie1.Name = "movie1";
             this.movie1.Size = new System.Drawing.Size(1037, 726);
             this.movie1.TabIndex = 2;
-            // 
-            // footBall
-            // 
-            this.footBall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-                this.animator1.SetDecoration(this.footBall, BunifuAnimatorNS.DecorationType.None);
-            this.footBall.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.footBall.Location = new System.Drawing.Point(209, 0);
-            this.footBall.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.footBall.Name = "footBall";
-            this.footBall.Size = new System.Drawing.Size(1037, 726);
-            this.footBall.TabIndex = 3;
             // 
             // FrmMain
             // 
@@ -336,13 +322,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(1246, 726);
-            this.Controls.Add(this.footBall);
             this.Controls.Add(this.movie1);
             this.Controls.Add(this.youtube1);
             this.Controls.Add(this.pnMenu);
             this.animator1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -352,14 +336,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
 
-        
+        }
 
+        #endregion
 
-    }
-
-    #endregion
-
-    private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuGradientPanel pnMenu;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
@@ -372,7 +353,6 @@
         private BunifuAnimatorNS.BunifuTransition animator1;
         private Youtube_module.youtube youtube1;
         private Movie_module.Movie movie1;
-        private Football_module.Football footBall;
     }
 }
 

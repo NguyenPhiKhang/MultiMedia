@@ -80,8 +80,8 @@ namespace MultiMedia
             movie1.Visible = true;
             youtube1.Visible = false;
             youtube1.Enabled = false;
-            footBall.Visible = false;
-            footBall.Enabled = false;
+            //footBall.Visible = false;
+            //footBall.Enabled = false;
             //tv1.Visible = false;
             //tv1.Enabled = false;
             //tv1.axVLCPlugin21.playlist.stop();
@@ -102,12 +102,12 @@ namespace MultiMedia
 
 
 
-            footBall.Visible = false;
-            footBall.Enabled = false;
+            //footBall.Visible = false;
+            //footBall.Enabled = false;
             youtube1.Visible = true;
             youtube1.Enabled = true;
-            movie1.Enabled = false;
-            movie1.Visible = false;
+            //movie1.Enabled = false;
+            //movie1.Visible = false;
             //tv1.Visible = false;
             //tv1.Enabled = false;
         }
@@ -117,12 +117,6 @@ namespace MultiMedia
             bntColor();
             bntFoot.Normalcolor = Color.FromArgb(0, 102, 204);
             bntFoot.Textcolor = Color.Yellow;
-            footBall.Visible = true;
-            footBall.Enabled = true;
-            youtube1.Visible = false;
-            youtube1.Enabled = false;
-            movie1.Enabled = false;
-            movie1.Visible = false;
         }
     }
 }
