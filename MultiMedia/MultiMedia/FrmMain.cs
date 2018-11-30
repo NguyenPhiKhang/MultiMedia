@@ -106,8 +106,8 @@ namespace MultiMedia
             //footBall.Enabled = false;
             youtube1.Visible = true;
             youtube1.Enabled = true;
-            //movie1.Enabled = false;
-            //movie1.Visible = false;
+            movie1.Enabled = false;
+            movie1.Visible = false;
             //tv1.Visible = false;
             //tv1.Enabled = false;
         }
@@ -117,6 +117,11 @@ namespace MultiMedia
             bntColor();
             bntFoot.Normalcolor = Color.FromArgb(0, 102, 204);
             bntFoot.Textcolor = Color.Yellow;
+        }
+
+        private void pnMenu_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

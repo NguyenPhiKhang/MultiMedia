@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation6 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pnMenu = new Bunifu.Framework.UI.BunifuGradientPanel();
@@ -40,10 +40,10 @@
             this.bntMenu = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.animator1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.youtube1 = new MultiMedia.Youtube_module.youtube();
+            this.animator1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.movie1 = new MultiMedia.Movie_module.Movie();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.pnMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bntMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
@@ -77,6 +77,7 @@
             this.pnMenu.Quality = 10;
             this.pnMenu.Size = new System.Drawing.Size(209, 726);
             this.pnMenu.TabIndex = 0;
+            this.pnMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.pnMenu_Paint);
             // 
             // bntFoot
             // 
@@ -268,34 +269,6 @@
             this.bunifuImageButton1.Zoom = 10;
             this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.pnMenu;
-            this.bunifuDragControl1.Vertical = true;
-            // 
-            // animator1
-            // 
-            this.animator1.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
-            this.animator1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 1;
-            animation1.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 2F;
-            animation1.TransparencyCoeff = 0F;
-            this.animator1.DefaultAnimation = animation1;
-            // 
             // youtube1
             // 
             this.youtube1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
@@ -306,6 +279,27 @@
             this.youtube1.Size = new System.Drawing.Size(1037, 726);
             this.youtube1.TabIndex = 1;
             // 
+            // animator1
+            // 
+            this.animator1.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
+            this.animator1.Cursor = null;
+            animation6.AnimateOnlyDifferences = true;
+            animation6.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.BlindCoeff")));
+            animation6.LeafCoeff = 0F;
+            animation6.MaxTime = 1F;
+            animation6.MinTime = 0F;
+            animation6.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicCoeff")));
+            animation6.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicShift")));
+            animation6.MosaicSize = 1;
+            animation6.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation6.RotateCoeff = 0F;
+            animation6.RotateLimit = 0F;
+            animation6.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.ScaleCoeff")));
+            animation6.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.SlideCoeff")));
+            animation6.TimeCoeff = 2F;
+            animation6.TransparencyCoeff = 0F;
+            this.animator1.DefaultAnimation = animation6;
+            // 
             // movie1
             // 
             this.movie1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
@@ -315,6 +309,13 @@
             this.movie1.Name = "movie1";
             this.movie1.Size = new System.Drawing.Size(1037, 726);
             this.movie1.TabIndex = 2;
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.pnMenu;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // FrmMain
             // 
@@ -344,15 +345,15 @@
         private Bunifu.Framework.UI.BunifuGradientPanel pnMenu;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuImageButton bntMenu;
         private Bunifu.Framework.UI.BunifuFlatButton bntCinema;
         private Bunifu.Framework.UI.BunifuFlatButton bntFoot;
         private Bunifu.Framework.UI.BunifuFlatButton bntYTB;
         private Bunifu.Framework.UI.BunifuFlatButton bntTV;
-        private BunifuAnimatorNS.BunifuTransition animator1;
         private Youtube_module.youtube youtube1;
+        private BunifuAnimatorNS.BunifuTransition animator1;
         private Movie_module.Movie movie1;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }
 
