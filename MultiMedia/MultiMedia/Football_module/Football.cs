@@ -7,14 +7,175 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using HtmlAgilityPack;
 namespace MultiMedia.Football_module
 {
+   
     public partial class Football : UserControl
     {
+        List<string> logo1 = new List<string>();
+        List<string> logo2 = new List<string>();
+        List<string> time = new List<string>();
+        List<string> team = new List<string>();
+        List<string> leage = new List<string>();
+        List<string> link1 = new List<string>();
+        List<string> link2 = new List<string>();
+        List<string> link3 = new List<string>();
+        List<ItemMatch> itemMatches = new List<ItemMatch>();
         public Football()
         {
             InitializeComponent();
+            crawData();
+            int sotran = logo1.Count;
+            for (int i = 0; i < sotran; i++)
+            {
+                ItemMatch itemMatch = new ItemMatch();
+                itemMatch.BackColor = Color.Transparent;
+
+                itemMatch.ptb_team1.Tag = i.ToString();
+                itemMatch.ptb_team2.Tag = i.ToString();
+                itemMatch.txtTime.Tag = i.ToString();
+                itemMatch.txtTeam.Tag = i.ToString();
+                itemMatch.txtLeage.Tag = i.ToString();
+
+                itemMatch.Tag = i.ToString();
+                itemMatch.txtLeage.Tag = i.ToString();
+                itemMatch.txtTeam.Tag = i.ToString();
+                itemMatch.txtTime.Tag = i.ToString();
+                itemMatch.ptb_team1.Tag = i.ToString();
+                itemMatch.ptb_team2.Tag = i.ToString();
+
+                itemMatch.ptb_team1.ImageLocation = logo1[i];
+                itemMatch.ptb_team1.SizeMode = PictureBoxSizeMode.StretchImage;
+                itemMatch.ptb_team2.ImageLocation = logo2[i];
+                itemMatch.ptb_team2.SizeMode = PictureBoxSizeMode.StretchImage;
+                itemMatch.txtTime.Text = time[i];
+                itemMatch.txtTeam.Text = team[i];
+                itemMatch.txtLeage.Text = leage[i];
+                itemMatches.Add(itemMatch);
+                flowLayoutPanel1.Controls.Add(itemMatch);
+
+                itemMatch.Click += Click1;
+                itemMatch.ptb_team1.Click += Click5;
+                itemMatch.ptb_team2.Click += Click6;
+                itemMatch.txtLeage.Click += Click2;
+                itemMatch.txtTeam.Click += Click3;
+                itemMatch.txtTime.Click += Click4;
+
+            }
+
+        }
+
+        void Click1(object sender, EventArgs e)
+        {
+            ItemMatch item = sender as ItemMatch;
+            int a = Convert.ToInt32(item.Tag.ToString());
+            Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
+            frmVLC.StartPosition = FormStartPosition.CenterScreen;
+            frmVLC.Show();
+        }
+
+        void Click2(object sender, EventArgs e)
+        {
+            Label item = sender as Label;
+            int a = Convert.ToInt32(item.Tag.ToString());
+            Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
+            frmVLC.StartPosition = FormStartPosition.CenterScreen;
+            frmVLC.Show();
+        }
+
+        void Click3(object sender, EventArgs e)
+        {
+            Label item = sender as Label;
+            int a = Convert.ToInt32(item.Tag.ToString());
+            Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
+            frmVLC.StartPosition = FormStartPosition.CenterScreen;
+            frmVLC.Show();
+        }
+
+        void Click4(object sender, EventArgs e)
+        {
+            Label item = sender as Label;
+            int a = Convert.ToInt32(item.Tag.ToString());
+            Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
+            
+            frmVLC.StartPosition = FormStartPosition.CenterScreen;
+            frmVLC.Show();
+        }
+
+        void Click5(object sender, EventArgs e)
+        {
+            PictureBox item = sender as PictureBox;
+            int a = Convert.ToInt32(item.Tag.ToString());
+            Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
+            frmVLC.StartPosition = FormStartPosition.CenterScreen;
+            frmVLC.Show();
+        }
+
+        void Click6(object sender, EventArgs e)
+        {
+            PictureBox item = sender as PictureBox;
+            int a = Convert.ToInt32(item.Tag.ToString());
+            Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
+            frmVLC.StartPosition = FormStartPosition.CenterScreen;
+            frmVLC.Show();
+        }
+
+        private void crawData()
+        {
+            try
+            {
+                string url = "http://xemmienphi.xyz/dulieubongda.html";
+                HtmlWeb hw = new HtmlWeb();
+                HtmlAgilityPack.HtmlDocument doc = hw.Load(url);
+                HtmlNodeCollection newsitemlogo1 = doc.DocumentNode.SelectNodes("//div[@class='0']");
+                HtmlNodeCollection newsitemlogo2 = doc.DocumentNode.SelectNodes("//div[@class='1']");
+                HtmlNodeCollection newsitemtime = doc.DocumentNode.SelectNodes("//div[@class='2']");
+                HtmlNodeCollection newsitemteam = doc.DocumentNode.SelectNodes("//div[@class='3']");
+                HtmlNodeCollection newsitemleage = doc.DocumentNode.SelectNodes("//div[@class='5']");
+                HtmlNodeCollection newsitemlink1 = doc.DocumentNode.SelectNodes("//div[@class='6']");
+                HtmlNodeCollection newsitemlink2 = doc.DocumentNode.SelectNodes("//div[@class='7']");
+                HtmlNodeCollection newsitemlink3 = doc.DocumentNode.SelectNodes("//div[@class='8']");
+
+                foreach (var item in newsitemlogo1)
+                {
+                    logo1.Add(item.InnerHtml);
+                }
+                foreach (var item in newsitemlogo2)
+                {
+                    logo2.Add(item.InnerHtml);
+                }
+                foreach (var item in newsitemtime)
+                {
+                    time.Add(item.InnerHtml);
+                }
+                foreach (var item in newsitemteam)
+                {
+                    team.Add(item.InnerHtml);
+                }
+                foreach (var item in newsitemleage)
+                {
+                    leage.Add(item.InnerHtml);
+                }
+                foreach (var item in newsitemlink1)
+                {
+                    link1.Add(item.InnerHtml);
+                }
+                foreach (var item in newsitemlink2)
+                {
+                    link2.Add(item.InnerHtml);
+                }
+                foreach (var item in newsitemlink3)
+                {
+                    link3.Add(item.InnerHtml);
+                }
+            }
+            catch
+            {
+
+            }
+
         }
     }
+    
 }
