@@ -124,5 +124,10 @@ namespace MultiMedia
             movie1.Enabled = false;
             movie1.Visible = false;
         }
+
+        private void pnMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
