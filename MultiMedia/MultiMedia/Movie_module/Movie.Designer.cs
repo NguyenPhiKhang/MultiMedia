@@ -32,23 +32,23 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
+            this.dropdown_theloai = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_timkiem = new System.Windows.Forms.TextBox();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lbl_sotrang = new System.Windows.Forms.Label();
+            this.btn_forward = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_back = new Bunifu.Framework.UI.BunifuImageButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_forward)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_back)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -84,9 +84,9 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.bunifuDropdown1);
+            this.panel1.Controls.Add(this.dropdown_theloai);
             this.panel1.Controls.Add(this.bunifuThinButton21);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.tb_timkiem);
             this.panel1.Controls.Add(this.bunifuFlatButton3);
             this.panel1.Controls.Add(this.bunifuFlatButton2);
             this.panel1.Controls.Add(this.bunifuFlatButton1);
@@ -96,14 +96,14 @@
             this.panel1.Size = new System.Drawing.Size(1031, 47);
             this.panel1.TabIndex = 1;
             // 
-            // bunifuDropdown1
+            // dropdown_theloai
             // 
-            this.bunifuDropdown1.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown1.BorderRadius = 0;
-            this.bunifuDropdown1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuDropdown1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuDropdown1.Items = new string[] {
+            this.dropdown_theloai.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.dropdown_theloai.BackColor = System.Drawing.Color.Transparent;
+            this.dropdown_theloai.BorderRadius = 0;
+            this.dropdown_theloai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dropdown_theloai.ForeColor = System.Drawing.Color.Black;
+            this.dropdown_theloai.Items = new string[] {
         "Truyền hình",
         "Kiếm hiệp",
         "Hành động",
@@ -120,14 +120,14 @@
         "Cổ trang",
         "Âm nhạc",
         "Anime"};
-            this.bunifuDropdown1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuDropdown1.Margin = new System.Windows.Forms.Padding(0);
-            this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(46)))));
-            this.bunifuDropdown1.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuDropdown1.selectedIndex = 0;
-            this.bunifuDropdown1.Size = new System.Drawing.Size(150, 47);
-            this.bunifuDropdown1.TabIndex = 6;
+            this.dropdown_theloai.Location = new System.Drawing.Point(0, 0);
+            this.dropdown_theloai.Margin = new System.Windows.Forms.Padding(0);
+            this.dropdown_theloai.Name = "dropdown_theloai";
+            this.dropdown_theloai.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(46)))));
+            this.dropdown_theloai.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.dropdown_theloai.selectedIndex = 0;
+            this.dropdown_theloai.Size = new System.Drawing.Size(150, 47);
+            this.dropdown_theloai.TabIndex = 6;
             // 
             // bunifuThinButton21
             // 
@@ -155,15 +155,15 @@
             this.bunifuThinButton21.TabIndex = 5;
             this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // tb_timkiem
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(627, 15);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(276, 22);
-            this.textBox1.TabIndex = 4;
+            this.tb_timkiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_timkiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_timkiem.Location = new System.Drawing.Point(627, 15);
+            this.tb_timkiem.Multiline = true;
+            this.tb_timkiem.Name = "tb_timkiem";
+            this.tb_timkiem.Size = new System.Drawing.Size(276, 22);
+            this.tb_timkiem.TabIndex = 4;
             // 
             // bunifuFlatButton3
             // 
@@ -272,9 +272,9 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.bunifuImageButton2);
-            this.panel2.Controls.Add(this.bunifuImageButton1);
+            this.panel2.Controls.Add(this.lbl_sotrang);
+            this.panel2.Controls.Add(this.btn_forward);
+            this.panel2.Controls.Add(this.btn_back);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 683);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -282,45 +282,45 @@
             this.panel2.Size = new System.Drawing.Size(1031, 43);
             this.panel2.TabIndex = 2;
             // 
-            // label1
+            // lbl_sotrang
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(480, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "1/20";
+            this.lbl_sotrang.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_sotrang.AutoSize = true;
+            this.lbl_sotrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_sotrang.ForeColor = System.Drawing.Color.White;
+            this.lbl_sotrang.Location = new System.Drawing.Point(480, 11);
+            this.lbl_sotrang.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_sotrang.Name = "lbl_sotrang";
+            this.lbl_sotrang.Size = new System.Drawing.Size(44, 20);
+            this.lbl_sotrang.TabIndex = 2;
+            this.lbl_sotrang.Text = "1/20";
             // 
-            // bunifuImageButton2
+            // btn_forward
             // 
-            this.bunifuImageButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuImageButton2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
-            this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(541, 0);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(53, 42);
-            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton2.TabIndex = 1;
-            this.bunifuImageButton2.TabStop = false;
-            this.bunifuImageButton2.Zoom = 10;
+            this.btn_forward.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_forward.BackColor = System.Drawing.Color.Transparent;
+            this.btn_forward.Image = ((System.Drawing.Image)(resources.GetObject("btn_forward.Image")));
+            this.btn_forward.ImageActive = null;
+            this.btn_forward.Location = new System.Drawing.Point(541, 0);
+            this.btn_forward.Name = "btn_forward";
+            this.btn_forward.Size = new System.Drawing.Size(53, 42);
+            this.btn_forward.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_forward.TabIndex = 1;
+            this.btn_forward.TabStop = false;
+            this.btn_forward.Zoom = 10;
             // 
-            // bunifuImageButton1
+            // btn_back
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(406, 0);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(53, 42);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 0;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
+            this.btn_back.BackColor = System.Drawing.Color.Transparent;
+            this.btn_back.Image = ((System.Drawing.Image)(resources.GetObject("btn_back.Image")));
+            this.btn_back.ImageActive = null;
+            this.btn_back.Location = new System.Drawing.Point(406, 0);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(53, 42);
+            this.btn_back.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_back.TabIndex = 0;
+            this.btn_back.TabStop = false;
+            this.btn_back.Zoom = 10;
             // 
             // flowLayoutPanel1
             // 
@@ -344,8 +344,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_forward)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_back)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -357,14 +357,14 @@
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_timkiem;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
-        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown1;
+        private Bunifu.Framework.UI.BunifuDropdown dropdown_theloai;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private System.Windows.Forms.Label lbl_sotrang;
+        private Bunifu.Framework.UI.BunifuImageButton btn_forward;
+        private Bunifu.Framework.UI.BunifuImageButton btn_back;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
