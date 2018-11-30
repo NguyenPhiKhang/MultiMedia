@@ -126,9 +126,6 @@
     <Reference Include="YoutubeExtractor, Version=0.10.11.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\YoutubeExtractor.0.10.11\lib\net35\YoutubeExtractor.dll</HintPath>
     </Reference>
-    <Reference Include="YoutubeSearch, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YoutubeSearch.dll.1.1\lib\YoutubeSearch.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Football_module\Football.cs">
