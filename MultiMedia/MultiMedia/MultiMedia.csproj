@@ -131,6 +131,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Football_module\Football.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Football_module\Football.Designer.cs">
+      <DependentUpon>Football.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Football_module\ItemMatch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Football_module\ItemMatch.Designer.cs">
+      <DependentUpon>ItemMatch.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +182,9 @@
     <Compile Include="Youtube_module\youtube.Designer.cs">
       <DependentUpon>youtube.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Football_module\Football.resx">
+      <DependentUpon>Football.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,7 +247,6 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Football_module\" />
     <Folder Include="Resources\" />
     <Folder Include="TV_module\" />
   </ItemGroup>
