@@ -34,7 +34,8 @@ namespace MultiMedia.Movie_module
             //url_origin = "http://phimvnz.com/the-loai/chieu-rap?page=";
             //url = url_origin + numberPage;
             //LoadFilm(url);
-            btn_back.Visible = false;
+            btn_back.Enabled=false;
+            btn_forward.Enabled = false;
         }
 
 
@@ -73,18 +74,18 @@ namespace MultiMedia.Movie_module
                 lbl_sotrang.Text = currentPage + " / " + MaxPage;
                 if (currentPage <= 1)
                 {
-                    btn_back.Visible = false;
-                    btn_forward.Visible = true;
+                    btn_back.Enabled = false;
+                    btn_forward.Enabled = (currentPage == MaxPage) ? false : true;
                 }
                 else if (currentPage >= MaxPage)
                 {
-                    btn_back.Visible = true;
-                    btn_forward.Visible = false;
+                    btn_back.Enabled = true;
+                    btn_forward.Enabled = false;
                 }
                 else
                 {
-                    btn_back.Visible = true;
-                    btn_forward.Visible = true;
+                    btn_back.Enabled = true;
+                    btn_forward.Enabled = true;
                 }
 
                 //Lay so luong phim trong trang dau tien
@@ -273,7 +274,7 @@ namespace MultiMedia.Movie_module
             LoadFilm(url);
         }
 
-        private void btn_xemnhieu_Click(object sender, EventArgs e)
+        private void btn_chieurap_Click(object sender, EventArgs e)
         {
             url_origin = "http://www.vtv16.com/danh-sach/phim-chieu-rap?page=";
             url = url_origin + numberPage;

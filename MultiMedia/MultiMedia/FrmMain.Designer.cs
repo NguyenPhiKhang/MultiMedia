@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation6 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pnMenu = new Bunifu.Framework.UI.BunifuGradientPanel();
@@ -77,7 +77,6 @@
             this.pnMenu.Quality = 10;
             this.pnMenu.Size = new System.Drawing.Size(209, 726);
             this.pnMenu.TabIndex = 0;
-            this.pnMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.pnMenu_Paint);
             // 
             // bntFoot
             // 
@@ -284,22 +283,22 @@
             // 
             this.animator1.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
             this.animator1.Cursor = null;
-            animation6.AnimateOnlyDifferences = true;
-            animation6.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.BlindCoeff")));
-            animation6.LeafCoeff = 0F;
-            animation6.MaxTime = 1F;
-            animation6.MinTime = 0F;
-            animation6.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicCoeff")));
-            animation6.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicShift")));
-            animation6.MosaicSize = 1;
-            animation6.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation6.RotateCoeff = 0F;
-            animation6.RotateLimit = 0F;
-            animation6.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.ScaleCoeff")));
-            animation6.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.SlideCoeff")));
-            animation6.TimeCoeff = 2F;
-            animation6.TransparencyCoeff = 0F;
-            this.animator1.DefaultAnimation = animation6;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 1;
+            animation2.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 2F;
+            animation2.TransparencyCoeff = 0F;
+            this.animator1.DefaultAnimation = animation2;
             // 
             // movie1
             // 
@@ -307,7 +306,6 @@
             this.animator1.SetDecoration(this.movie1, BunifuAnimatorNS.DecorationType.None);
             this.movie1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.movie1.Location = new System.Drawing.Point(209, 0);
-            this.movie1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.movie1.Name = "movie1";
             this.movie1.Size = new System.Drawing.Size(1037, 726);
             this.movie1.TabIndex = 2;
@@ -315,10 +313,9 @@
             // footBall
             // 
             this.footBall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-                this.animator1.SetDecoration(this.footBall, BunifuAnimatorNS.DecorationType.None);
+            this.animator1.SetDecoration(this.footBall, BunifuAnimatorNS.DecorationType.None);
             this.footBall.Dock = System.Windows.Forms.DockStyle.Fill;
             this.footBall.Location = new System.Drawing.Point(209, 0);
-            this.footBall.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.footBall.Name = "footBall";
             this.footBall.Size = new System.Drawing.Size(1037, 726);
             this.footBall.TabIndex = 3;
@@ -344,9 +341,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
-
-        
-
 
     }
 
