@@ -125,7 +125,7 @@ namespace MultiMedia.Football_module
         {
             try
             {
-                string url = "http://xemmienphi.xyz/dulieubongda.html";
+                string url = "http://xemmienphi.xyz/tructiep.html";
                 HtmlWeb hw = new HtmlWeb();
                 HtmlAgilityPack.HtmlDocument doc = hw.Load(url);
                 HtmlNodeCollection newsitemlogo1 = doc.DocumentNode.SelectNodes("//div[@class='0']");

@@ -125,11 +125,11 @@ namespace MultiMedia.Movie_module
                 this.WindowState = FormWindowState.Maximized;
                 isFullScreen = true;
             }
-            //else
-            //{
-            //    this.WindowState = FormWindowState.Normal;
-            //    isFullScreen = false;
-            //}
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                isFullScreen = false;
+            }
 
         }
 
@@ -173,5 +173,17 @@ namespace MultiMedia.Movie_module
             double pe = r / file_size * 100;
             lbl_down.Text = string.Format("{0 : 0.00}%", pe);
         }
+
+        private void bunifuImageButton1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void bunifuImageButton3_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        
     }
 }

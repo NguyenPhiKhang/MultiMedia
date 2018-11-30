@@ -18,6 +18,7 @@ namespace MultiMedia
             //this.WindowState = FormWindowState.Maximized;
             youtube1.Visible = false;
             movie1.Visible = false;
+            footBall.Visible = false;
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -125,9 +126,8 @@ namespace MultiMedia
             movie1.Visible = false;
         }
 
-        private void pnMenu_Paint(object sender, PaintEventArgs e)
-        {
+        
 
-        }
+        
     }
 }
