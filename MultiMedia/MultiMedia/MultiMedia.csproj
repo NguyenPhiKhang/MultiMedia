@@ -40,7 +40,8 @@
       <HintPath>..\packages\HtmlAgilityPack.1.8.10\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="libvideo, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VideoLibrary.2.0.3\lib\netstandard1.1\libvideo.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\libvideo.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -164,9 +165,6 @@
     <Compile Include="Movie_module\LabelRoundCorners.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Movie_module\LabelRoundCorners.Designer.cs">
-      <DependentUpon>LabelRoundCorners.cs</DependentUpon>
-    </Compile>
     <Compile Include="Movie_module\Movie.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -193,9 +191,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movie_module\item_movie.resx">
       <DependentUpon>item_movie.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Movie_module\LabelRoundCorners.resx">
-      <DependentUpon>LabelRoundCorners.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movie_module\Movie.resx">
       <DependentUpon>Movie.cs</DependentUpon>
