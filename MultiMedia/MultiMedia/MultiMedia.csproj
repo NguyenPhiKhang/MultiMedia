@@ -155,6 +155,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Youtube_module\youtube.resx">
       <DependentUpon>youtube.cs</DependentUpon>
@@ -194,8 +195,139 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
     <Folder Include="TV_module\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5a50274e9e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7da71df7759cfda71d9de0d37a3495b5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\74-742441_preamps-white-search-icon-svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\219-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1024px-Yellow_icon.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5856b1184f6ae202fedf2789.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\84729531-a-black-and-white-silhouette-of-a-pause-button.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avengersleagueoflegens_ox__W1000xh0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button-1187460_960_720.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dc-marvel-759.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dc-universe-759.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-1915753_960_720.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Film-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\football.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Green-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green-circle-md.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-down-arrow-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-downloading-updates-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sort-left-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sort-right-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_186726.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_357679.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Marvel-movies-in-development-700x300.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maxresdefault %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maxresdefault.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\One-Piece-748-800x533-800x533.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause_lead_flow.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-icon-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tag_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled5345464.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vertical-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volume-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_back_1152661.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\youtube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ytb.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -56,7 +56,7 @@ namespace MultiMedia
                 pnMenu.Visible = false;
                 pnMenu.Width = 58;
                 bunifuImageButton1.Location = new Point(3, 46);
-                //bunifuImageButton2.Location = new Point(3, 71);
+                //bIbtn_Pause.Location = new Point(3, 71);
                 bunifuImageButton3.Location = new Point(3, 71);
                 animator1.ShowSync(pnMenu);
             }
