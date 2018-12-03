@@ -20,9 +20,9 @@ namespace MultiMedia.Youtube_module
         public youtube()
         {
             InitializeComponent();
-            this.dataGridView1.DefaultCellStyle.Font = new Font("Tahoma", 12);
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            foreach (DataGridViewColumn col in dataGridView1.Columns)
+            this.dGv_Ytb.DefaultCellStyle.Font = new Font("Tahoma", 12);
+            dGv_Ytb.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            foreach (DataGridViewColumn col in dGv_Ytb.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 col.HeaderCell.Style.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
@@ -38,7 +38,7 @@ namespace MultiMedia.Youtube_module
         {
             List<Video> list = new List<Video>();
             VideoSearch items = new VideoSearch();
-            foreach (var item in items.SearchQuery(textBox1.Text, 1))
+            foreach (var item in items.SearchQuery(txtSearch.Text, 1))
             {
                 Video video = new Video();
 
@@ -64,11 +64,11 @@ namespace MultiMedia.Youtube_module
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
                     var youtube = YouTube.Default;
-                    //label1.Text = "Đang tải...";
-                    bunifuFlatButton1.Visible = false;
+                    //lblSearch.Text = "Đang tải...";
+                    btnDownload.Visible = false;
                     var video = await youtube.GetVideoAsync(link);
                     File.WriteAllBytes(fbd.SelectedPath + video.FullName, await video.GetBytesAsync());
-                    //label1.Text = "Hoàn thành !";
+                    //lblSearch.Text = "Hoàn thành !";
                 }
             }
         }
@@ -77,18 +77,33 @@ namespace MultiMedia.Youtube_module
         {
             if (e.RowIndex >= 0)
             {
-                //label1.Visible = true;
-                bunifuFlatButton1.Visible = true;
-                //label1.Text = "Đang phát...";
+                //lblSearch.Visible = true;
+                btnDownload.Visible = true;
+                //lblSearch.Text = "Đang phát...";
                 //int index = e.RowIndex;
-                //dataGridView1.Rows[index].Selected = true;
-                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                bunifuCustomLabel1.Text = row.Cells[1].Value.ToString();
+                //dGv_Ytb.Rows[index].Selected = true;
+                DataGridViewRow row = this.dGv_Ytb.Rows[e.RowIndex];
+                lblTitle.Text = row.Cells[1].Value.ToString();
                 link = row.Cells["Url"].Value.ToString();
                 //string a = list[index].Url;
                 axVLCPlugin21.playlist.add(link);
                 axVLCPlugin21.playlist.next();
                 axVLCPlugin21.playlist.play();
+            }
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                SearchYoutube();
+
+                string[] temp = txtSearch.Text.Split('\n');
+                txtSearch.Clear();
+                foreach (string item in temp)
+                {
+                    txtSearch.Text = item;
+                }
             }
         }
 

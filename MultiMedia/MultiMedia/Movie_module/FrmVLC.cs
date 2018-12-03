@@ -200,6 +200,7 @@ namespace MultiMedia.Movie_module
         private void bIbtn_Volume_Click(object sender, EventArgs e)
         {
             volume.Value = 0;
+            axVLCPlugin21.audio.volume = volume.Value;
         }
     }
 }

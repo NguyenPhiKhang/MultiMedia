@@ -104,14 +104,14 @@
             this.panel1.Size = new System.Drawing.Size(1031, 41);
             this.panel1.TabIndex = 5;
             // 
-            // label1
+            // lblSearch
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Info;
             this.label1.Location = new System.Drawing.Point(327, 0);
-            this.label1.Name = "label1";
+            this.label1.Name = "lblSearch";
             this.label1.Size = new System.Drawing.Size(359, 37);
             this.label1.TabIndex = 4;
             this.label1.Text = "TƯỜNG THUẬT TRỰC TIẾP";

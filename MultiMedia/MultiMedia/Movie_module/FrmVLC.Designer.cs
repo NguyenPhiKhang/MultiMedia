@@ -208,7 +208,7 @@
             // bIbtn_Stop
             // 
             this.bIbtn_Stop.BackColor = System.Drawing.Color.Transparent;
-            this.bIbtn_Stop.Image = global::MultiMedia.Properties.Resources._219_512;
+            this.bIbtn_Stop.Image = global::MultiMedia.Properties.Resources.    _219_512;
             this.bIbtn_Stop.ImageActive = null;
             this.bIbtn_Stop.Location = new System.Drawing.Point(129, 8);
             this.bIbtn_Stop.Margin = new System.Windows.Forms.Padding(0);
