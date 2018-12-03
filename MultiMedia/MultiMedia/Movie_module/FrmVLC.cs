@@ -45,7 +45,10 @@ namespace MultiMedia.Movie_module
 
             volume.Value = 100;
             btn_play.Click += btn_play_Click;
+            bIbtn_Pause.Click += bIbtn_Pause_Click;
+            bIbtn_Stop.Click += bIbtn_Stop_Click;
             btn_fullscreen.Click += btn_fullscreen_Click;
+            
             volume.ValueChanged += volume_ValueChanged;
             time_movie.ValueChanged += time_movie_ValueChanged;
             uri = url;
@@ -63,12 +66,12 @@ namespace MultiMedia.Movie_module
             return strTime;
         }
 
-        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        private void bIbtn_Minimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void bunifuImageButton3_Click(object sender, EventArgs e)
+        private void bIbtn_Close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -86,14 +89,24 @@ namespace MultiMedia.Movie_module
 
         private void btn_play_Click(object sender, EventArgs e)
         {
-            if (axVLCPlugin21.playlist.isPlaying)
-            {
-                axVLCPlugin21.playlist.pause();
-            }
-            else
-            {
-                axVLCPlugin21.playlist.play();
-            }
+            //if (axVLCPlugin21.playlist.isPlaying)
+            //{
+            //    axVLCPlugin21.playlist.pause();
+            //}
+            //else
+            //{
+            //    axVLCPlugin21.playlist.play();
+            //}
+            axVLCPlugin21.playlist.play();
+        }
+        private void bIbtn_Pause_Click(object sender, EventArgs e)
+        {
+            axVLCPlugin21.playlist.pause();
+        }
+
+        private void bIbtn_Stop_Click(object sender, EventArgs e)
+        {
+            axVLCPlugin21.playlist.stop();
         }
 
         private void axVLCPlugin21_MediaPlayerTimeChanged(object sender, AxAXVLC.DVLCEvents_MediaPlayerTimeChangedEvent e)
@@ -113,7 +126,7 @@ namespace MultiMedia.Movie_module
             {
                 time_movie.Value = time_movie.MaximumValue;
                 axVLCPlugin21.playlist.stop();
-            }
+            }   
         }
 
         private void btn_fullscreen_Click(object sender, EventArgs e)
@@ -179,11 +192,14 @@ namespace MultiMedia.Movie_module
             this.Close();
         }
 
-        private void bunifuImageButton3_Click_1(object sender, EventArgs e)
+        private void bIbtn_MiniMize_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        
+        private void bIbtn_Volume_Click(object sender, EventArgs e)
+        {
+            volume.Value = 0;
+        }
     }
 }
