@@ -1003,6 +1003,16 @@ namespace MultiMedia.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Trafficlight_green_icon {
+            get {
+                object obj = ResourceManager.GetObject("Trafficlight-green-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap travinh {
             get {
                 object obj = ResourceManager.GetObject("travinh", resourceCulture);

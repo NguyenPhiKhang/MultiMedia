@@ -164,7 +164,7 @@ namespace MultiMedia.Movie_module
             {
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
-                    lbl_down.Visible = true;
+                    lbl_name_video.Visible = true;
                     Uri u = new Uri(this.uri);
                     c.DownloadFileAsync(u, Path.Combine(fbd.SelectedPath, Path.GetFileName(u.AbsolutePath)));
                     c.DownloadProgressChanged += C_DownloadProgressChanged;
@@ -184,7 +184,7 @@ namespace MultiMedia.Movie_module
             double r = e.BytesReceived;
             double file_size = e.TotalBytesToReceive;
             double pe = r / file_size * 100;
-            lbl_down.Text = string.Format("{0 : 0.00}%", pe);
+            lbl_name_video.Text = string.Format("{0 : 0.00}%", pe);
         }
 
         private void bunifuImageButton1_Click_1(object sender, EventArgs e)
@@ -201,6 +201,11 @@ namespace MultiMedia.Movie_module
         {
             volume.Value = 0;
             axVLCPlugin21.audio.volume = volume.Value;
+        }
+
+        private void lbl_name_video_TextChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }
