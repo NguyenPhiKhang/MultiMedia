@@ -122,6 +122,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TV_module\TV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TV_module\TV.Designer.cs">
+      <DependentUpon>TV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Youtube_module\Video.cs" />
     <Compile Include="Youtube_module\youtube.cs">
       <SubType>UserControl</SubType>
@@ -157,6 +163,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TV_module\TV.resx">
+      <DependentUpon>TV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Youtube_module\youtube.resx">
       <DependentUpon>youtube.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,7 +204,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="TV_module\" />
+    <None Include="Resources\back.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\5a50274e9e.png" />
@@ -306,9 +315,6 @@
     <None Include="Resources\tag_black.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\TV.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Untitled.png" />
   </ItemGroup>
   <ItemGroup>
@@ -328,6 +334,276 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ytb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1046px-Search_Noun_project_15028.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_football.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\binhdinh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\binhphuoc1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car-toon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Collapse_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discovery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dulich.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\english.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expand_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forward_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giadinh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hatinh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\htv1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\htv2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\htv3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\htv4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\htv7hd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\htv9hd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\htvthethao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\khanhhoa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kiengiang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lamdong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\langson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lichthidau1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\longan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maxresdefault-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mtvviet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nhac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pause_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phimbo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phimhd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phunu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Play_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quangnam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\soctrang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tag2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tayninh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thuanviethd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tivi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tpcantho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\travinh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tv2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vinhlong1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vinhlong2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vov1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vov2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vov3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vov4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vov5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vovGT.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vovGTHCM.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtc1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtc4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtc7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtc8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtc9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtc10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtc11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtc14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtc16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtv1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtv2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtv3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtv4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtv5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtv6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtv7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtv8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtv9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\worldcup2018-1522034263874751758884.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xsports-s-wallpapers-widescreen-Is-Cool-Wallpapers.jpg.pagespeed.ic.AVvoT0hwKt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\18.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\181.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\15520265.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\33396408_975016176006570_4109188077589626880_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\33873812_977480632426791_4132674436232904704_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\animalplanet.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
