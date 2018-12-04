@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HtmlAgilityPack;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 namespace MultiMedia.Movie_module
 {
@@ -22,7 +24,7 @@ namespace MultiMedia.Movie_module
         public String keyword = "keyword";
         item_movie item_Movie;
         List<item_movie> list_itemmovies = new List<item_movie>();
-        List<String> detail = new List<string>();
+        List<String> status = new List<string>();
         List<String> avatar = new List<string>();
         List<String> name = new List<string>();
         List<String> realname = new List<string>();
@@ -31,9 +33,6 @@ namespace MultiMedia.Movie_module
         public Movie()
         {
             InitializeComponent();
-            //url_origin = "http://phimvnz.com/the-loai/chieu-rap?page=";
-            //url = url_origin + numberPage;
-            //LoadFilm(url);
             btn_back.Enabled=false;
             btn_forward.Enabled = false;
         }
@@ -45,7 +44,7 @@ namespace MultiMedia.Movie_module
             try
             {
                 list_itemmovies.Clear();
-                detail.Clear();
+                status.Clear();
                 realname.Clear();
                 avatar.Clear();
                 name.Clear();
@@ -56,14 +55,14 @@ namespace MultiMedia.Movie_module
                     AutoDetectEncoding = false,
                     OverrideEncoding = Encoding.UTF8  //Set UTF8 để hiển thị tiếng Việt
                 };
-                htmlWeb.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1";
+                htmlWeb.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36";
                 HtmlAgilityPack.HtmlDocument document = htmlWeb.Load(url);
                 //Lay so luong trang phim
-                HtmlNode Soluongphim = document.DocumentNode.SelectSingleNode("//div[@class='page-navigation']/span");
+                HtmlNode Sotrangphim = document.DocumentNode.SelectSingleNode("//span[@class='page_nav']");
                 try
                 {
-                    currentPage = Convert.ToInt32(Soluongphim.SelectSingleNode(@"a[@class='item current']").InnerText);
-                    MaxPage = Convert.ToInt32(Soluongphim.SelectSingleNode(@"a[last()-1]").InnerText);
+                    currentPage = Convert.ToInt32(Sotrangphim.SelectSingleNode(".//span[@class='current']").InnerText);
+                    MaxPage = Convert.ToInt32(Sotrangphim.SelectSingleNode(".//span[last()-1]").InnerText);
                 }
                 catch
                 {
@@ -89,18 +88,24 @@ namespace MultiMedia.Movie_module
                 }
 
                 //Lay so luong phim trong trang dau tien
-                HtmlNode list_film = document.DocumentNode.SelectSingleNode("//ul[@class='list-film']");
-                HtmlNodeCollection listfilm_collection = list_film.SelectNodes(@"li");
+                var listfilm_collection = document.DocumentNode.SelectNodes("//ul[@class='list-film']/li").ToList();
+                //HtmlNodeCollection listfilm_collection = list_film.SelectNodes(@"li");
 
                 foreach (var n in listfilm_collection)
                 {
-                    String name_film = n.SelectSingleNode("div[@class='name']/h4/a").InnerText;
-                    String detail_film = n.SelectSingleNode("div[@class='poster']/div").InnerText.Trim();
-                    String avatar_film = n.SelectSingleNode("div[@class='poster']/a/img").Attributes["src"].Value;
-                    String realname_film = n.SelectSingleNode("div[@class='name']/dfn").InnerText;
-                    String url_film = n.SelectSingleNode("div[@class='poster']/a").Attributes["href"].Value + "/xem-phim.html";
+                    String name_film = n.SelectSingleNode(".//div[@class='name']/a").InnerText;
+                    String status_film;
+                    try
+                    {
+                        status_film = n.SelectSingleNode(".//div[@class='status']").InnerText.Trim();
+                    }
+                    catch { status_film = null; }
 
-                    detail.Add(detail_film);
+                    String avatar_film = n.SelectSingleNode(".//div[@class='inner']/a/img").Attributes["src"].Value;
+                    String realname_film = n.SelectSingleNode(".//div[@class='name2']").InnerText;
+                    String url_film = "/"+n.SelectSingleNode(".//div[@class='inner']/a").Attributes["href"].Value;
+                    url_film = "http://woohay.com"+url_film.Replace("/phim/", "/xem-phim/");
+                    status.Add(status_film);
                     realname.Add(realname_film);
                     name.Add(name_film);
                     avatar.Add(avatar_film);
@@ -116,7 +121,7 @@ namespace MultiMedia.Movie_module
                     item_Movie.Tag = i.ToString();
 
                     item_Movie.lbl_name.Text = name[i];
-                    item_Movie.lbl_detail.Text = detail[i];
+                    item_Movie.lbl_status.Text = status[i];
                     item_Movie.lbl_realname.Text = realname[i];
                     item_Movie.lbl_url.Text = url_first[i];
 
@@ -150,111 +155,93 @@ namespace MultiMedia.Movie_module
                 AutoDetectEncoding = false,
                 OverrideEncoding = Encoding.UTF8  //Set UTF8 để hiển thị tiếng Việt
             };
-            htmlWeb.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1";
-            HtmlAgilityPack.HtmlDocument document = htmlWeb.Load(film.lbl_url.Text.ToString());
-            String text = document.ParsedText;
-            String[] arr = text.Split((new String[] { "src" }), StringSplitOptions.None);
-            String[] arr1 = arr[9].Split(new char[] { '"', '"' });
-            String url_origin1 = arr1[1];
-            String url_origin2 = url_origin1.Replace(@"'", "");
-            String link2 = url_origin2.Replace("+", "");
-            String link3 = link2.Replace(" ", "");
-
-            HtmlAgilityPack.HtmlDocument document2 = htmlWeb.Load(link3);
-            String text2 = document2.ParsedText;
-            String[] arr2 = text2.Split(new char[] { '"', '"' });
-            String link1 = arr2[27].Replace(@"\", "");
-            //String link2 = arr2[33].Replace(@"\","");
-            //String link3 = arr2[45].Replace(@"\","");
-
-            String[] url_origin3 = new string[] { link1 };
-
-            Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(url_origin3[0]);
-            frmVLC.StartPosition = FormStartPosition.CenterScreen;
-            frmVLC.btn_down.Visible = true;
-            frmVLC.Show();
+            htmlWeb.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36";
+            //lấy link phim phát được trên vlc nhờ webdriver
+            var chromedriverServer = ChromeDriverService.CreateDefaultService();
+            chromedriverServer.HideCommandPromptWindow = true;
+            ChromeOptions option = new ChromeOptions();
+            option.AddArgument("--headless");
+            IWebDriver driver = new ChromeDriver(chromedriverServer, option);
+            driver.Url = film.lbl_url.Text.ToString();
+            try
+            {
+                IWebElement link_element = driver.FindElement(By.XPath("//div[@class='jw-media jw-reset']/video"));
+                String linkvideofilm = link_element.GetAttribute("src").Trim();
+                Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(linkvideofilm);
+                frmVLC.StartPosition = FormStartPosition.CenterScreen;
+                frmVLC.btn_down.Visible = true;
+                frmVLC.Show();
+            }
+            catch { MessageBox.Show("Link bị die! Xin vui lòng xem phim khác!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            driver.Quit();
+            driver.Dispose();
         }
 
         private void dropdown_theloai_onItemSelected(object sender, EventArgs e)
         {
             if (dropdown_theloai.selectedIndex == 0)
             {
-                url_origin = "http://www.vtv16.com/the-loai/phim-truyen-hinh?page=";
+                url_origin = "https://woohay.com/the-loai/phim-hanh-dong/page-";
                 url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 1)
             {
-                url_origin = "http://www.vtv16.com/the-loai/phim-kiem-hiep?page=";
+                url_origin = "https://woohay.com/the-loai/phim-hoat-hinh/page-";
                 url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 2)
             {
-                url_origin = "http://www.vtv16.com/the-loai/phim-hanh-dong?page=";
+                url_origin = "https://woohay.com/the-loai/phim-vien-tuong/page-";
                 url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 3)
             {
-                url_origin = "http://www.vtv16.com/the-loai/phim-vo-thuat?page=";
+                url_origin = "https://woohay.com/the-loai/phim-phieu-luu/page-";
                 url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 4)
             {
-                url_origin = "http://www.vtv16.com/the-loai/phim-tam-ly?page=";
+                url_origin = "https://woohay.com/the-loai/phim-vo-thuat/page-";
                 url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 5)
             {
-                url_origin = "http://www.vtv16.com/the-loai/phim-hai-huoc?page=";
+                url_origin = "https://woohay.com/the-loai/phim-than-thoai/page-";
                 url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 6)
             {
-                url_origin = "http://www.vtv16.com/the-loai/phim-hoat-hinh?page=";
+                url_origin = "https://woohay.com/the-loai/phim-kinh-di/page-";
                 url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 7)
             {
-                url_origin = "http://www.vtv16.com/the-loai/phim-phieu-luu?page=";
+                url_origin = "https://woohay.com/the-loai/phim-hai-huoc/page-";
                 url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 8)
             {
-                url_origin = "http://www.vtv16.com/the-loai/phim-kinh-di?page=";
+                url_origin = "https://woohay.com/the-loai/phim-co-trang/page-";
                 url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 9)
             {
-                url = "http://www.vtv16.com/the-loai/phim-hinh-su?page=";
+                url_origin = "https://woohay.com/the-loai/phim-chien-tranh/page-";
                 url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 10)
             {
-                url_origin = "http://www.vtv16.com/the-loai/phim-chien-tranh?page=";
+                url_origin = "https://woohay.com/the-loai/phim-hai-viet/page-";
                 url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 11)
             {
-                url_origin = "http://www.vtv16.com/the-loai/phim-than-thoai?page=";
+                url_origin = "https://woohay.com/the-loai/phim-tam-ly/page-";
                 url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 12)
             {
-                url_origin = "http://www.vtv16.com/the-loai/phim-vien-tuong?page=";
-                url = url_origin + numberPage;
-            }
-            else if (dropdown_theloai.selectedIndex == 13)
-            {
-                url_origin = "http://www.vtv16.com/the-loai/phim-co-trang?page=";
-                url = url_origin + numberPage;
-            }
-            else if (dropdown_theloai.selectedIndex == 14)
-            {
-                url_origin = "http://www.vtv16.com/the-loai/phim-am-nhac?page=";
-                url = url_origin + numberPage;
-            }
-            else if (dropdown_theloai.selectedIndex == 15)
-            {
-                url_origin = "http://www.vtv16.com/the-loai/phim-anime?page=";
+                url_origin = "https://woohay.com/the-loai/phim-thieu-nhi/page-";
                 url = url_origin + numberPage;
             }
             LoadFilm(url);
@@ -262,30 +249,30 @@ namespace MultiMedia.Movie_module
 
         private void btn_phimle_Click(object sender, EventArgs e)
         {
-            url_origin = "http://www.vtv16.com/danh-sach/phim-le?page=";
+            url_origin = "https://woohay.com/danh-sach/phim-le/page-";
             url = url_origin + numberPage;
             LoadFilm(url);
         }
 
         private void btn_phimmoi_Click(object sender, EventArgs e)
         {
-            url_origin = "http://www.vtv16.com/danh-sach/phim-moi?page=";
+            url_origin = "https://woohay.com/danh-sach/phim-moi/page-";
             url = url_origin + numberPage;
             LoadFilm(url);
         }
 
         private void btn_chieurap_Click(object sender, EventArgs e)
         {
-            url_origin = "http://www.vtv16.com/danh-sach/phim-chieu-rap?page=";
+            url_origin = "https://woohay.com/danh-sach/phim-chieu-rap/page-";
             url = url_origin + numberPage;
             LoadFilm(url);
         }
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-            if (url.IndexOf("tim-kiem-phim") != -1)
+            if (url.IndexOf("/search/") != -1)
             {
-                url = "http://www.vtv16.com/tim-kiem-phim/" + search2 + "?page=2" + (currentPage - 1);
+                url = "https://woohay.com/search/" + search2 + "/page-" + (currentPage - 1);
 
                 LoadFilm(url);
             }
@@ -301,11 +288,17 @@ namespace MultiMedia.Movie_module
             }
         }
 
+        private void tb_timkiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == System.Windows.Forms.Keys.Enter)
+                btn_timkiem_Click_1(sender, e);
+        }
+
         private void btn_forward_Click(object sender, EventArgs e)
         {
-            if (url.IndexOf("tim-kiem-phim") != -1)
+            if (url.IndexOf("/search/") != -1)
             {
-                url = "http://www.vtv16.com/tim-kiem-phim/" + search2 + "?page=2" + (currentPage + 1);
+                url = "https://woohay.com/search/" + search2 + "/page-" + (currentPage + 1);
 
                 LoadFilm(url);
             }
@@ -332,7 +325,7 @@ namespace MultiMedia.Movie_module
             {
                 search2 = search.Replace(" ", "-");
 
-                url = "http://www.vtv16.com/tim-kiem-phim/" + search2;
+                url = "https://woohay.com/search/" + search2;
 
                 LoadFilm(url);
             }

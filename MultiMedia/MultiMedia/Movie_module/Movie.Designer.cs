@@ -32,8 +32,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tb_timkiem = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.dropdown_theloai = new Bunifu.Framework.UI.BunifuDropdown();
-            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btn_timkiem = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btn_chieurap = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_phimmoi = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_phimle = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -42,7 +43,6 @@
             this.btn_forward = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_back = new Bunifu.Framework.UI.BunifuImageButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.tb_timkiem = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -86,7 +86,7 @@
             // 
             this.panel1.Controls.Add(this.tb_timkiem);
             this.panel1.Controls.Add(this.dropdown_theloai);
-            this.panel1.Controls.Add(this.bunifuThinButton21);
+            this.panel1.Controls.Add(this.btn_timkiem);
             this.panel1.Controls.Add(this.btn_chieurap);
             this.panel1.Controls.Add(this.btn_phimmoi);
             this.panel1.Controls.Add(this.btn_phimle);
@@ -96,6 +96,17 @@
             this.panel1.Size = new System.Drawing.Size(1031, 47);
             this.panel1.TabIndex = 1;
             // 
+            // tb_timkiem
+            // 
+            this.tb_timkiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_timkiem.BorderColor = System.Drawing.Color.SeaGreen;
+            this.tb_timkiem.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_timkiem.Location = new System.Drawing.Point(622, 10);
+            this.tb_timkiem.Name = "tb_timkiem";
+            this.tb_timkiem.Size = new System.Drawing.Size(281, 25);
+            this.tb_timkiem.TabIndex = 7;
+            this.tb_timkiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_timkiem_KeyDown);
+            // 
             // dropdown_theloai
             // 
             this.dropdown_theloai.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
@@ -104,22 +115,19 @@
             this.dropdown_theloai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dropdown_theloai.ForeColor = System.Drawing.Color.Black;
             this.dropdown_theloai.Items = new string[] {
-        "Truyền hình",
-        "Kiếm hiệp",
-        "Hành động",
-        "Võ thuật",
-        "Tâm lý",
-        "Hài hước",
-        "Hoạt hình",
-        "Phiêu lưu",
-        "Kinh dị",
-        "Hình sự",
-        "Chiến tranh",
-        "Thần thoại",
-        "Viễn tưởng",
-        "Cổ trang",
-        "Âm nhạc",
-        "Anime"};
+        "Hành Động",
+        "Hoạt Hình",
+        "Viễn Tưởng",
+        "Phiêu Lưu",
+        "Võ Thuật",
+        "Thần Thoại",
+        "Kinh Dị",
+        "Hài Hước",
+        "Cổ Trang",
+        "Chiến Tranh",
+        "Hài Việt",
+        "Tâm Lý",
+        "Thiếu Nhi"};
             this.dropdown_theloai.Location = new System.Drawing.Point(0, 0);
             this.dropdown_theloai.Margin = new System.Windows.Forms.Padding(0);
             this.dropdown_theloai.Name = "dropdown_theloai";
@@ -130,32 +138,32 @@
             this.dropdown_theloai.TabIndex = 6;
             this.dropdown_theloai.onItemSelected += new System.EventHandler(this.dropdown_theloai_onItemSelected);
             // 
-            // bunifuThinButton21
+            // btn_timkiem
             // 
-            this.bunifuThinButton21.ActiveBorderThickness = 1;
-            this.bunifuThinButton21.ActiveCornerRadius = 20;
-            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuThinButton21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
-            this.bunifuThinButton21.ButtonText = "Tìm Kiếm";
-            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton21.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton21.ForeColor = System.Drawing.Color.Black;
-            this.bunifuThinButton21.IdleBorderThickness = 1;
-            this.bunifuThinButton21.IdleCornerRadius = 20;
-            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(46)))));
-            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.Black;
-            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(46)))));
-            this.bunifuThinButton21.Location = new System.Drawing.Point(909, 2);
-            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.Size = new System.Drawing.Size(107, 41);
-            this.bunifuThinButton21.TabIndex = 5;
-            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuThinButton21.Click += new System.EventHandler(this.btn_timkiem_Click_1);
+            this.btn_timkiem.ActiveBorderThickness = 1;
+            this.btn_timkiem.ActiveCornerRadius = 20;
+            this.btn_timkiem.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btn_timkiem.ActiveForecolor = System.Drawing.Color.White;
+            this.btn_timkiem.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btn_timkiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_timkiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btn_timkiem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_timkiem.BackgroundImage")));
+            this.btn_timkiem.ButtonText = "Tìm Kiếm";
+            this.btn_timkiem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_timkiem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_timkiem.ForeColor = System.Drawing.Color.Black;
+            this.btn_timkiem.IdleBorderThickness = 1;
+            this.btn_timkiem.IdleCornerRadius = 20;
+            this.btn_timkiem.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(46)))));
+            this.btn_timkiem.IdleForecolor = System.Drawing.Color.Black;
+            this.btn_timkiem.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(46)))));
+            this.btn_timkiem.Location = new System.Drawing.Point(909, 2);
+            this.btn_timkiem.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btn_timkiem.Name = "btn_timkiem";
+            this.btn_timkiem.Size = new System.Drawing.Size(107, 41);
+            this.btn_timkiem.TabIndex = 5;
+            this.btn_timkiem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_timkiem.Click += new System.EventHandler(this.btn_timkiem_Click_1);
             // 
             // btn_chieurap
             // 
@@ -328,15 +336,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1031, 462);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
-            // tb_timkiem
-            // 
-            this.tb_timkiem.BorderColor = System.Drawing.Color.SeaGreen;
-            this.tb_timkiem.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_timkiem.Location = new System.Drawing.Point(622, 10);
-            this.tb_timkiem.Name = "tb_timkiem";
-            this.tb_timkiem.Size = new System.Drawing.Size(281, 25);
-            this.tb_timkiem.TabIndex = 7;
-            // 
             // Movie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,7 +362,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuFlatButton btn_phimle;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
+        private Bunifu.Framework.UI.BunifuThinButton2 btn_timkiem;
         private Bunifu.Framework.UI.BunifuFlatButton btn_chieurap;
         private Bunifu.Framework.UI.BunifuFlatButton btn_phimmoi;
         private Bunifu.Framework.UI.BunifuDropdown dropdown_theloai;

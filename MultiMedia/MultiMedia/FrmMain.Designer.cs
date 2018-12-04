@@ -249,13 +249,12 @@
             // 
             this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
             this.animator1.SetDecoration(this.bunifuImageButton3, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
+            this.bunifuImageButton3.Image = global::MultiMedia.Properties.Resources.Trafficlight_green_icon;
             this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(47, 12);
-            this.bunifuImageButton3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bunifuImageButton3.Location = new System.Drawing.Point(30, 12);
             this.bunifuImageButton3.Name = "bunifuImageButton3";
-            this.bunifuImageButton3.Size = new System.Drawing.Size(28, 29);
-            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton3.Size = new System.Drawing.Size(20, 20);
+            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bunifuImageButton3.TabIndex = 2;
             this.bunifuImageButton3.TabStop = false;
             this.bunifuImageButton3.Zoom = 10;
@@ -265,13 +264,12 @@
             // 
             this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
             this.animator1.SetDecoration(this.bunifuImageButton1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.Image = global::MultiMedia.Properties.Resources.red;
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(12, 12);
-            this.bunifuImageButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(3, 12);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(28, 29);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.Size = new System.Drawing.Size(20, 20);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bunifuImageButton1.TabIndex = 0;
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Zoom = 10;

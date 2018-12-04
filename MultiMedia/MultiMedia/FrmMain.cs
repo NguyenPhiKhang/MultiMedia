@@ -15,10 +15,10 @@ namespace MultiMedia
         public FrmMain()
         {
             InitializeComponent();
-            //this.WindowState = FormWindowState.Maximized;
             youtube1.Visible = false;
             movie1.Visible = false;
             footBall.Visible = false;
+            tv1.Visible = false;
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -45,9 +45,9 @@ namespace MultiMedia
                 pnMenu.Visible = false;
                 pnMenu.Width = 209;
                 //bntMenu.Location = new Point(169, 3);
-                bunifuImageButton1.Location = new Point(12, 12);
+                bunifuImageButton1.Location = new Point(3, 12);
                 //bunifuImageButton2.Location = new Point(37, 13);
-                bunifuImageButton3.Location = new Point(37, 13);
+                bunifuImageButton3.Location = new Point(30, 12);
                 animator1.ShowSync(pnMenu);
             }
             else

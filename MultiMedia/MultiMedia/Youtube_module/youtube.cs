@@ -106,11 +106,5 @@ namespace MultiMedia.Youtube_module
                 }
             }
         }
-
-        //private void youtube_KeyDown(object sender, KeyEventArgs e)
-        //{
-        //    if (e.KeyCode == Keys.Enter)
-        //        bunifuImageButton1_Click(sender,e);
-        //}
     }
 }
