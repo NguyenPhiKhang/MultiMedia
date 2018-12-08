@@ -40,7 +40,8 @@ namespace MultiMedia.Movie_module
 
         public void LoadFilm(String url)
         {
-            while (flowLayoutPanel1.Controls.Count > 0) flowLayoutPanel1.Controls.RemoveAt(0);
+             while (flowLayoutPanel1.Controls.Count > 0) flowLayoutPanel1.Controls.RemoveAt(0);
+           // flowLayoutPanel1.Controls.Clear();
             try
             {
                 list_itemmovies.Clear();
