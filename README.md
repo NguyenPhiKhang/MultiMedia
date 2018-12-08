@@ -1,2 +1,2 @@
 # MultiMedia
-App for watch movie, TV, football
+App for watch Movies, TV show, Youtube, Football 
