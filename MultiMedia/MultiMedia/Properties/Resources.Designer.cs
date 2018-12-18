@@ -195,7 +195,7 @@ namespace MultiMedia.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap animalplanet {
             get {
-                object obj = ResourceManager.GetObject("AXN", resourceCulture);
+                object obj = ResourceManager.GetObject("animalplanet", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -171,7 +171,7 @@ namespace MultiMedia.Football_module
                 }
                 foreach (var item in newsitemtime)
                 {
-                    time.Add(item.InnerText);
+                    time.Add(item.InnerText.Replace("\n", " "));
                 }
                 foreach (var item in newsitemteam)
                 {
