@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(item_movie));
             this.btn_avatar = new Bunifu.Framework.UI.BunifuImageButton();
-            this.lbl_url = new MultiMedia.LabelRoundCorners();
-            this.lbl_status = new MultiMedia.LabelRoundCorners();
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_realname = new System.Windows.Forms.Label();
+            this.lbl_status = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lbl_url = new Bunifu.Framework.UI.BunifuCustomLabel();
             ((System.ComponentModel.ISupportInitialize)(this.btn_avatar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,33 +49,6 @@
             this.btn_avatar.TabIndex = 1;
             this.btn_avatar.TabStop = false;
             this.btn_avatar.Zoom = 10;
-            // 
-            // lbl_url
-            // 
-            this.lbl_url._BackColor = System.Drawing.Color.Transparent;
-            this.lbl_url.AutoSize = true;
-            this.lbl_url.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbl_url.Location = new System.Drawing.Point(2, 1);
-            this.lbl_url.Name = "lbl_url";
-            this.lbl_url.Size = new System.Drawing.Size(0, 13);
-            this.lbl_url.TabIndex = 4;
-            this.lbl_url.Visible = false;
-            // 
-            // lbl_status
-            // 
-            this.lbl_status._BackColor = System.Drawing.Color.Red;
-            this.lbl_status.AutoSize = true;
-            this.lbl_status.BackColor = System.Drawing.Color.Red;
-            this.lbl_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl_status.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_status.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_status.Location = new System.Drawing.Point(3, 230);
-            this.lbl_status.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.lbl_status.Name = "lbl_status";
-            this.lbl_status.Size = new System.Drawing.Size(40, 17);
-            this.lbl_status.TabIndex = 3;
-            this.lbl_status.Text = "2018";
-            this.lbl_status.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_name
             // 
@@ -98,15 +71,39 @@
             this.lbl_realname.Text = "One Piece";
             this.lbl_realname.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // lbl_status
+            // 
+            this.lbl_status.AutoSize = true;
+            this.lbl_status.BackColor = System.Drawing.Color.Red;
+            this.lbl_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_status.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_status.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbl_status.Location = new System.Drawing.Point(3, 235);
+            this.lbl_status.Name = "lbl_status";
+            this.lbl_status.Size = new System.Drawing.Size(40, 17);
+            this.lbl_status.TabIndex = 8;
+            this.lbl_status.Text = "2018";
+            this.lbl_status.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_url
+            // 
+            this.lbl_url.AutoSize = true;
+            this.lbl_url.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_url.Location = new System.Drawing.Point(2, 5);
+            this.lbl_url.Name = "lbl_url";
+            this.lbl_url.Size = new System.Drawing.Size(0, 13);
+            this.lbl_url.TabIndex = 9;
+            this.lbl_url.Visible = false;
+            // 
             // item_movie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.Controls.Add(this.lbl_realname);
-            this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.lbl_url);
             this.Controls.Add(this.lbl_status);
+            this.Controls.Add(this.lbl_realname);
+            this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.btn_avatar);
             this.Name = "item_movie";
             this.Size = new System.Drawing.Size(226, 325);
@@ -117,10 +114,10 @@
         }
 
         #endregion
-        public LabelRoundCorners lbl_status;
-        public LabelRoundCorners lbl_url;
         public Bunifu.Framework.UI.BunifuImageButton btn_avatar;
         public System.Windows.Forms.Label lbl_name;
         public System.Windows.Forms.Label lbl_realname;
+        public Bunifu.Framework.UI.BunifuCustomLabel lbl_status;
+        public Bunifu.Framework.UI.BunifuCustomLabel lbl_url;
     }
 }

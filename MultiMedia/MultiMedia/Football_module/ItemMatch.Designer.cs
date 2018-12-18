@@ -75,8 +75,8 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.txtTime, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.txtTeam, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.txtTime, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.txtLeage, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
@@ -136,6 +136,7 @@
             this.ptb_team1.Location = new System.Drawing.Point(3, 3);
             this.ptb_team1.Name = "ptb_team1";
             this.ptb_team1.Size = new System.Drawing.Size(90, 91);
+            this.ptb_team1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptb_team1.TabIndex = 1;
             this.ptb_team1.TabStop = false;
             // 
@@ -145,6 +146,7 @@
             this.ptb_team2.Location = new System.Drawing.Point(621, 3);
             this.ptb_team2.Name = "ptb_team2";
             this.ptb_team2.Size = new System.Drawing.Size(91, 91);
+            this.ptb_team2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptb_team2.TabIndex = 2;
             this.ptb_team2.TabStop = false;
             // 

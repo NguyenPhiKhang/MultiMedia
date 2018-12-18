@@ -45,6 +45,7 @@
             this.movie1 = new MultiMedia.Movie_module.Movie();
             this.footBall = new MultiMedia.Football_module.Football();
             this.tv1 = new MultiMedia.TV_module.TV();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.pnMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bntMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
@@ -249,7 +250,7 @@
             // 
             this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
             this.animator1.SetDecoration(this.bunifuImageButton3, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuImageButton3.Image = global::MultiMedia.Properties.Resources.Trafficlight_green_icon;
+            this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
             this.bunifuImageButton3.ImageActive = null;
             this.bunifuImageButton3.Location = new System.Drawing.Point(30, 12);
             this.bunifuImageButton3.Name = "bunifuImageButton3";
@@ -264,7 +265,7 @@
             // 
             this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
             this.animator1.SetDecoration(this.bunifuImageButton1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuImageButton1.Image = global::MultiMedia.Properties.Resources.red;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
             this.bunifuImageButton1.Location = new System.Drawing.Point(3, 12);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
@@ -331,14 +332,20 @@
             // 
             // tv1
             // 
-            this.tv1.BackColor = System.Drawing.Color.Black;
+            this.tv1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.animator1.SetDecoration(this.tv1, BunifuAnimatorNS.DecorationType.None);
             this.tv1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tv1.Location = new System.Drawing.Point(209, 0);
-            this.tv1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tv1.Name = "tv1";
             this.tv1.Size = new System.Drawing.Size(1037, 726);
             this.tv1.TabIndex = 4;
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.pnMenu;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // FrmMain
             // 
@@ -380,6 +387,7 @@
         private BunifuAnimatorNS.BunifuTransition animator1;
         private Movie_module.Movie movie1;
         private Football_module.Football footBall;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private TV_module.TV tv1;
         //private TV_module.TV tv1;
     }

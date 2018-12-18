@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using HtmlAgilityPack;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using System.Threading;
 
 namespace MultiMedia.Movie_module
 {
@@ -143,14 +144,9 @@ namespace MultiMedia.Movie_module
                 MessageBox.Show("Không có phim !!");
             }
         }
-
-        void btnAvatar_Click(object sender, EventArgs e)
+        //BackgroundWorker bw;
+        void ShowFilm(string url)
         {
-            //Lấy vị trí film trong list            
-            Bunifu.Framework.UI.BunifuImageButton imageButton = sender as Bunifu.Framework.UI.BunifuImageButton;
-            int id = Convert.ToInt32(imageButton.Tag.ToString());
-            item_movie film = list_itemmovies[id];
-
             HtmlWeb htmlWeb = new HtmlWeb()
             {
                 AutoDetectEncoding = false,
@@ -163,19 +159,34 @@ namespace MultiMedia.Movie_module
             ChromeOptions option = new ChromeOptions();
             option.AddArgument("--headless");
             IWebDriver driver = new ChromeDriver(chromedriverServer, option);
-            driver.Url = film.lbl_url.Text.ToString();
+            driver.Url = url;
             try
             {
                 IWebElement link_element = driver.FindElement(By.XPath("//div[@class='jw-media jw-reset']/video"));
                 String linkvideofilm = link_element.GetAttribute("src").Trim();
                 Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(linkvideofilm);
-                frmVLC.StartPosition = FormStartPosition.CenterScreen;
+                //frmVLC.StartPosition = FormStartPosition.CenterScreen;
                 frmVLC.btn_down.Visible = true;
+                frmVLC.axVLCPlugin21.playlist.stop();
                 frmVLC.Show();
+
             }
-            catch { MessageBox.Show("Link bị die! Xin vui lòng xem phim khác!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch
+            {
+                //MessageBox.Show("Link bị die! Xin vui lòng xem phim khác!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                Movie_module.ThongBao tb = new Movie_module.ThongBao();
+                tb.Show();
+            }
             driver.Quit();
             driver.Dispose();
+        }
+        void btnAvatar_Click(object sender, EventArgs e)
+        {
+            //Lấy vị trí film trong list            
+            Bunifu.Framework.UI.BunifuImageButton imageButton = sender as Bunifu.Framework.UI.BunifuImageButton;
+            int id = Convert.ToInt32(imageButton.Tag.ToString());
+            item_movie film = list_itemmovies[id];
+            ShowFilm(film.lbl_url.Text.ToString());
         }
 
         private void dropdown_theloai_onItemSelected(object sender, EventArgs e)

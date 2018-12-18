@@ -30,13 +30,13 @@ namespace MultiMedia.Football_module
             for (int i = 0; i < sotran; i++)
             {
                 ItemMatch itemMatch = new ItemMatch();
-                itemMatch.BackColor = Color.Transparent;
+                //itemMatch.BackColor = Color.Transparent;
 
-                itemMatch.ptb_team1.Tag = i.ToString();
-                itemMatch.ptb_team2.Tag = i.ToString();
-                itemMatch.txtTime.Tag = i.ToString();
-                itemMatch.txtTeam.Tag = i.ToString();
-                itemMatch.txtLeage.Tag = i.ToString();
+                //itemMatch.ptb_team1.Tag = i.ToString();
+                //itemMatch.ptb_team2.Tag = i.ToString();
+                //itemMatch.txtTime.Tag = i.ToString();
+                //itemMatch.txtTeam.Tag = i.ToString();
+                //itemMatch.txtLeage.Tag = i.ToString();
 
                 itemMatch.Tag = i.ToString();
                 itemMatch.txtLeage.Tag = i.ToString();
@@ -46,9 +46,9 @@ namespace MultiMedia.Football_module
                 itemMatch.ptb_team2.Tag = i.ToString();
 
                 itemMatch.ptb_team1.ImageLocation = logo1[i];
-                itemMatch.ptb_team1.SizeMode = PictureBoxSizeMode.StretchImage;
+                //itemMatch.ptb_team1.SizeMode = PictureBoxSizeMode.StretchImage;
                 itemMatch.ptb_team2.ImageLocation = logo2[i];
-                itemMatch.ptb_team2.SizeMode = PictureBoxSizeMode.StretchImage;
+                //itemMatch.ptb_team2.SizeMode = PictureBoxSizeMode.StretchImage;
                 itemMatch.txtTime.Text = time[i];
                 itemMatch.txtTeam.Text = team[i];
                 itemMatch.txtLeage.Text = leage[i];
@@ -65,60 +65,84 @@ namespace MultiMedia.Football_module
             }
 
         }
-
+        int KTYTB(string a)
+        {
+            return a.IndexOf("youtube");
+        }
+        void ShowVlc(string url)
+        {
+            Movie_module.FrmVLC frmVlc = new Movie_module.FrmVLC(url);
+            frmVlc.btn_Pause.Visible = false;
+            frmVlc.btn_play.Visible = false;
+            frmVlc.btn_Stop.Visible = false;
+            frmVlc.btn_play_vlc.Visible = false;
+            //frmVLC.StartPosition = FormStartPosition.CenterScreen;
+            frmVlc.Show();
+        }
         void Click1(object sender, EventArgs e)
         {
             ItemMatch item = sender as ItemMatch;
             int a = Convert.ToInt32(item.Tag.ToString());
-            Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
-            frmVLC.StartPosition = FormStartPosition.CenterScreen;
-            frmVLC.Show();
+            if (KTYTB(link1[a]) >= 0) link1[a] = "0";
+            //Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
+            //frmVLC.StartPosition = FormStartPosition.CenterScreen;
+            //frmVLC.Show();
+            ShowVlc(link1[a]);
         }
 
         void Click2(object sender, EventArgs e)
         {
             Label item = sender as Label;
             int a = Convert.ToInt32(item.Tag.ToString());
-            Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
-            frmVLC.StartPosition = FormStartPosition.CenterScreen;
-            frmVLC.Show();
+            if (KTYTB(link1[a]) >= 0) link1[a] = "0";
+            //Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
+            //frmVLC.StartPosition = FormStartPosition.CenterScreen;
+            //frmVLC.Show();
+            ShowVlc(link1[a]);
         }
 
         void Click3(object sender, EventArgs e)
         {
             Label item = sender as Label;
             int a = Convert.ToInt32(item.Tag.ToString());
-            Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
-            frmVLC.StartPosition = FormStartPosition.CenterScreen;
-            frmVLC.Show();
+            if (KTYTB(link1[a]) >= 0) link1[a] = "0";
+            //Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
+            //frmVLC.StartPosition = FormStartPosition.CenterScreen;
+            //frmVLC.Show();
+            ShowVlc(link1[a]);
         }
 
         void Click4(object sender, EventArgs e)
         {
             Label item = sender as Label;
             int a = Convert.ToInt32(item.Tag.ToString());
-            Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
-            
-            frmVLC.StartPosition = FormStartPosition.CenterScreen;
-            frmVLC.Show();
+            if (KTYTB(link1[a]) >= 0) link1[a] = "0";
+            //Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
+            //frmVLC.StartPosition = FormStartPosition.CenterScreen;
+            //frmVLC.Show();
+            ShowVlc(link1[a]);
         }
 
         void Click5(object sender, EventArgs e)
         {
             PictureBox item = sender as PictureBox;
             int a = Convert.ToInt32(item.Tag.ToString());
-            Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
-            frmVLC.StartPosition = FormStartPosition.CenterScreen;
-            frmVLC.Show();
+            if (KTYTB(link1[a]) >= 0) link1[a] = "0";
+            //Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
+            //frmVLC.StartPosition = FormStartPosition.CenterScreen;
+            //frmVLC.Show();
+            ShowVlc(link1[a]);
         }
 
         void Click6(object sender, EventArgs e)
         {
             PictureBox item = sender as PictureBox;
             int a = Convert.ToInt32(item.Tag.ToString());
-            Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
-            frmVLC.StartPosition = FormStartPosition.CenterScreen;
-            frmVLC.Show();
+            if (KTYTB(link1[a]) >= 0) link1[a] = "0";
+            //Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
+            //frmVLC.StartPosition = FormStartPosition.CenterScreen;
+            //frmVLC.Show();
+            ShowVlc(link1[a]);
         }
 
         private void crawData()
@@ -147,15 +171,15 @@ namespace MultiMedia.Football_module
                 }
                 foreach (var item in newsitemtime)
                 {
-                    time.Add(item.InnerHtml);
+                    time.Add(item.InnerText);
                 }
                 foreach (var item in newsitemteam)
                 {
-                    team.Add(item.InnerHtml);
+                    team.Add(item.InnerText);
                 }
                 foreach (var item in newsitemleage)
                 {
-                    leage.Add(item.InnerHtml);
+                    leage.Add(item.InnerText);
                 }
                 foreach (var item in newsitemlink1)
                 {

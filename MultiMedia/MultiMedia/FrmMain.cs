@@ -23,7 +23,7 @@ namespace MultiMedia
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void bunifuImageButton3_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace MultiMedia
             footBall.Enabled = false;
             tv1.Visible = false;
             tv1.Enabled = false;
-            tv1.axVLCPlugin21.playlist.stop();
+            //tv1.axVLCPlugin21.playlist.stop();
         }
 
         private void bntTV_Click(object sender, EventArgs e)
@@ -102,6 +102,7 @@ namespace MultiMedia
             movie1.Visible = false;
             tv1.Visible = true;
             tv1.Enabled = true;
+            //youtube1.axVLCPlugin21.playlist.stop();
         }
 
         private void bntYTB_Click(object sender, EventArgs e)
@@ -120,6 +121,8 @@ namespace MultiMedia
             movie1.Visible = false;
             tv1.Visible = false;
             tv1.Enabled = false;
+            //tv1.axVLCPlugin21.playlist.stop();
+           // youtube1.axVLCPlugin21.playlist.stop();
         }
 
         private void bntFoot_Click(object sender, EventArgs e)
@@ -135,6 +138,8 @@ namespace MultiMedia
             movie1.Visible = false;
             tv1.Enabled = false;
             tv1.Visible = false;
+            //tv1.axVLCPlugin21.playlist.stop();
+           // youtube1.axVLCPlugin21.playlist.stop();
         }
 
         

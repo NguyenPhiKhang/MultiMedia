@@ -10,7 +10,7 @@ namespace MultiMedia.Youtube_module
     class Video
     {
         public string Title { get; set; }
-        public String Url { get; set; }
+        public string Url { get; set; }
         public Image Thumbnail { get; set; }
     }
 }
