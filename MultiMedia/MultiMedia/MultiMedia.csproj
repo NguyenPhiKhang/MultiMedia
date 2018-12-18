@@ -139,7 +139,12 @@
     <Compile Include="TV_module\TV.Designer.cs">
       <DependentUpon>TV.cs</DependentUpon>
     </Compile>
-    <Compile Include="Youtube_module\Video.cs" />
+    <Compile Include="Youtube_module\item_ytb.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Youtube_module\item_ytb.Designer.cs">
+      <DependentUpon>item_ytb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Youtube_module\youtube.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -173,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TV_module\TV.resx">
       <DependentUpon>TV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Youtube_module\item_ytb.resx">
+      <DependentUpon>item_ytb.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Youtube_module\youtube.resx">
       <DependentUpon>youtube.cs</DependentUpon>

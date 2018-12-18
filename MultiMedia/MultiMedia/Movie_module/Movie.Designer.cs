@@ -112,7 +112,7 @@
             this.dropdown_theloai.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.dropdown_theloai.BackColor = System.Drawing.Color.Transparent;
             this.dropdown_theloai.BorderRadius = 0;
-            this.dropdown_theloai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dropdown_theloai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dropdown_theloai.ForeColor = System.Drawing.Color.Black;
             this.dropdown_theloai.Items = new string[] {
         "Hành Động",
@@ -133,7 +133,8 @@
             this.dropdown_theloai.Name = "dropdown_theloai";
             this.dropdown_theloai.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(46)))));
             this.dropdown_theloai.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.dropdown_theloai.selectedIndex = 0;
+            this.dropdown_theloai.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dropdown_theloai.selectedIndex = -1;
             this.dropdown_theloai.Size = new System.Drawing.Size(150, 47);
             this.dropdown_theloai.TabIndex = 6;
             this.dropdown_theloai.onItemSelected += new System.EventHandler(this.dropdown_theloai_onItemSelected);
@@ -246,6 +247,7 @@
             this.btn_phimle.ButtonText = "Phim Lẻ";
             this.btn_phimle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_phimle.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_phimle.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_phimle.Iconcolor = System.Drawing.Color.Transparent;
             this.btn_phimle.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_phimle.Iconimage")));
             this.btn_phimle.Iconimage_right = null;
@@ -333,6 +335,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 218);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1031, 462);
             this.flowLayoutPanel1.TabIndex = 3;
             // 

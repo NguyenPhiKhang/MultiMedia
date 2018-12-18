@@ -72,6 +72,7 @@ namespace MultiMedia
             bntYTB.Textcolor = Color.White;
             bntFoot.Textcolor = Color.White;
         }
+        
         private void bntCinema_Click(object sender, EventArgs e)
         {
             bntColor();
@@ -85,7 +86,6 @@ namespace MultiMedia
             footBall.Enabled = false;
             tv1.Visible = false;
             tv1.Enabled = false;
-            //tv1.axVLCPlugin21.playlist.stop();
         }
 
         private void bntTV_Click(object sender, EventArgs e)
@@ -93,16 +93,14 @@ namespace MultiMedia
             bntColor();
             bntTV.Normalcolor = Color.FromArgb(0, 102, 204);
             bntTV.Textcolor = Color.Yellow;
-
+            tv1.Visible = true;
+            tv1.Enabled = true;
             footBall.Visible = false;
             footBall.Enabled =false;
             youtube1.Visible = false;
             youtube1.Enabled = false;
             movie1.Enabled = false;
             movie1.Visible = false;
-            tv1.Visible = true;
-            tv1.Enabled = true;
-            //youtube1.axVLCPlugin21.playlist.stop();
         }
 
         private void bntYTB_Click(object sender, EventArgs e)
@@ -110,9 +108,6 @@ namespace MultiMedia
             bntColor();
             bntYTB.Normalcolor = Color.FromArgb(0, 102, 204);
             bntYTB.Textcolor = Color.Yellow;
-
-
-
             footBall.Visible = false;
             footBall.Enabled = false;
             youtube1.Visible = true;
@@ -121,8 +116,6 @@ namespace MultiMedia
             movie1.Visible = false;
             tv1.Visible = false;
             tv1.Enabled = false;
-            //tv1.axVLCPlugin21.playlist.stop();
-           // youtube1.axVLCPlugin21.playlist.stop();
         }
 
         private void bntFoot_Click(object sender, EventArgs e)
@@ -138,8 +131,6 @@ namespace MultiMedia
             movie1.Visible = false;
             tv1.Enabled = false;
             tv1.Visible = false;
-            //tv1.axVLCPlugin21.playlist.stop();
-           // youtube1.axVLCPlugin21.playlist.stop();
         }
 
         

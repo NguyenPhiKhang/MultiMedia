@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(youtube));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -42,14 +38,10 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new Bunifu.Framework.UI.BunifuImageButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.dGv_Ytb = new System.Windows.Forms.DataGridView();
-            this.thumbnailDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_forward = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_back = new Bunifu.Framework.UI.BunifuImageButton();
-            this.Url = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.videoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -57,11 +49,9 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGv_Ytb)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_forward)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_back)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.videoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -81,7 +71,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 505F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1037, 726);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.TabIndex = 4;
             // 
             // pictureBox1
             // 
@@ -101,7 +91,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.62963F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 543F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
             this.tableLayoutPanel2.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel2, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnSearch, 3, 0);
@@ -111,16 +101,16 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1031, 33);
-            this.tableLayoutPanel2.TabIndex = 1;
+            this.tableLayoutPanel2.TabIndex = 5;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.lblSearch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(161, 3);
+            this.panel1.Location = new System.Drawing.Point(160, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(98, 27);
-            this.panel1.TabIndex = 0;
+            this.panel1.Size = new System.Drawing.Size(97, 27);
+            this.panel1.TabIndex = 1;
             // 
             // lblSearch
             // 
@@ -128,19 +118,19 @@
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Ravie", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearch.ForeColor = System.Drawing.Color.White;
-            this.lblSearch.Location = new System.Drawing.Point(0, 0);
+            this.lblSearch.Location = new System.Drawing.Point(-1, 0);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(101, 26);
-            this.lblSearch.TabIndex = 0;
+            this.lblSearch.TabIndex = 7;
             this.lblSearch.Text = "Search";
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.txtSearch);
-            this.panel2.Location = new System.Drawing.Point(265, 3);
+            this.panel2.Location = new System.Drawing.Point(263, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(537, 27);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 2;
             // 
             // txtSearch
             // 
@@ -158,7 +148,7 @@
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageActive = null;
             this.btnSearch.ImageLocation = "";
-            this.btnSearch.Location = new System.Drawing.Point(808, 3);
+            this.btnSearch.Location = new System.Drawing.Point(806, 3);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(41, 27);
             this.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -171,67 +161,24 @@
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.22599F));
-            this.tableLayoutPanel3.Controls.Add(this.dGv_Ytb, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 190);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1031, 499);
-            this.tableLayoutPanel3.TabIndex = 2;
-            // 
-            // dGv_Ytb
-            // 
-            this.dGv_Ytb.AllowUserToAddRows = false;
-            this.dGv_Ytb.AllowUserToDeleteRows = false;
-            this.dGv_Ytb.AutoGenerateColumns = false;
-            this.dGv_Ytb.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dGv_Ytb.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGv_Ytb.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.thumbnailDataGridViewImageColumn,
-            this.titleDataGridViewTextBoxColumn,
-            this.Url});
-            this.dGv_Ytb.DataSource = this.videoBindingSource;
-            this.dGv_Ytb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGv_Ytb.Location = new System.Drawing.Point(3, 3);
-            this.dGv_Ytb.Name = "dGv_Ytb";
-            this.dGv_Ytb.ReadOnly = true;
-            this.dGv_Ytb.Size = new System.Drawing.Size(1025, 493);
-            this.dGv_Ytb.TabIndex = 1;
-            this.dGv_Ytb.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // thumbnailDataGridViewImageColumn
-            // 
-            this.thumbnailDataGridViewImageColumn.DataPropertyName = "Thumbnail";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle4.NullValue")));
-            this.thumbnailDataGridViewImageColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.thumbnailDataGridViewImageColumn.HeaderText = "Thumbnail";
-            this.thumbnailDataGridViewImageColumn.Name = "thumbnailDataGridViewImageColumn";
-            this.thumbnailDataGridViewImageColumn.ReadOnly = true;
-            this.thumbnailDataGridViewImageColumn.Width = 300;
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
-            this.titleDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.titleDataGridViewTextBoxColumn.Width = 300;
+            this.tableLayoutPanel3.TabIndex = 6;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btn_forward);
             this.panel3.Controls.Add(this.btn_back);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 695);
+            this.panel3.Location = new System.Drawing.Point(3, 692);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1031, 28);
+            this.panel3.Size = new System.Drawing.Size(1031, 34);
             this.panel3.TabIndex = 3;
             // 
             // btn_forward
@@ -241,6 +188,7 @@
             this.btn_forward.Image = ((System.Drawing.Image)(resources.GetObject("btn_forward.Image")));
             this.btn_forward.ImageActive = null;
             this.btn_forward.Location = new System.Drawing.Point(541, 3);
+            this.btn_forward.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btn_forward.Name = "btn_forward";
             this.btn_forward.Size = new System.Drawing.Size(44, 25);
             this.btn_forward.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -255,6 +203,7 @@
             this.btn_back.Image = ((System.Drawing.Image)(resources.GetObject("btn_back.Image")));
             this.btn_back.ImageActive = null;
             this.btn_back.Location = new System.Drawing.Point(491, 3);
+            this.btn_back.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(44, 25);
             this.btn_back.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -263,19 +212,14 @@
             this.btn_back.Zoom = 10;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
-            // Url
+            // flowLayoutPanel1
             // 
-            this.Url.DataPropertyName = "Url";
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Url.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Url.HeaderText = "Url";
-            this.Url.Name = "Url";
-            this.Url.ReadOnly = true;
-            this.Url.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // videoBindingSource
-            // 
-            this.videoBindingSource.DataSource = typeof(MultiMedia.Youtube_module.Video);
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1025, 493);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // youtube
             // 
@@ -294,11 +238,9 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dGv_Ytb)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_forward)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_back)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.videoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -314,13 +256,9 @@
         private System.Windows.Forms.TextBox txtSearch;
         private Bunifu.Framework.UI.BunifuImageButton btnSearch;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.BindingSource videoBindingSource;
-        private System.Windows.Forms.DataGridView dGv_Ytb;
         private System.Windows.Forms.Panel panel3;
         private Bunifu.Framework.UI.BunifuImageButton btn_forward;
         private Bunifu.Framework.UI.BunifuImageButton btn_back;
-        private System.Windows.Forms.DataGridViewImageColumn thumbnailDataGridViewImageColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Url;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

@@ -16,21 +16,14 @@ namespace MultiMedia.Movie_module
 {
     public partial class Movie : UserControl
     {
-        public static String url, url_origin, search2;
+        public static string url, url_origin, search2;
         public static int currentPage, MaxPage;
-        public static bool isPlay = false;
-
+        //public static bool isPlay = false;
         public int numberPage = 1;
-        public int numberFilm;
-        public String keyword = "keyword";
+        //public int numberFilm;
+        //public String keyword = "keyword";
         item_movie item_Movie;
-        List<item_movie> list_itemmovies = new List<item_movie>();
-        List<String> status = new List<string>();
-        List<String> avatar = new List<string>();
-        List<String> name = new List<string>();
-        List<String> realname = new List<string>();
-        List<String> url_first = new List<string>();
-
+        List<string> list_link = new List<string>();
         public Movie()
         {
             InitializeComponent();
@@ -41,17 +34,10 @@ namespace MultiMedia.Movie_module
 
         public void LoadFilm(String url)
         {
-             while (flowLayoutPanel1.Controls.Count > 0) flowLayoutPanel1.Controls.RemoveAt(0);
-           // flowLayoutPanel1.Controls.Clear();
+            while (flowLayoutPanel1.Controls.Count > 0) flowLayoutPanel1.Controls.RemoveAt(0);
             try
             {
-                list_itemmovies.Clear();
-                status.Clear();
-                realname.Clear();
-                avatar.Clear();
-                name.Clear();
-                url_first.Clear();
-
+                list_link.Clear();
                 HtmlWeb htmlWeb = new HtmlWeb()
                 {
                     AutoDetectEncoding = false,
@@ -93,51 +79,29 @@ namespace MultiMedia.Movie_module
                 var listfilm_collection = document.DocumentNode.SelectNodes("//ul[@class='list-film']/li").ToList();
                 //HtmlNodeCollection listfilm_collection = list_film.SelectNodes(@"li");
 
-                foreach (var n in listfilm_collection)
-                {
-                    String name_film = n.SelectSingleNode(".//div[@class='name']/a").InnerText;
-                    String status_film;
-                    try
-                    {
-                        status_film = n.SelectSingleNode(".//div[@class='status']").InnerText.Trim();
-                    }
-                    catch { status_film = null; }
-
-                    String avatar_film = n.SelectSingleNode(".//div[@class='inner']/a/img").Attributes["src"].Value;
-                    String realname_film = n.SelectSingleNode(".//div[@class='name2']").InnerText;
-                    String url_film = "/"+n.SelectSingleNode(".//div[@class='inner']/a").Attributes["href"].Value;
-                    url_film = "http://woohay.com"+url_film.Replace("/phim/", "/xem-phim/");
-                    status.Add(status_film);
-                    realname.Add(realname_film);
-                    name.Add(name_film);
-                    avatar.Add(avatar_film);
-                    url_first.Add(url_film);
-                }
-                numberFilm = listfilm_collection.Count;
-
-                //Hiển thị danh sách phim 
-                for (int i = 0; i < numberFilm; i++)
+                for (int i=0;i< listfilm_collection.Count;i++)
                 {
                     item_Movie = new item_movie();
+                    item_Movie.lbl_name.Text = listfilm_collection[i].SelectSingleNode(".//div[@class='name']/a").InnerText.ToString();
+                    try
+                    {
+                        item_Movie.lbl_status.Text = listfilm_collection[i].SelectSingleNode(".//div[@class='status']").InnerText.ToString();
+                    }
+                    catch { item_Movie.lbl_status.Text = null; }
+
+                    item_Movie.btn_avatar.ImageLocation = listfilm_collection[i].SelectSingleNode(".//div[@class='inner']/a/img").Attributes["src"].Value;
+                    item_Movie.lbl_realname.Text = listfilm_collection[i].SelectSingleNode(".//div[@class='name2']").InnerText.ToString();
+                    String url_film = "/"+ listfilm_collection[i].SelectSingleNode(".//div[@class='inner']/a").Attributes["href"].Value.ToString();
+                    item_Movie.lbl_url.Text = "http://woohay.com"+url_film.Replace("/phim/", "/xem-phim/");
+                    
                     item_Movie.Name = "movie" + i;
                     item_Movie.Tag = i.ToString();
-
-                    item_Movie.lbl_name.Text = name[i];
-                    item_Movie.lbl_status.Text = status[i];
-                    item_Movie.lbl_realname.Text = realname[i];
-                    item_Movie.lbl_url.Text = url_first[i];
-
-                    item_Movie.btn_avatar.ImageLocation = avatar[i];
-                    item_Movie.btn_avatar.SizeMode = PictureBoxSizeMode.StretchImage;
                     item_Movie.btn_avatar.Tag = i.ToString();
                     item_Movie.btn_avatar.Click += btnAvatar_Click;
-
-
                     flowLayoutPanel1.Controls.Add(item_Movie);
 
-                    list_itemmovies.Add(item_Movie);
+                    list_link.Add(item_Movie.lbl_url.Text);
                 }
-
             }
             catch (Exception)
             {
@@ -145,6 +109,17 @@ namespace MultiMedia.Movie_module
             }
         }
         //BackgroundWorker bw;
+        void ActiveTaskBarFilm()
+        {
+            dropdown_theloai.NomalColor = Color.FromArgb(250, 204, 46);
+            btn_phimle.Normalcolor = Color.FromArgb(250, 204, 46);
+            btn_phimmoi.Normalcolor = Color.FromArgb(250, 204, 46);
+            btn_chieurap.Normalcolor = Color.FromArgb(250, 204, 46);
+            dropdown_theloai.ForeColor = Color.Black;
+            btn_phimle.Textcolor = Color.Black;
+            btn_phimmoi.Textcolor = Color.Black;
+            btn_chieurap.Textcolor = Color.Black;
+        }
         void ShowFilm(string url)
         {
             HtmlWeb htmlWeb = new HtmlWeb()
@@ -184,13 +159,15 @@ namespace MultiMedia.Movie_module
         {
             //Lấy vị trí film trong list            
             Bunifu.Framework.UI.BunifuImageButton imageButton = sender as Bunifu.Framework.UI.BunifuImageButton;
-            int id = Convert.ToInt32(imageButton.Tag.ToString());
-            item_movie film = list_itemmovies[id];
-            ShowFilm(film.lbl_url.Text.ToString());
+            int tag = Convert.ToInt32(imageButton.Tag.ToString());
+            ShowFilm(list_link[tag]);
         }
 
         private void dropdown_theloai_onItemSelected(object sender, EventArgs e)
         {
+            ActiveTaskBarFilm();
+            dropdown_theloai.NomalColor = Color.FromArgb(36, 129, 77);
+            dropdown_theloai.ForeColor = Color.White;
             if (dropdown_theloai.selectedIndex == 0)
             {
                 url_origin = "https://woohay.com/the-loai/phim-hanh-dong/page-";
@@ -261,6 +238,9 @@ namespace MultiMedia.Movie_module
 
         private void btn_phimle_Click(object sender, EventArgs e)
         {
+            ActiveTaskBarFilm();
+            btn_phimle.Textcolor = Color.White;
+            btn_phimle.Normalcolor = Color.FromArgb(36, 129, 77);
             url_origin = "https://woohay.com/danh-sach/phim-le/page-";
             url = url_origin + numberPage;
             LoadFilm(url);
@@ -268,6 +248,9 @@ namespace MultiMedia.Movie_module
 
         private void btn_phimmoi_Click(object sender, EventArgs e)
         {
+            ActiveTaskBarFilm();
+            btn_phimmoi.Textcolor = Color.White;
+            btn_phimmoi.Normalcolor = Color.FromArgb(36, 129, 77);
             url_origin = "https://woohay.com/danh-sach/phim-moi/page-";
             url = url_origin + numberPage;
             LoadFilm(url);
@@ -275,6 +258,9 @@ namespace MultiMedia.Movie_module
 
         private void btn_chieurap_Click(object sender, EventArgs e)
         {
+            ActiveTaskBarFilm();
+            btn_chieurap.Textcolor = Color.White;
+            btn_chieurap.Normalcolor = Color.FromArgb(36, 129, 77);
             url_origin = "https://woohay.com/danh-sach/phim-chieu-rap/page-";
             url = url_origin + numberPage;
             LoadFilm(url);
@@ -332,6 +318,8 @@ namespace MultiMedia.Movie_module
 
         private void btn_timkiem_Click_1(object sender, EventArgs e)
         {
+            ActiveTaskBarFilm();
+            dropdown_theloai.selectedIndex = -1;
             String search = tb_timkiem.Text.ToString();
             if (search != null)
             {
