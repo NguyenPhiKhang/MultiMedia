@@ -203,6 +203,36 @@ namespace MultiMedia.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap antv {
+            get {
+                object obj = ResourceManager.GetObject("antv", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap antv1 {
+            get {
+                object obj = ResourceManager.GetObject("antv1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap antv2 {
+            get {
+                object obj = ResourceManager.GetObject("antv2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrows {
             get {
                 object obj = ResourceManager.GetObject("arrows", resourceCulture);
@@ -216,6 +246,16 @@ namespace MultiMedia.Properties {
         internal static System.Drawing.Bitmap avengersleagueoflegens_ox__W1000xh0 {
             get {
                 object obj = ResourceManager.GetObject("avengersleagueoflegens_ox__W1000xh0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap axn {
+            get {
+                object obj = ResourceManager.GetObject("axn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -346,6 +386,16 @@ namespace MultiMedia.Properties {
         internal static System.Drawing.Bitmap discovery {
             get {
                 object obj = ResourceManager.GetObject("discovery", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap disney {
+            get {
+                object obj = ResourceManager.GetObject("disney", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -516,6 +566,16 @@ namespace MultiMedia.Properties {
         internal static System.Drawing.Bitmap hatinh {
             get {
                 object obj = ResourceManager.GetObject("hatinh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hbo {
+            get {
+                object obj = ResourceManager.GetObject("hbo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
