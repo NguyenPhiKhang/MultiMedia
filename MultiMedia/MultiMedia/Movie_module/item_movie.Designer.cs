@@ -76,11 +76,11 @@
             this.lbl_status.AutoSize = true;
             this.lbl_status.BackColor = System.Drawing.Color.Red;
             this.lbl_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl_status.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_status.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_status.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbl_status.Location = new System.Drawing.Point(3, 235);
             this.lbl_status.Name = "lbl_status";
-            this.lbl_status.Size = new System.Drawing.Size(40, 17);
+            this.lbl_status.Size = new System.Drawing.Size(35, 15);
             this.lbl_status.TabIndex = 8;
             this.lbl_status.Text = "2018";
             this.lbl_status.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

@@ -40,12 +40,12 @@
             this.bntMenu = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.youtube1 = new MultiMedia.Youtube_module.youtube();
             this.animator1 = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.movie1 = new MultiMedia.Movie_module.Movie();
-            this.footBall = new MultiMedia.Football_module.Football();
-            this.tv1 = new MultiMedia.TV_module.TV();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.tv1 = new MultiMedia.TV_module.TV();
+            this.footBall = new MultiMedia.Football_module.Football();
+            this.movie1 = new MultiMedia.Movie_module.Movie();
+            this.youtube1 = new MultiMedia.Youtube_module.youtube();
             this.pnMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bntMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
@@ -276,17 +276,6 @@
             this.bunifuImageButton1.Zoom = 10;
             this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
-            // youtube1
-            // 
-            this.youtube1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.animator1.SetDecoration(this.youtube1, BunifuAnimatorNS.DecorationType.None);
-            this.youtube1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.youtube1.Location = new System.Drawing.Point(209, 0);
-            this.youtube1.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
-            this.youtube1.Name = "youtube1";
-            this.youtube1.Size = new System.Drawing.Size(1037, 726);
-            this.youtube1.TabIndex = 1;
-            // 
             // animator1
             // 
             this.animator1.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
@@ -308,16 +297,22 @@
             animation1.TransparencyCoeff = 0F;
             this.animator1.DefaultAnimation = animation1;
             // 
-            // movie1
+            // bunifuDragControl1
             // 
-            this.movie1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.animator1.SetDecoration(this.movie1, BunifuAnimatorNS.DecorationType.None);
-            this.movie1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.movie1.Location = new System.Drawing.Point(209, 0);
-            this.movie1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.movie1.Name = "movie1";
-            this.movie1.Size = new System.Drawing.Size(1037, 726);
-            this.movie1.TabIndex = 2;
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.pnMenu;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // tv1
+            // 
+            this.tv1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.animator1.SetDecoration(this.tv1, BunifuAnimatorNS.DecorationType.None);
+            this.tv1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tv1.Location = new System.Drawing.Point(209, 0);
+            this.tv1.Name = "tv1";
+            this.tv1.Size = new System.Drawing.Size(1037, 726);
+            this.tv1.TabIndex = 4;
             // 
             // footBall
             // 
@@ -330,22 +325,27 @@
             this.footBall.Size = new System.Drawing.Size(1037, 726);
             this.footBall.TabIndex = 3;
             // 
-            // tv1
+            // movie1
             // 
-            this.tv1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.animator1.SetDecoration(this.tv1, BunifuAnimatorNS.DecorationType.None);
-            this.tv1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tv1.Location = new System.Drawing.Point(209, 0);
-            this.tv1.Name = "tv1";
-            this.tv1.Size = new System.Drawing.Size(1037, 726);
-            this.tv1.TabIndex = 4;
+            this.movie1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.animator1.SetDecoration(this.movie1, BunifuAnimatorNS.DecorationType.None);
+            this.movie1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.movie1.Location = new System.Drawing.Point(209, 0);
+            this.movie1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.movie1.Name = "movie1";
+            this.movie1.Size = new System.Drawing.Size(1037, 726);
+            this.movie1.TabIndex = 2;
             // 
-            // bunifuDragControl1
+            // youtube1
             // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.pnMenu;
-            this.bunifuDragControl1.Vertical = true;
+            this.youtube1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.animator1.SetDecoration(this.youtube1, BunifuAnimatorNS.DecorationType.None);
+            this.youtube1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.youtube1.Location = new System.Drawing.Point(209, 0);
+            this.youtube1.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
+            this.youtube1.Name = "youtube1";
+            this.youtube1.Size = new System.Drawing.Size(1037, 726);
+            this.youtube1.TabIndex = 1;
             // 
             // FrmMain
             // 
@@ -360,10 +360,11 @@
             this.Controls.Add(this.pnMenu);
             this.animator1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "MultiMedia";
             this.pnMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bntMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();

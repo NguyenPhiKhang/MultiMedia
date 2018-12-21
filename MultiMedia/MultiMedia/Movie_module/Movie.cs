@@ -16,18 +16,18 @@ namespace MultiMedia.Movie_module
 {
     public partial class Movie : UserControl
     {
-        public static string url, url_origin, search2;
+        public static string _url, url_origin, search2;
         public static int currentPage, MaxPage;
         //public static bool isPlay = false;
         public int numberPage = 1;
         //public int numberFilm;
         //public String keyword = "keyword";
         item_movie item_Movie;
-        List<string> list_link = new List<string>();
+        List<item_movie> itemMovies = new List<item_movie>();
         public Movie()
         {
             InitializeComponent();
-            btn_back.Enabled=false;
+            btn_back.Enabled = false;
             btn_forward.Enabled = false;
         }
 
@@ -37,7 +37,7 @@ namespace MultiMedia.Movie_module
             while (flowLayoutPanel1.Controls.Count > 0) flowLayoutPanel1.Controls.RemoveAt(0);
             try
             {
-                list_link.Clear();
+                itemMovies.Clear();
                 HtmlWeb htmlWeb = new HtmlWeb()
                 {
                     AutoDetectEncoding = false,
@@ -79,7 +79,7 @@ namespace MultiMedia.Movie_module
                 var listfilm_collection = document.DocumentNode.SelectNodes("//ul[@class='list-film']/li").ToList();
                 //HtmlNodeCollection listfilm_collection = list_film.SelectNodes(@"li");
 
-                for (int i=0;i< listfilm_collection.Count;i++)
+                for (int i = 0; i < listfilm_collection.Count; i++)
                 {
                     item_Movie = new item_movie();
                     item_Movie.lbl_name.Text = listfilm_collection[i].SelectSingleNode(".//div[@class='name']/a").InnerText.ToString();
@@ -91,16 +91,16 @@ namespace MultiMedia.Movie_module
 
                     item_Movie.btn_avatar.ImageLocation = listfilm_collection[i].SelectSingleNode(".//div[@class='inner']/a/img").Attributes["src"].Value;
                     item_Movie.lbl_realname.Text = listfilm_collection[i].SelectSingleNode(".//div[@class='name2']").InnerText.ToString();
-                    String url_film = "/"+ listfilm_collection[i].SelectSingleNode(".//div[@class='inner']/a").Attributes["href"].Value.ToString();
-                    item_Movie.lbl_url.Text = "http://woohay.com"+url_film.Replace("/phim/", "/xem-phim/");
-                    
+                    String url_film = "/" + listfilm_collection[i].SelectSingleNode(".//div[@class='inner']/a").Attributes["href"].Value.ToString();
+                    item_Movie.lbl_url.Text = "http://woohay.com" + url_film.Replace("/phim/", "/xem-phim/");
+
                     item_Movie.Name = "movie" + i;
                     item_Movie.Tag = i.ToString();
                     item_Movie.btn_avatar.Tag = i.ToString();
                     item_Movie.btn_avatar.Click += btnAvatar_Click;
                     flowLayoutPanel1.Controls.Add(item_Movie);
 
-                    list_link.Add(item_Movie.lbl_url.Text);
+                    itemMovies.Add(item_Movie);
                 }
             }
             catch (Exception)
@@ -120,47 +120,52 @@ namespace MultiMedia.Movie_module
             btn_phimmoi.Textcolor = Color.Black;
             btn_chieurap.Textcolor = Color.Black;
         }
-        void ShowFilm(string url)
+        
+        int tag;
+        void btnAvatar_Click(object sender, EventArgs e)
         {
-            HtmlWeb htmlWeb = new HtmlWeb()
-            {
-                AutoDetectEncoding = false,
-                OverrideEncoding = Encoding.UTF8  //Set UTF8 để hiển thị tiếng Việt
-            };
-            htmlWeb.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36";
-            //lấy link phim phát được trên vlc nhờ webdriver
+            //Lấy vị trí film trong list            
+            Bunifu.Framework.UI.BunifuImageButton imageButton = sender as Bunifu.Framework.UI.BunifuImageButton;
+            tag = Convert.ToInt32(imageButton.Tag.ToString());
+            //ShowFilm(itemMovies[tag]);
+            BackgroundWorker bw = new BackgroundWorker();
+            bw.DoWork += Bw_DoWork;
+            bw.RunWorkerAsync();
+        }
+
+        private void Bw_DoWork(object sender, DoWorkEventArgs e)
+        {
             var chromedriverServer = ChromeDriverService.CreateDefaultService();
             chromedriverServer.HideCommandPromptWindow = true;
             ChromeOptions option = new ChromeOptions();
             option.AddArgument("--headless");
             IWebDriver driver = new ChromeDriver(chromedriverServer, option);
-            driver.Url = url;
             try
             {
+                driver.Url = itemMovies[tag].lbl_url.Text.ToString();
+                Thread.Sleep(3000);
                 IWebElement link_element = driver.FindElement(By.XPath("//div[@class='jw-media jw-reset']/video"));
                 String linkvideofilm = link_element.GetAttribute("src").Trim();
-                Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(linkvideofilm);
-                //frmVLC.StartPosition = FormStartPosition.CenterScreen;
-                frmVLC.btn_down.Visible = true;
-                frmVLC.axVLCPlugin21.playlist.stop();
-                frmVLC.Show();
+                Invoke(new Action(() =>
+                {
+                    Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(linkvideofilm);
+                    frmVLC.lbl_name_video.Text = itemMovies[tag].lbl_name.Text.ToString();
+                    frmVLC.axVLCPlugin21.playlist.stop();
+                    frmVLC.Show();
+                }));
 
             }
             catch
             {
-                //MessageBox.Show("Link bị die! Xin vui lòng xem phim khác!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error); 
-                Movie_module.ThongBao tb = new Movie_module.ThongBao();
-                tb.Show();
+                //MessageBox.Show("Xin Lỗi! Server đang bận!\r\n Không thể phát được", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                Invoke(new Action(()=>
+                {
+                    Movie_module.ThongBao tb = new Movie_module.ThongBao();
+                    tb.Show();
+                }));
             }
             driver.Quit();
             driver.Dispose();
-        }
-        void btnAvatar_Click(object sender, EventArgs e)
-        {
-            //Lấy vị trí film trong list            
-            Bunifu.Framework.UI.BunifuImageButton imageButton = sender as Bunifu.Framework.UI.BunifuImageButton;
-            int tag = Convert.ToInt32(imageButton.Tag.ToString());
-            ShowFilm(list_link[tag]);
         }
 
         private void dropdown_theloai_onItemSelected(object sender, EventArgs e)
@@ -171,69 +176,69 @@ namespace MultiMedia.Movie_module
             if (dropdown_theloai.selectedIndex == 0)
             {
                 url_origin = "https://woohay.com/the-loai/phim-hanh-dong/page-";
-                url = url_origin + numberPage;
+                _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 1)
             {
                 url_origin = "https://woohay.com/the-loai/phim-hoat-hinh/page-";
-                url = url_origin + numberPage;
+                _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 2)
             {
                 url_origin = "https://woohay.com/the-loai/phim-vien-tuong/page-";
-                url = url_origin + numberPage;
+                _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 3)
             {
                 url_origin = "https://woohay.com/the-loai/phim-phieu-luu/page-";
-                url = url_origin + numberPage;
+                _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 4)
             {
                 url_origin = "https://woohay.com/the-loai/phim-vo-thuat/page-";
-                url = url_origin + numberPage;
+                _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 5)
             {
                 url_origin = "https://woohay.com/the-loai/phim-than-thoai/page-";
-                url = url_origin + numberPage;
+                _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 6)
             {
                 url_origin = "https://woohay.com/the-loai/phim-kinh-di/page-";
-                url = url_origin + numberPage;
+                _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 7)
             {
                 url_origin = "https://woohay.com/the-loai/phim-hai-huoc/page-";
-                url = url_origin + numberPage;
+                _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 8)
             {
                 url_origin = "https://woohay.com/the-loai/phim-co-trang/page-";
-                url = url_origin + numberPage;
+                _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 9)
             {
                 url_origin = "https://woohay.com/the-loai/phim-chien-tranh/page-";
-                url = url_origin + numberPage;
+                _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 10)
             {
                 url_origin = "https://woohay.com/the-loai/phim-hai-viet/page-";
-                url = url_origin + numberPage;
+                _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 11)
             {
                 url_origin = "https://woohay.com/the-loai/phim-tam-ly/page-";
-                url = url_origin + numberPage;
+                _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 12)
             {
                 url_origin = "https://woohay.com/the-loai/phim-thieu-nhi/page-";
-                url = url_origin + numberPage;
+                _url = url_origin + numberPage;
             }
-            LoadFilm(url);
+            LoadFilm(_url);
         }
 
         private void btn_phimle_Click(object sender, EventArgs e)
@@ -242,8 +247,8 @@ namespace MultiMedia.Movie_module
             btn_phimle.Textcolor = Color.White;
             btn_phimle.Normalcolor = Color.FromArgb(36, 129, 77);
             url_origin = "https://woohay.com/danh-sach/phim-le/page-";
-            url = url_origin + numberPage;
-            LoadFilm(url);
+            _url = url_origin + numberPage;
+            LoadFilm(_url);
         }
 
         private void btn_phimmoi_Click(object sender, EventArgs e)
@@ -252,8 +257,8 @@ namespace MultiMedia.Movie_module
             btn_phimmoi.Textcolor = Color.White;
             btn_phimmoi.Normalcolor = Color.FromArgb(36, 129, 77);
             url_origin = "https://woohay.com/danh-sach/phim-moi/page-";
-            url = url_origin + numberPage;
-            LoadFilm(url);
+            _url = url_origin + numberPage;
+            LoadFilm(_url);
         }
 
         private void btn_chieurap_Click(object sender, EventArgs e)
@@ -262,17 +267,17 @@ namespace MultiMedia.Movie_module
             btn_chieurap.Textcolor = Color.White;
             btn_chieurap.Normalcolor = Color.FromArgb(36, 129, 77);
             url_origin = "https://woohay.com/danh-sach/phim-chieu-rap/page-";
-            url = url_origin + numberPage;
-            LoadFilm(url);
+            _url = url_origin + numberPage;
+            LoadFilm(_url);
         }
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-            if (url.IndexOf("/search/") != -1)
+            if (_url.IndexOf("/search/") != -1)
             {
-                url = "https://woohay.com/search/" + search2 + "/page-" + (currentPage - 1);
+                _url = "https://woohay.com/search/" + search2 + "/page-" + (currentPage - 1);
 
-                LoadFilm(url);
+                LoadFilm(_url);
             }
             else if (currentPage < 1)
             {
@@ -294,11 +299,11 @@ namespace MultiMedia.Movie_module
 
         private void btn_forward_Click(object sender, EventArgs e)
         {
-            if (url.IndexOf("/search/") != -1)
+            if (_url.IndexOf("/search/") != -1)
             {
-                url = "https://woohay.com/search/" + search2 + "/page-" + (currentPage + 1);
+                _url = "https://woohay.com/search/" + search2 + "/page-" + (currentPage + 1);
 
-                LoadFilm(url);
+                LoadFilm(_url);
             }
             else if (currentPage > MaxPage)
             {
@@ -325,9 +330,9 @@ namespace MultiMedia.Movie_module
             {
                 search2 = search.Replace(" ", "-");
 
-                url = "https://woohay.com/search/" + search2;
+               _url = "https://woohay.com/search/" + search2;
 
-                LoadFilm(url);
+                LoadFilm(_url);
             }
             else
             {

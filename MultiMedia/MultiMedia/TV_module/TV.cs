@@ -40,6 +40,7 @@ namespace MultiMedia.TV_module
             Bunifu.Framework.UI.BunifuImageButton a = sender as Bunifu.Framework.UI.BunifuImageButton;
             int b = Convert.ToInt32(a.Tag.ToString());
             frmVlc = new Movie_module.FrmVLC(listLink[b]);
+            frmVlc.lbl_name_video.Text = "Bạn đang xem kênh " + imgButton[b].Name.ToString();
             //frmVlc.time_movie.Enabled = false;
             //frmVlc.time_movie.MaximumValue = 100;
             frmVlc.btn_Pause.Visible = false;

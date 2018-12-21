@@ -32,31 +32,31 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVLC));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_down = new System.Windows.Forms.Label();
-            this.btn_down = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bIbtn_MiniMize = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bIbtn_Close = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_Stop = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_Pause = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_play = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.axVLCPlugin21 = new AxAXVLC.AxVLCPlugin2();
             this.btn_play_vlc = new Bunifu.Framework.UI.BunifuImageButton();
+            this.axVLCPlugin21 = new AxAXVLC.AxVLCPlugin2();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.bIbtn_MiniMize = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bIbtn_Close = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lbl_name_video = new System.Windows.Forms.Label();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_down)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bIbtn_MiniMize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bIbtn_Close)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Stop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Pause)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_play)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axVLCPlugin21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_play_vlc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axVLCPlugin21)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bIbtn_MiniMize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bIbtn_Close)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -68,104 +68,27 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.ForeColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.904051F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95.09595F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.54371F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 94.45629F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(924, 512);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.bIbtn_MiniMize);
-            this.panel1.Controls.Add(this.bIbtn_Close);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(918, 17);
-            this.panel1.TabIndex = 0;
-            // 
-            // lbl_down
-            // 
-            this.lbl_down.AutoSize = true;
-            this.lbl_down.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_down.ForeColor = System.Drawing.Color.Black;
-            this.lbl_down.Location = new System.Drawing.Point(779, 12);
-            this.lbl_down.Name = "lbl_down";
-            this.lbl_down.Size = new System.Drawing.Size(80, 19);
-            this.lbl_down.TabIndex = 5;
-            this.lbl_down.Text = "download: ";
-            this.lbl_down.Visible = false;
-            this.lbl_down.TextChanged += new System.EventHandler(this.lbl_name_video_TextChanged);
-            // 
-            // btn_down
-            // 
-            this.btn_down.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_down.BackColor = System.Drawing.Color.Transparent;
-            this.btn_down.Image = ((System.Drawing.Image)(resources.GetObject("btn_down.Image")));
-            this.btn_down.ImageActive = null;
-            this.btn_down.Location = new System.Drawing.Point(865, 3);
-            this.btn_down.Name = "btn_down";
-            this.btn_down.Size = new System.Drawing.Size(50, 34);
-            this.btn_down.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_down.TabIndex = 4;
-            this.btn_down.TabStop = false;
-            this.btn_down.Visible = false;
-            this.btn_down.Zoom = 10;
-            // 
-            // bIbtn_MiniMize
-            // 
-            this.bIbtn_MiniMize.BackColor = System.Drawing.Color.Transparent;
-            this.bIbtn_MiniMize.Image = ((System.Drawing.Image)(resources.GetObject("bIbtn_MiniMize.Image")));
-            this.bIbtn_MiniMize.ImageActive = null;
-            this.bIbtn_MiniMize.Location = new System.Drawing.Point(21, 1);
-            this.bIbtn_MiniMize.Margin = new System.Windows.Forms.Padding(1);
-            this.bIbtn_MiniMize.Name = "bIbtn_MiniMize";
-            this.bIbtn_MiniMize.Size = new System.Drawing.Size(15, 15);
-            this.bIbtn_MiniMize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bIbtn_MiniMize.TabIndex = 3;
-            this.bIbtn_MiniMize.TabStop = false;
-            this.bIbtn_MiniMize.Zoom = 10;
-            this.bIbtn_MiniMize.Click += new System.EventHandler(this.bIbtn_MiniMize_Click_1);
-            // 
-            // bIbtn_Close
-            // 
-            this.bIbtn_Close.BackColor = System.Drawing.Color.Transparent;
-            this.bIbtn_Close.Image = ((System.Drawing.Image)(resources.GetObject("bIbtn_Close.Image")));
-            this.bIbtn_Close.ImageActive = null;
-            this.bIbtn_Close.Location = new System.Drawing.Point(4, 1);
-            this.bIbtn_Close.Margin = new System.Windows.Forms.Padding(1);
-            this.bIbtn_Close.Name = "bIbtn_Close";
-            this.bIbtn_Close.Size = new System.Drawing.Size(15, 15);
-            this.bIbtn_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bIbtn_Close.TabIndex = 1;
-            this.bIbtn_Close.TabStop = false;
-            this.bIbtn_Close.Zoom = 10;
-            this.bIbtn_Close.Click += new System.EventHandler(this.bunifuImageButton1_Click_1);
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.panel1;
-            this.bunifuDragControl1.Vertical = true;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btn_Stop);
             this.panel2.Controls.Add(this.btn_Pause);
             this.panel2.Controls.Add(this.btn_play);
-            this.panel2.Controls.Add(this.lbl_down);
-            this.panel2.Controls.Add(this.btn_down);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 472);
             this.panel2.Name = "panel2";
@@ -222,19 +145,10 @@
             this.panel3.Controls.Add(this.btn_play_vlc);
             this.panel3.Controls.Add(this.axVLCPlugin21);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 26);
+            this.panel3.Location = new System.Drawing.Point(3, 29);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(918, 440);
+            this.panel3.Size = new System.Drawing.Size(918, 437);
             this.panel3.TabIndex = 4;
-            // 
-            // axVLCPlugin21
-            // 
-            this.axVLCPlugin21.Enabled = true;
-            this.axVLCPlugin21.Location = new System.Drawing.Point(0, 0);
-            this.axVLCPlugin21.Name = "axVLCPlugin21";
-            this.axVLCPlugin21.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axVLCPlugin21.OcxState")));
-            this.axVLCPlugin21.Size = new System.Drawing.Size(918, 440);
-            this.axVLCPlugin21.TabIndex = 0;
             // 
             // btn_play_vlc
             // 
@@ -250,6 +164,91 @@
             this.btn_play_vlc.Zoom = 10;
             this.btn_play_vlc.Click += new System.EventHandler(this.btn_play_vlc_Click);
             // 
+            // axVLCPlugin21
+            // 
+            this.axVLCPlugin21.Enabled = true;
+            this.axVLCPlugin21.Location = new System.Drawing.Point(0, 0);
+            this.axVLCPlugin21.Name = "axVLCPlugin21";
+            this.axVLCPlugin21.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axVLCPlugin21.OcxState")));
+            this.axVLCPlugin21.Size = new System.Drawing.Size(918, 440);
+            this.axVLCPlugin21.TabIndex = 0;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.466231F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 95.53377F));
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lbl_name_video, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(918, 20);
+            this.tableLayoutPanel2.TabIndex = 5;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.bIbtn_MiniMize);
+            this.panel1.Controls.Add(this.bIbtn_Close);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(40, 20);
+            this.panel1.TabIndex = 0;
+            // 
+            // bIbtn_MiniMize
+            // 
+            this.bIbtn_MiniMize.BackColor = System.Drawing.Color.Transparent;
+            this.bIbtn_MiniMize.Image = ((System.Drawing.Image)(resources.GetObject("bIbtn_MiniMize.Image")));
+            this.bIbtn_MiniMize.ImageActive = null;
+            this.bIbtn_MiniMize.Location = new System.Drawing.Point(22, 2);
+            this.bIbtn_MiniMize.Margin = new System.Windows.Forms.Padding(1);
+            this.bIbtn_MiniMize.Name = "bIbtn_MiniMize";
+            this.bIbtn_MiniMize.Size = new System.Drawing.Size(17, 17);
+            this.bIbtn_MiniMize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bIbtn_MiniMize.TabIndex = 3;
+            this.bIbtn_MiniMize.TabStop = false;
+            this.bIbtn_MiniMize.Zoom = 10;
+            this.bIbtn_MiniMize.Click += new System.EventHandler(this.bIbtn_MiniMize_Click_1);
+            // 
+            // bIbtn_Close
+            // 
+            this.bIbtn_Close.BackColor = System.Drawing.Color.Transparent;
+            this.bIbtn_Close.Image = ((System.Drawing.Image)(resources.GetObject("bIbtn_Close.Image")));
+            this.bIbtn_Close.ImageActive = null;
+            this.bIbtn_Close.Location = new System.Drawing.Point(3, 2);
+            this.bIbtn_Close.Margin = new System.Windows.Forms.Padding(1);
+            this.bIbtn_Close.Name = "bIbtn_Close";
+            this.bIbtn_Close.Size = new System.Drawing.Size(17, 17);
+            this.bIbtn_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bIbtn_Close.TabIndex = 1;
+            this.bIbtn_Close.TabStop = false;
+            this.bIbtn_Close.Zoom = 10;
+            this.bIbtn_Close.Click += new System.EventHandler(this.bunifuImageButton1_Click_1);
+            // 
+            // lbl_name_video
+            // 
+            this.lbl_name_video.AutoSize = true;
+            this.lbl_name_video.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_name_video.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_name_video.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lbl_name_video.Location = new System.Drawing.Point(43, 0);
+            this.lbl_name_video.Name = "lbl_name_video";
+            this.lbl_name_video.Size = new System.Drawing.Size(872, 20);
+            this.lbl_name_video.TabIndex = 1;
+            this.lbl_name_video.Text = "label1";
+            this.lbl_name_video.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.lbl_name_video;
+            this.bunifuDragControl1.Vertical = true;
+            // 
             // FrmVLC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,24 +258,25 @@
             this.ClientSize = new System.Drawing.Size(924, 512);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmVLC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmVLC";
+            this.Text = "VLC";
             this.Activated += new System.EventHandler(this.TB_Activated);
             this.Deactivate += new System.EventHandler(this.TB_Deactivate);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btn_down)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bIbtn_MiniMize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bIbtn_Close)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Stop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Pause)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_play)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.axVLCPlugin21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_play_vlc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axVLCPlugin21)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bIbtn_MiniMize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bIbtn_Close)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -285,11 +285,8 @@
 
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuImageButton bIbtn_Close;
         private Bunifu.Framework.UI.BunifuImageButton bIbtn_MiniMize;
-        public Bunifu.Framework.UI.BunifuImageButton btn_down;
-        public System.Windows.Forms.Label lbl_down;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
@@ -298,5 +295,8 @@
         public Bunifu.Framework.UI.BunifuImageButton btn_Pause;
         public Bunifu.Framework.UI.BunifuImageButton btn_play;
         public Bunifu.Framework.UI.BunifuImageButton btn_play_vlc;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Label lbl_name_video;
     }
 }

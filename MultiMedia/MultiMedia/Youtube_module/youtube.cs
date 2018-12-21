@@ -19,7 +19,7 @@ namespace MultiMedia.Youtube_module
     {
         int pagenumber = 1;
         //string link = "";
-        List<string> linkYTB ;
+        List<item_ytb> itemYTBs ;
         List<VideoInformation> listYTB;
         public youtube()
         {
@@ -47,7 +47,7 @@ namespace MultiMedia.Youtube_module
         private void SearchYoutube(string text)
         {
             VideoSearch items = new VideoSearch();
-            linkYTB = new List<string>();
+            itemYTBs = new List<item_ytb>();
             try
             {
                 int numberYTB = items.SearchQuery(text, pagenumber).Count;
@@ -61,34 +61,51 @@ namespace MultiMedia.Youtube_module
                     itemytb.lbl_title.Text = listYTB[i].Title.ToString();
                     itemytb.lbl_url.Text = listYTB[i].Url.ToString();
                     itemytb.lbl_time.Text = listYTB[i].Duration.ToString();
-                    byte[] imageBytes = new WebClient().DownloadData(listYTB[i].Thumbnail);
-                    using (MemoryStream ms = new MemoryStream(imageBytes))
-                    {
-                        itemytb.btn_image.Image = Image.FromStream(ms);
-                    }
+                    //byte[] imageBytes = new WebClient().DownloadData(listYTB[i].Thumbnail);
+                    //using (MemoryStream ms = new MemoryStream(imageBytes))
+                    //{
+                    //    itemytb.btn_image.Image = Image.FromStream(ms);
+                    //}
+                    itemytb.btn_image.ImageLocation = listYTB[i].Thumbnail;
                     itemytb.btn_image.Tag = i.ToString();
                     itemytb.btn_image.Click += Btn_image_Click;
-                    linkYTB.Add(itemytb.lbl_url.Text);
+                    itemYTBs.Add(itemytb);
                     flowLayoutPanel1.Controls.Add(itemytb);
                 }
             }
             catch { MessageBox.Show("Vui lòng kết nối mạng!"); };
         }
-
+        int tag;
         private void Btn_image_Click(object sender, EventArgs e)
+        {
+            Bunifu.Framework.UI.BunifuImageButton _image = sender as Bunifu.Framework.UI.BunifuImageButton;
+            tag = Convert.ToInt32(_image.Tag);
+            BackgroundWorker bw = new BackgroundWorker();
+            bw.DoWork += Bw_DoWork;
+            bw.RunWorkerAsync();
+        }
+
+        private void Bw_DoWork(object sender, DoWorkEventArgs e)
         {
             try
             {
-                Bunifu.Framework.UI.BunifuImageButton _image = sender as Bunifu.Framework.UI.BunifuImageButton;
-                int tag = Convert.ToInt32(_image.Tag);
-                Movie_module.FrmVLC frmVlc = new Movie_module.FrmVLC(linkYTB[tag]);
-                frmVlc.axVLCPlugin21.playlist.stop();
-                frmVlc.Show();
+                Invoke(new Action(()=>
+                {
+                    Movie_module.FrmVLC frmVlc = new Movie_module.FrmVLC(itemYTBs[tag].lbl_url.Text.ToString());
+                    frmVlc.lbl_name_video.Text = itemYTBs[tag].lbl_title.Text.ToString();
+                    frmVlc.axVLCPlugin21.playlist.stop();
+                    frmVlc.Show();
+                }
+                ));
             }
             catch
             {
-                Movie_module.ThongBao tb = new Movie_module.ThongBao();
-                tb.Show();
+                Invoke(new Action(() =>
+                {
+                    Movie_module.ThongBao tb = new Movie_module.ThongBao();
+                    tb.Show();
+                }
+                ));
             }
         }
 
@@ -122,12 +139,12 @@ namespace MultiMedia.Youtube_module
         //                tb.ShowDialog ();
         //                btnDownload.Visible = false;
         //            }));
-                    
+
         //        }
         //    });
         //    Thread.Sleep(5000);
         //    thread.Start();
-            
+
         //}
         //private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         //{
@@ -150,22 +167,19 @@ namespace MultiMedia.Youtube_module
         //        Movie_module.FrmVLC frmVlc = new Movie_module.FrmVLC(link);
         //        frmVlc.axVLCPlugin21.playlist.stop();
         //        frmVlc.Show();
-                
+
         //    }
         //    //threadYTB();
         //}
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode==Keys.Enter)
+            if(e.KeyCode== Keys.Enter)
             {
                 btnSearch_Click(sender, e);
                 string[] temp = txtSearch.Text.Split('\n');
                 txtSearch.Clear();
-                foreach (string item in temp)
-                {
-                    txtSearch.Text = item;
-                }
+                txtSearch.Text = temp[0];
             }
         }
         

@@ -69,9 +69,10 @@ namespace MultiMedia.Football_module
         {
             return a.IndexOf("youtube");
         }
-        void ShowVlc(string url)
+        void ShowVlc(string url, string name)
         {
             Movie_module.FrmVLC frmVlc = new Movie_module.FrmVLC(url);
+            frmVlc.lbl_name_video.Text = name.ToString();
             frmVlc.btn_Pause.Visible = false;
             frmVlc.btn_play.Visible = false;
             frmVlc.btn_Stop.Visible = false;
@@ -87,7 +88,7 @@ namespace MultiMedia.Football_module
             //Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
             //frmVLC.StartPosition = FormStartPosition.CenterScreen;
             //frmVLC.Show();
-            ShowVlc(link1[a]);
+            ShowVlc(link1[a], team[a]);
         }
 
         void Click2(object sender, EventArgs e)
@@ -98,7 +99,7 @@ namespace MultiMedia.Football_module
             //Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
             //frmVLC.StartPosition = FormStartPosition.CenterScreen;
             //frmVLC.Show();
-            ShowVlc(link1[a]);
+            ShowVlc(link1[a], team[a]);
         }
 
         void Click3(object sender, EventArgs e)
@@ -109,7 +110,7 @@ namespace MultiMedia.Football_module
             //Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
             //frmVLC.StartPosition = FormStartPosition.CenterScreen;
             //frmVLC.Show();
-            ShowVlc(link1[a]);
+            ShowVlc(link1[a], team[a]);
         }
 
         void Click4(object sender, EventArgs e)
@@ -120,7 +121,7 @@ namespace MultiMedia.Football_module
             //Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
             //frmVLC.StartPosition = FormStartPosition.CenterScreen;
             //frmVLC.Show();
-            ShowVlc(link1[a]);
+            ShowVlc(link1[a], team[a]);
         }
 
         void Click5(object sender, EventArgs e)
@@ -131,7 +132,7 @@ namespace MultiMedia.Football_module
             //Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
             //frmVLC.StartPosition = FormStartPosition.CenterScreen;
             //frmVLC.Show();
-            ShowVlc(link1[a]);
+            ShowVlc(link1[a], team[a]);
         }
 
         void Click6(object sender, EventArgs e)
@@ -142,7 +143,7 @@ namespace MultiMedia.Football_module
             //Movie_module.FrmVLC frmVLC = new Movie_module.FrmVLC(link1[a]);
             //frmVLC.StartPosition = FormStartPosition.CenterScreen;
             //frmVLC.Show();
-            ShowVlc(link1[a]);
+            ShowVlc(link1[a], team[a]);
         }
 
         private void crawData()

@@ -109,6 +109,7 @@ namespace MultiMedia.Movie_module
             btn_play.Enabled = false;
             btn_Stop.Enabled = true;
             btn_play_vlc.Visible = false;
+            axVLCPlugin21.Toolbar = true;
         }
         private void bIbtn_Pause_Click(object sender, EventArgs e)
         {
@@ -116,6 +117,8 @@ namespace MultiMedia.Movie_module
             btn_Pause.Enabled = false;
             btn_play.Enabled = true;
             btn_Stop.Enabled = true;
+            btn_play_vlc.Visible = false;
+            axVLCPlugin21.Toolbar = true;
             
         }
 
@@ -126,6 +129,7 @@ namespace MultiMedia.Movie_module
             btn_play.Enabled = true;
             btn_Stop.Enabled = false;
             btn_play_vlc.Visible = true;
+            axVLCPlugin21.Toolbar = false;
         }
 
         //private void axVLCPlugin21_MediaPlayerTimeChanged(object sender, AxAXVLC.DVLCEvents_MediaPlayerTimeChangedEvent e)
@@ -166,35 +170,35 @@ namespace MultiMedia.Movie_module
         //    isFullScreen = false;
         //}
 
-        WebClient c = new WebClient();
-        private void btn_down_Click(object sender, EventArgs e)
-        {
-            using (FolderBrowserDialog fbd = new FolderBrowserDialog() { Description = "Select your path." })
-            {
-                if (fbd.ShowDialog() == DialogResult.OK)
-                {
-                    lbl_down.Visible = true;
-                    Uri u = new Uri(this.uri);
-                    c.DownloadFileAsync(u, Path.Combine(fbd.SelectedPath, Path.GetFileName(u.AbsolutePath)));
-                    c.DownloadProgressChanged += C_DownloadProgressChanged;
-                    c.DownloadFileCompleted += C_DownloadFileCompleted;
-                }
-            }
+        //WebClient c = new WebClient();
+        //private void btn_down_Click(object sender, EventArgs e)
+        //{
+        //    using (FolderBrowserDialog fbd = new FolderBrowserDialog() { Description = "Select your path." })
+        //    {
+        //        if (fbd.ShowDialog() == DialogResult.OK)
+        //        {
+        //            lbl_down.Visible = true;
+        //            Uri u = new Uri(this.uri);
+        //            c.DownloadFileAsync(u, Path.Combine(fbd.SelectedPath, Path.GetFileName(u.AbsolutePath)));
+        //            c.DownloadProgressChanged += C_DownloadProgressChanged;
+        //            c.DownloadFileCompleted += C_DownloadFileCompleted;
+        //        }
+        //    }
 
-        }
+        //}
 
-        private void C_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
-        {
-            MessageBox.Show("Đã tải xong");
-        }
+        //private void C_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
+        //{
+        //    MessageBox.Show("Đã tải xong");
+        //}
 
-        private void C_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
-        {
-            double r = e.BytesReceived;
-            double file_size = e.TotalBytesToReceive;
-            double pe = r / file_size * 100;
-            lbl_down.Text = string.Format("{0 : 0.00}%", pe);
-        }
+        //private void C_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        //{
+        //    double r = e.BytesReceived;
+        //    double file_size = e.TotalBytesToReceive;
+        //    double pe = r / file_size * 100;
+        //    lbl_down.Text = string.Format("{0 : 0.00}%", pe);
+        //}
 
         private void bunifuImageButton1_Click_1(object sender, EventArgs e)
         {
