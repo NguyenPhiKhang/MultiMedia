@@ -19,6 +19,7 @@ namespace MultiMedia
             movie1.Visible = false;
             footBall.Visible = false;
             tv1.Visible = false;
+            
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -45,10 +46,11 @@ namespace MultiMedia
                 pnMenu.Visible = false;
                 pnMenu.Width = 209;
                 //bntMenu.Location = new Point(169, 3);
-                bunifuImageButton1.Location = new Point(3, 12);
+                bunifuImageButton1.Location = new Point(3, 3);
                 //bunifuImageButton2.Location = new Point(37, 13);
-                bunifuImageButton3.Location = new Point(30, 12);
+                bunifuImageButton3.Location = new Point(27, 3);
                 animator1.ShowSync(pnMenu);
+                tableLayoutPanel1.Visible = false;
             }
             else
             {
@@ -59,6 +61,7 @@ namespace MultiMedia
                 //bIbtn_Pause.Location = new Point(3, 71);
                 bunifuImageButton3.Location = new Point(3, 71);
                 animator1.ShowSync(pnMenu);
+                tableLayoutPanel1.Visible = false;
             }
         }
         private void bntColor()
@@ -72,7 +75,7 @@ namespace MultiMedia
             bntYTB.Textcolor = Color.White;
             bntFoot.Textcolor = Color.White;
         }
-        
+
         private void bntCinema_Click(object sender, EventArgs e)
         {
             bntColor();
@@ -86,6 +89,7 @@ namespace MultiMedia
             footBall.Enabled = false;
             tv1.Visible = false;
             tv1.Enabled = false;
+            tableLayoutPanel1.Visible = true;
         }
 
         private void bntTV_Click(object sender, EventArgs e)
@@ -96,11 +100,12 @@ namespace MultiMedia
             tv1.Visible = true;
             tv1.Enabled = true;
             footBall.Visible = false;
-            footBall.Enabled =false;
+            footBall.Enabled = false;
             youtube1.Visible = false;
             youtube1.Enabled = false;
             movie1.Enabled = false;
             movie1.Visible = false;
+            tableLayoutPanel1.Visible = false;
         }
 
         private void bntYTB_Click(object sender, EventArgs e)
@@ -116,6 +121,7 @@ namespace MultiMedia
             movie1.Visible = false;
             tv1.Visible = false;
             tv1.Enabled = false;
+            tableLayoutPanel1.Visible = false;
         }
 
         private void bntFoot_Click(object sender, EventArgs e)
@@ -131,10 +137,33 @@ namespace MultiMedia
             movie1.Visible = false;
             tv1.Enabled = false;
             tv1.Visible = false;
+            tableLayoutPanel1.Visible = false;
         }
 
-        
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+            Install_Adblock adblock = new Install_Adblock();
+            adblock.Show();
+        }
+        Boolean flag; int x, y;
+        private void pnMenu_MouseDown(object sender, MouseEventArgs e)
+        {
+            flag = true;
+            x = e.X;
+            y = e.Y;
+        }
 
-        
+        private void pnMenu_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(flag==true)
+            {
+                this.SetDesktopLocation(Cursor.Position.X - x, Cursor.Position.Y - y);
+            }
+        }
+
+        private void pnMenu_MouseUp(object sender, MouseEventArgs e)
+        {
+            flag = false;
+        }
     }
 }

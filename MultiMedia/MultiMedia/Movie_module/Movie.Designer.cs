@@ -36,7 +36,7 @@
             this.dropdown_theloai = new Bunifu.Framework.UI.BunifuDropdown();
             this.btn_timkiem = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btn_chieurap = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_phimmoi = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_phimkhac = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_phimle = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_sotrang = new System.Windows.Forms.Label();
@@ -88,7 +88,7 @@
             this.panel1.Controls.Add(this.dropdown_theloai);
             this.panel1.Controls.Add(this.btn_timkiem);
             this.panel1.Controls.Add(this.btn_chieurap);
-            this.panel1.Controls.Add(this.btn_phimmoi);
+            this.panel1.Controls.Add(this.btn_phimkhac);
             this.panel1.Controls.Add(this.btn_phimle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 165);
@@ -127,7 +127,7 @@
         "Chiến Tranh",
         "Hài Việt",
         "Tâm Lý",
-        "Thiếu Nhi"};
+        "Tình Cảm"};
             this.dropdown_theloai.Location = new System.Drawing.Point(0, 0);
             this.dropdown_theloai.Margin = new System.Windows.Forms.Padding(0);
             this.dropdown_theloai.Name = "dropdown_theloai";
@@ -202,41 +202,41 @@
             this.btn_chieurap.TextFont = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_chieurap.Click += new System.EventHandler(this.btn_chieurap_Click);
             // 
-            // btn_phimmoi
+            // btn_phimkhac
             // 
-            this.btn_phimmoi.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btn_phimmoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(46)))));
-            this.btn_phimmoi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_phimmoi.BorderRadius = 0;
-            this.btn_phimmoi.ButtonText = "Phim Mới";
-            this.btn_phimmoi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_phimmoi.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_phimmoi.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_phimmoi.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_phimmoi.Iconimage")));
-            this.btn_phimmoi.Iconimage_right = null;
-            this.btn_phimmoi.Iconimage_right_Selected = null;
-            this.btn_phimmoi.Iconimage_Selected = null;
-            this.btn_phimmoi.IconMarginLeft = 0;
-            this.btn_phimmoi.IconMarginRight = 0;
-            this.btn_phimmoi.IconRightVisible = true;
-            this.btn_phimmoi.IconRightZoom = 0D;
-            this.btn_phimmoi.IconVisible = true;
-            this.btn_phimmoi.IconZoom = 60D;
-            this.btn_phimmoi.IsTab = false;
-            this.btn_phimmoi.Location = new System.Drawing.Point(287, 0);
-            this.btn_phimmoi.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_phimmoi.Name = "btn_phimmoi";
-            this.btn_phimmoi.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(46)))));
-            this.btn_phimmoi.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_phimmoi.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_phimmoi.selected = false;
-            this.btn_phimmoi.Size = new System.Drawing.Size(137, 47);
-            this.btn_phimmoi.TabIndex = 2;
-            this.btn_phimmoi.Text = "Phim Mới";
-            this.btn_phimmoi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_phimmoi.Textcolor = System.Drawing.Color.Black;
-            this.btn_phimmoi.TextFont = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_phimmoi.Click += new System.EventHandler(this.btn_phimmoi_Click);
+            this.btn_phimkhac.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_phimkhac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(46)))));
+            this.btn_phimkhac.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_phimkhac.BorderRadius = 0;
+            this.btn_phimkhac.ButtonText = "Phim Khác";
+            this.btn_phimkhac.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_phimkhac.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_phimkhac.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_phimkhac.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_phimkhac.Iconimage")));
+            this.btn_phimkhac.Iconimage_right = null;
+            this.btn_phimkhac.Iconimage_right_Selected = null;
+            this.btn_phimkhac.Iconimage_Selected = null;
+            this.btn_phimkhac.IconMarginLeft = 0;
+            this.btn_phimkhac.IconMarginRight = 0;
+            this.btn_phimkhac.IconRightVisible = true;
+            this.btn_phimkhac.IconRightZoom = 0D;
+            this.btn_phimkhac.IconVisible = true;
+            this.btn_phimkhac.IconZoom = 60D;
+            this.btn_phimkhac.IsTab = false;
+            this.btn_phimkhac.Location = new System.Drawing.Point(287, 0);
+            this.btn_phimkhac.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_phimkhac.Name = "btn_phimkhac";
+            this.btn_phimkhac.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(46)))));
+            this.btn_phimkhac.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_phimkhac.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_phimkhac.selected = false;
+            this.btn_phimkhac.Size = new System.Drawing.Size(137, 47);
+            this.btn_phimkhac.TabIndex = 2;
+            this.btn_phimkhac.Text = "Phim Khác";
+            this.btn_phimkhac.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_phimkhac.Textcolor = System.Drawing.Color.Black;
+            this.btn_phimkhac.TextFont = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_phimkhac.Click += new System.EventHandler(this.btn_phimmoi_Click);
             // 
             // btn_phimle
             // 
@@ -367,7 +367,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_phimle;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_timkiem;
         private Bunifu.Framework.UI.BunifuFlatButton btn_chieurap;
-        private Bunifu.Framework.UI.BunifuFlatButton btn_phimmoi;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_phimkhac;
         private Bunifu.Framework.UI.BunifuDropdown dropdown_theloai;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl_sotrang;

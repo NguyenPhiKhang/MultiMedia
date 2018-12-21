@@ -81,9 +81,6 @@
     <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
     </Reference>
-    <Reference Include="YoutubeExtractor, Version=0.10.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YoutubeExtractor.0.10.11\lib\net35\YoutubeExtractor.dll</HintPath>
-    </Reference>
     <Reference Include="YoutubeSearch, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\YoutubeSearch.dll.1.1\lib\YoutubeSearch.dll</HintPath>
     </Reference>
@@ -106,6 +103,12 @@
     </Compile>
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Install_Adblock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Install_Adblock.Designer.cs">
+      <DependentUpon>Install_Adblock.cs</DependentUpon>
     </Compile>
     <Compile Include="Movie_module\FrmVLC.cs">
       <SubType>Form</SubType>
@@ -159,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Install_Adblock.resx">
+      <DependentUpon>Install_Adblock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movie_module\FrmVLC.resx">
       <DependentUpon>FrmVLC.cs</DependentUpon>

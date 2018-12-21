@@ -29,27 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.animator1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.pnMenu = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bntMenu = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bntFoot = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bntYTB = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bntTV = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bntCinema = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bntMenu = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.animator1 = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.tv1 = new MultiMedia.TV_module.TV();
             this.footBall = new MultiMedia.Football_module.Football();
             this.movie1 = new MultiMedia.Movie_module.Movie();
+            this.tv1 = new MultiMedia.TV_module.TV();
             this.youtube1 = new MultiMedia.Youtube_module.youtube();
             this.pnMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bntMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -57,17 +62,39 @@
             this.bunifuElipse1.ElipseRadius = 8;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // animator1
+            // 
+            this.animator1.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
+            this.animator1.Cursor = null;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 1;
+            animation3.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 2F;
+            animation3.TransparencyCoeff = 0F;
+            this.animator1.DefaultAnimation = animation3;
+            // 
             // pnMenu
             // 
             this.pnMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnMenu.BackgroundImage")));
             this.pnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnMenu.Controls.Add(this.bntMenu);
+            this.pnMenu.Controls.Add(this.bunifuImageButton3);
+            this.pnMenu.Controls.Add(this.bunifuImageButton1);
+            this.pnMenu.Controls.Add(this.tableLayoutPanel1);
             this.pnMenu.Controls.Add(this.bntFoot);
             this.pnMenu.Controls.Add(this.bntYTB);
             this.pnMenu.Controls.Add(this.bntTV);
             this.pnMenu.Controls.Add(this.bntCinema);
-            this.pnMenu.Controls.Add(this.bntMenu);
-            this.pnMenu.Controls.Add(this.bunifuImageButton3);
-            this.pnMenu.Controls.Add(this.bunifuImageButton1);
             this.animator1.SetDecoration(this.pnMenu, BunifuAnimatorNS.DecorationType.None);
             this.pnMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnMenu.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
@@ -79,7 +106,126 @@
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.Quality = 10;
             this.pnMenu.Size = new System.Drawing.Size(209, 726);
-            this.pnMenu.TabIndex = 0;
+            this.pnMenu.TabIndex = 7;
+            this.pnMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnMenu_MouseDown);
+            this.pnMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnMenu_MouseMove);
+            this.pnMenu.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnMenu_MouseUp);
+            // 
+            // bntMenu
+            // 
+            this.bntMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntMenu.BackColor = System.Drawing.Color.Transparent;
+            this.animator1.SetDecoration(this.bntMenu, BunifuAnimatorNS.DecorationType.None);
+            this.bntMenu.Image = ((System.Drawing.Image)(resources.GetObject("bntMenu.Image")));
+            this.bntMenu.ImageActive = null;
+            this.bntMenu.Location = new System.Drawing.Point(166, 3);
+            this.bntMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bntMenu.Name = "bntMenu";
+            this.bntMenu.Size = new System.Drawing.Size(40, 40);
+            this.bntMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bntMenu.TabIndex = 3;
+            this.bntMenu.TabStop = false;
+            this.bntMenu.Zoom = 10;
+            this.bntMenu.Click += new System.EventHandler(this.bunifuImageButton4_Click);
+            // 
+            // bunifuImageButton3
+            // 
+            this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
+            this.animator1.SetDecoration(this.bunifuImageButton3, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
+            this.bunifuImageButton3.ImageActive = null;
+            this.bunifuImageButton3.Location = new System.Drawing.Point(27, 3);
+            this.bunifuImageButton3.Name = "bunifuImageButton3";
+            this.bunifuImageButton3.Size = new System.Drawing.Size(20, 20);
+            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bunifuImageButton3.TabIndex = 2;
+            this.bunifuImageButton3.TabStop = false;
+            this.bunifuImageButton3.Zoom = 10;
+            this.bunifuImageButton3.Click += new System.EventHandler(this.bunifuImageButton3_Click);
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.animator1.SetDecoration(this.bunifuImageButton1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(3, 3);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(20, 20);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bunifuImageButton1.TabIndex = 0;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
+            this.animator1.SetDecoration(this.tableLayoutPanel1, BunifuAnimatorNS.DecorationType.None);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 533);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 193);
+            this.tableLayoutPanel1.TabIndex = 8;
+            this.tableLayoutPanel1.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.animator1.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(194, 73);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Để xem được phim, máy phải cài Chrome và chặn quảng cáo Adblock";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.bunifuThinButton21);
+            this.animator1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 73);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 120);
+            this.panel1.TabIndex = 1;
+            // 
+            // bunifuThinButton21
+            // 
+            this.bunifuThinButton21.ActiveBorderThickness = 1;
+            this.bunifuThinButton21.ActiveCornerRadius = 20;
+            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.Yellow;
+            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.Black;
+            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.Yellow;
+            this.bunifuThinButton21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
+            this.bunifuThinButton21.ButtonText = "Hướng dẫn cài Adblock";
+            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.animator1.SetDecoration(this.bunifuThinButton21, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuThinButton21.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.IdleBorderThickness = 1;
+            this.bunifuThinButton21.IdleCornerRadius = 20;
+            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.Silver;
+            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.Red;
+            this.bunifuThinButton21.Location = new System.Drawing.Point(21, 0);
+            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(0);
+            this.bunifuThinButton21.Name = "bunifuThinButton21";
+            this.bunifuThinButton21.Size = new System.Drawing.Size(169, 41);
+            this.bunifuThinButton21.TabIndex = 0;
+            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
             // 
             // bntFoot
             // 
@@ -229,80 +375,25 @@
             this.bntCinema.TextFont = new System.Drawing.Font("Snap ITC", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntCinema.Click += new System.EventHandler(this.bntCinema_Click);
             // 
-            // bntMenu
+            // footBall
             // 
-            this.bntMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bntMenu.BackColor = System.Drawing.Color.Transparent;
-            this.animator1.SetDecoration(this.bntMenu, BunifuAnimatorNS.DecorationType.None);
-            this.bntMenu.Image = ((System.Drawing.Image)(resources.GetObject("bntMenu.Image")));
-            this.bntMenu.ImageActive = null;
-            this.bntMenu.Location = new System.Drawing.Point(169, 3);
-            this.bntMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.bntMenu.Name = "bntMenu";
-            this.bntMenu.Size = new System.Drawing.Size(40, 40);
-            this.bntMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bntMenu.TabIndex = 3;
-            this.bntMenu.TabStop = false;
-            this.bntMenu.Zoom = 10;
-            this.bntMenu.Click += new System.EventHandler(this.bunifuImageButton4_Click);
+            this.footBall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.animator1.SetDecoration(this.footBall, BunifuAnimatorNS.DecorationType.None);
+            this.footBall.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.footBall.Location = new System.Drawing.Point(209, 0);
+            this.footBall.Name = "footBall";
+            this.footBall.Size = new System.Drawing.Size(1037, 726);
+            this.footBall.TabIndex = 8;
             // 
-            // bunifuImageButton3
+            // movie1
             // 
-            this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
-            this.animator1.SetDecoration(this.bunifuImageButton3, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
-            this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(30, 12);
-            this.bunifuImageButton3.Name = "bunifuImageButton3";
-            this.bunifuImageButton3.Size = new System.Drawing.Size(20, 20);
-            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bunifuImageButton3.TabIndex = 2;
-            this.bunifuImageButton3.TabStop = false;
-            this.bunifuImageButton3.Zoom = 10;
-            this.bunifuImageButton3.Click += new System.EventHandler(this.bunifuImageButton3_Click);
-            // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.animator1.SetDecoration(this.bunifuImageButton1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(3, 12);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(20, 20);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bunifuImageButton1.TabIndex = 0;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
-            // 
-            // animator1
-            // 
-            this.animator1.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
-            this.animator1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 1;
-            animation1.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 2F;
-            animation1.TransparencyCoeff = 0F;
-            this.animator1.DefaultAnimation = animation1;
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.pnMenu;
-            this.bunifuDragControl1.Vertical = true;
+            this.movie1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.animator1.SetDecoration(this.movie1, BunifuAnimatorNS.DecorationType.None);
+            this.movie1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.movie1.Location = new System.Drawing.Point(209, 0);
+            this.movie1.Name = "movie1";
+            this.movie1.Size = new System.Drawing.Size(1037, 726);
+            this.movie1.TabIndex = 9;
             // 
             // tv1
             // 
@@ -312,29 +403,7 @@
             this.tv1.Location = new System.Drawing.Point(209, 0);
             this.tv1.Name = "tv1";
             this.tv1.Size = new System.Drawing.Size(1037, 726);
-            this.tv1.TabIndex = 4;
-            // 
-            // footBall
-            // 
-            this.footBall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.animator1.SetDecoration(this.footBall, BunifuAnimatorNS.DecorationType.None);
-            this.footBall.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.footBall.Location = new System.Drawing.Point(209, 0);
-            this.footBall.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
-            this.footBall.Name = "footBall";
-            this.footBall.Size = new System.Drawing.Size(1037, 726);
-            this.footBall.TabIndex = 3;
-            // 
-            // movie1
-            // 
-            this.movie1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.animator1.SetDecoration(this.movie1, BunifuAnimatorNS.DecorationType.None);
-            this.movie1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.movie1.Location = new System.Drawing.Point(209, 0);
-            this.movie1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.movie1.Name = "movie1";
-            this.movie1.Size = new System.Drawing.Size(1037, 726);
-            this.movie1.TabIndex = 2;
+            this.tv1.TabIndex = 10;
             // 
             // youtube1
             // 
@@ -342,10 +411,9 @@
             this.animator1.SetDecoration(this.youtube1, BunifuAnimatorNS.DecorationType.None);
             this.youtube1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.youtube1.Location = new System.Drawing.Point(209, 0);
-            this.youtube1.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
             this.youtube1.Name = "youtube1";
             this.youtube1.Size = new System.Drawing.Size(1037, 726);
-            this.youtube1.TabIndex = 1;
+            this.youtube1.TabIndex = 11;
             // 
             // FrmMain
             // 
@@ -353,10 +421,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(1246, 726);
-            this.Controls.Add(this.tv1);
-            this.Controls.Add(this.footBall);
-            this.Controls.Add(this.movie1);
             this.Controls.Add(this.youtube1);
+            this.Controls.Add(this.tv1);
+            this.Controls.Add(this.movie1);
+            this.Controls.Add(this.footBall);
             this.Controls.Add(this.pnMenu);
             this.animator1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -369,6 +437,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bntMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -376,20 +447,23 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private BunifuAnimatorNS.BunifuTransition animator1;
         private Bunifu.Framework.UI.BunifuGradientPanel pnMenu;
+        private Bunifu.Framework.UI.BunifuImageButton bntMenu;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-        private Bunifu.Framework.UI.BunifuImageButton bntMenu;
-        private Bunifu.Framework.UI.BunifuFlatButton bntCinema;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private Bunifu.Framework.UI.BunifuFlatButton bntFoot;
         private Bunifu.Framework.UI.BunifuFlatButton bntYTB;
         private Bunifu.Framework.UI.BunifuFlatButton bntTV;
+        private Bunifu.Framework.UI.BunifuFlatButton bntCinema;
         private Youtube_module.youtube youtube1;
-        private BunifuAnimatorNS.BunifuTransition animator1;
+        private TV_module.TV tv1;
         private Movie_module.Movie movie1;
         private Football_module.Football footBall;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private TV_module.TV tv1;
         //private TV_module.TV tv1;
     }
 }
