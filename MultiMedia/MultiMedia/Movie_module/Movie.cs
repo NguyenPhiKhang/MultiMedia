@@ -32,7 +32,7 @@ namespace MultiMedia.Movie_module
         }
 
 
-        public void LoadFilm(String url)
+        public void LoadFilm(string url)
         {
             while (flowLayoutPanel1.Controls.Count > 0) flowLayoutPanel1.Controls.RemoveAt(0);
             try
@@ -46,12 +46,11 @@ namespace MultiMedia.Movie_module
                 htmlWeb.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36";
                 HtmlAgilityPack.HtmlDocument document = htmlWeb.Load(url);
                 //Lay so luong trang phim
-                HtmlNode Sotrangphim = document.DocumentNode.SelectSingleNode("//div[@class='pages']");
+                HtmlNode Sotrangphim = document.DocumentNode.SelectSingleNode("//div[@class='pagination']/ul");
                 try
                 {
-                    currentPage = Convert.ToInt32(Sotrangphim.SelectSingleNode(".//a[@class='activer']").InnerText);
-                    string[] a = Sotrangphim.SelectSingleNode(".//a[last()]").Attributes["href"].Value.ToString().Split(new char[]{ '-' });
-                    MaxPage = Convert.ToInt32(a[a.Count() - 1]);
+                    currentPage = Convert.ToInt32(Sotrangphim.SelectSingleNode(".//a[@class='current']").InnerText);
+                    MaxPage = Convert.ToInt32(Sotrangphim.SelectSingleNode(".//li[last()-1]").InnerText);
                 }
                 catch
                 {
@@ -77,17 +76,17 @@ namespace MultiMedia.Movie_module
                 }
 
                 //Lay so luong phim trong trang dau tien
-                var listfilm_collection = document.DocumentNode.SelectNodes("//div[@class='box-main']/ul/li").ToList();
+                var listfilm_collection = document.DocumentNode.SelectNodes("//div[@class='block-film']/ul[@class='list-film']/li").ToList();
                 //HtmlNodeCollection listfilm_collection = list_film.SelectNodes(@"li");
 
                 for (int i = 0; i < listfilm_collection.Count; i++)
                 {
                     item_Movie = new item_movie();
-                    item_Movie.lbl_name.Text = listfilm_collection[i].SelectSingleNode(".//div[@class='data']/h4/a").InnerText.ToString();
-                    item_Movie.lbl_status.Text = listfilm_collection[i].SelectSingleNode(".//span").InnerText.ToString();
+                    item_Movie.lbl_name.Text = listfilm_collection[i].SelectSingleNode(".//div[@class='title']/p[@class='name']").InnerText.ToString();
+                    item_Movie.lbl_status.Text = listfilm_collection[i].SelectSingleNode(".//label").InnerText.ToString();
                     item_Movie.btn_avatar.ImageLocation = listfilm_collection[i].SelectSingleNode(".//a/img").Attributes["src"].Value;
-                    item_Movie.lbl_realname.Text = listfilm_collection[i].SelectSingleNode(".//div[@class='data']/p").InnerText.ToString();
-                    item_Movie.lbl_url.Text = listfilm_collection[i].SelectSingleNode(".//a").Attributes["href"].Value.ToString();
+                    item_Movie.lbl_realname.Text = listfilm_collection[i].SelectSingleNode(".//div[@class='title']/p[@class='real-name']").InnerText.ToString();
+                    item_Movie.lbl_url.Text = "http://phimvietsubhd.com"+listfilm_collection[i].SelectSingleNode(".//a").Attributes["href"].Value.ToString();
                     item_Movie.Name = "movie" + i;
                     item_Movie.Tag = i.ToString();
                     item_Movie.btn_avatar.Tag = i.ToString();
@@ -121,7 +120,6 @@ namespace MultiMedia.Movie_module
             //Lấy vị trí film trong list            
             Bunifu.Framework.UI.BunifuImageButton imageButton = sender as Bunifu.Framework.UI.BunifuImageButton;
             tag = Convert.ToInt32(imageButton.Tag.ToString());
-            //ShowFilm(itemMovies[tag]);
             BackgroundWorker bw = new BackgroundWorker();
             bw.DoWork += Bw_DoWork;
             bw.RunWorkerAsync();
@@ -143,9 +141,9 @@ namespace MultiMedia.Movie_module
             IWebDriver driver = new ChromeDriver(chromedriverServer, option);
             try
             {
-                string b = document.DocumentNode.SelectSingleNode("//a[@id='btn-film-watch']").Attributes["href"].Value.ToString();
+                string b = "http://phimvietsubhd.com" + document.DocumentNode.SelectSingleNode("//a[@class='btn-see btn btn-danger']").Attributes["href"].Value.ToString();
                 driver.Url = b;
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
                 IWebElement link_element = driver.FindElement(By.XPath("//div[@class='jw-media jw-reset']/video"));
                 String linkvideofilm = link_element.GetAttribute("src").Trim();
                 Invoke(new Action(() =>
@@ -177,67 +175,67 @@ namespace MultiMedia.Movie_module
             dropdown_theloai.ForeColor = Color.White;
             if (dropdown_theloai.selectedIndex == 0)
             {
-                url_origin = "http://www1.xemvtv.net/the-loai/phim-hanh-dong.html?page-";
+                url_origin = "http://phimvietsubhd.com/the-loai/co-trang-than-thoai-6.html?page=";
                 _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 1)
             {
-                url_origin = "http://www1.xemvtv.net/the-loai/phim-hoat-hinh.html?page-";
+                url_origin = "http://phimvietsubhd.com/the-loai/phim-hoat-hinh-55.html?page=";
                 _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 2)
             {
-                url_origin = "http://www1.xemvtv.net/the-loai/phim-vien-tuong.html?page-";
+                url_origin = "http://phimvietsubhd.com/the-loai/van-hoa-tam-linh-53.html?page=";
                 _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 3)
             {
-                url_origin = "http://www1.xemvtv.net/the-loai/phim-phieu-luu.html?page-";
+                url_origin = "http://phimvietsubhd.com/the-loai/gia-dinh-hoc-duong-58.html?page=";
                 _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 4)
             {
-                url_origin = "http://www1.xemvtv.net/the-loai/phim-vo-thuat.html?page-";
+                url_origin = "http://phimvietsubhd.com/the-loai/phim-thuyet-minh-59.html?page=";
                 _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 5)
             {
-                url_origin = "http://www1.xemvtv.net/the-loai/phim-than-thoai.html?page-";
+                url_origin = "http://phimvietsubhd.com/the-loai/vo-thuat-kiem-hiep-4.html?page=";
                 _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 6)
             {
-                url_origin = "http://www1.xemvtv.net/the-loai/phim-kinh-di.html?page-";
+                url_origin = "http://phimvietsubhd.com/the-loai/khoa-hoc-vien-tuong-2.html?page=";
                 _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 7)
             {
-                url_origin = "http://www1.xemvtv.net/the-loai/phim-hai-huoc.html?page-";
+                url_origin = "http://phimvietsubhd.com/the-loai/hai-huoc-52.html?page=";
                 _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 8)
             {
-                url_origin = "http://www1.xemvtv.net/the-loai/phim-co-trang.html?page-";
+                url_origin = "http://phimvietsubhd.com/the-loai/phieu-luu-hanh-dong-1.html?page=";
                 _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 9)
             {
-                url_origin = "http://www1.xemvtv.net/the-loai/phim-chien-tranh.html?page-";
+                url_origin = "http://phimvietsubhd.com/the-loai/hinh-su-chien-tranh-7.html?page=";
                 _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 10)
             {
-                url_origin = "http://www1.xemvtv.net/the-loai/phim-hai-tet.html?page-";
+                url_origin = "http://phimvietsubhd.com/the-loai/tam-ly-tinh-cam-51.html?page=";
                 _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 11)
             {
-                url_origin = "http://www1.xemvtv.net/the-loai/phim-tam-ly.html?page-";
+                url_origin = "http://phimvietsubhd.com/the-loai/tai-lieu-kham-pha-3.html?page=";
                 _url = url_origin + numberPage;
             }
             else if (dropdown_theloai.selectedIndex == 12)
             {
-                url_origin = "http://www1.xemvtv.net/the-loai/phim-tinh-cam.html?page-";
+                url_origin = "http://phimvietsubhd.com/the-loai/kinh-di-ma-5.html?page=";
                 _url = url_origin + numberPage;
             }
             LoadFilm(_url);
@@ -248,17 +246,16 @@ namespace MultiMedia.Movie_module
             ActiveTaskBarFilm();
             btn_phimle.Textcolor = Color.White;
             btn_phimle.Normalcolor = Color.FromArgb(36, 129, 77);
-            url_origin = "http://www1.xemvtv.net/danh-sach/phim-le-hay.html?page-";
+            url_origin = "http://phimvietsubhd.com/danh-sach/phim-le.html?page=";
             _url = url_origin + numberPage;
             LoadFilm(_url);
         }
-
-        private void btn_phimmoi_Click(object sender, EventArgs e)
+        private void btn_phimkhac_Click(object sender, EventArgs e)
         {
             ActiveTaskBarFilm();
             btn_phimkhac.Textcolor = Color.White;
             btn_phimkhac.Normalcolor = Color.FromArgb(36, 129, 77);
-            url_origin = "http://www1.xemvtv.net/quoc-gia/phim-khac.html?page-";
+            url_origin = "http://phimvietsubhd.com/quoc-gia/quoc-gia-khac-9.html?page=";
             _url = url_origin + numberPage;
             LoadFilm(_url);
         }
@@ -268,29 +265,30 @@ namespace MultiMedia.Movie_module
             ActiveTaskBarFilm();
             btn_chieurap.Textcolor = Color.White;
             btn_chieurap.Normalcolor = Color.FromArgb(36, 129, 77);
-            url_origin = "http://www1.xemvtv.net/danh-sach/phim-chieu-rap.html?page-";
+            url_origin = "http://phimvietsubhd.com/phim-chieu-rap?page=";
             _url = url_origin + numberPage;
             LoadFilm(_url);
         }
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-            if (_url.IndexOf("/tim-kiem/") != -1)
-            {
-                _url = "http://www1.xemvtv.net/tim-kiem/" + search2 + "/page-" + (currentPage - 1);
+            //if (_url.IndexOf("tim-kiem.html") != -1)
+            //{
+            //    _url = "http://www1.xemvtv.net/tim-kiem/" + search2 + "/page-" + (currentPage - 1);
 
-                LoadFilm(_url);
-            }
-            else if (currentPage < 1)
-            {
+            //    LoadFilm(_url);
+            //}
+            //else
+            //if (currentPage < 1)
+            //{
 
-                return;
-            }
-            else
-            {
-                String nextPage_url = url_origin + (currentPage - 1);
-                LoadFilm(nextPage_url);
-            }
+            //    return;
+            //}
+            //else
+            //{
+            string nextPage_url = url_origin + (currentPage - 1);
+            LoadFilm(nextPage_url);
+            //}
         }
 
         private void tb_timkiem_KeyDown(object sender, KeyEventArgs e)
@@ -301,21 +299,21 @@ namespace MultiMedia.Movie_module
 
         private void btn_forward_Click(object sender, EventArgs e)
         {
-            if (_url.IndexOf("/search/") != -1)
-            {
-                _url = "https://woohay.com/search/" + search2 + "/page-" + (currentPage + 1);
+            //if (_url.IndexOf("/tim-kiem/") != -1)
+            //{
+            //    _url = "http://www1.xemvtv.net/tim-kiem/" + search2 + "/page-" + (currentPage + 1);
 
-                LoadFilm(_url);
-            }
-            else if (currentPage > MaxPage)
-            {
-                return;
-            }
-            else
-            {
-                String nextPage_url = url_origin + (currentPage + 1);
-                LoadFilm(nextPage_url);
-            }
+            //    LoadFilm(_url);
+            //}
+            //else if (currentPage > MaxPage)
+            //{
+            //    return;
+            //}
+            //else
+            //{
+            string nextPage_url = url_origin + (currentPage + 1);
+            LoadFilm(nextPage_url);
+            //}
         }
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
@@ -327,12 +325,12 @@ namespace MultiMedia.Movie_module
         {
             ActiveTaskBarFilm();
             dropdown_theloai.selectedIndex = -1;
-            string search = tb_timkiem.Text.ToString();
+            string search = tb_timkiem.Text.Trim().ToString();
             if (search != null)
             {
-                search2 = search.Replace(" ", "-");
+                search2 = search.Replace(" ", "+");
 
-               _url = "http://www1.xemvtv.net/tim-kiem/" + search2;
+               _url = "http://phimvietsubhd.com/tim-kiem.html?q=" + search2;
 
                 LoadFilm(_url);
             }

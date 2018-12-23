@@ -38,9 +38,16 @@ namespace MultiMedia.Movie_module
             {
                 axVLCPlugin21.playlist.items.remove(i);
             }
-
-            axVLCPlugin21.playlist.add(url);
-            axVLCPlugin21.playlist.play();
+            try
+            {
+                axVLCPlugin21.playlist.add(url);
+                axVLCPlugin21.playlist.play();
+            }
+            catch
+            {
+                Movie_module.ThongBao tb = new ThongBao();
+                tb.Show();
+            }
             //lbl_currenttime.Text = "0:00:00";
 
             //volume.Value = 70;

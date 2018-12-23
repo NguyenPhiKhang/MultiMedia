@@ -115,19 +115,19 @@
             this.dropdown_theloai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dropdown_theloai.ForeColor = System.Drawing.Color.Black;
             this.dropdown_theloai.Items = new string[] {
-        "Hành Động",
+        "Cổ Trang - Thần Thoại",
         "Hoạt Hình",
-        "Viễn Tưởng",
-        "Phiêu Lưu",
-        "Võ Thuật",
-        "Thần Thoại",
-        "Kinh Dị",
+        "Văn Hóa - Tâm Linh",
+        "Gia Đình - Học Đường",
+        "Thuyết Minh",
+        "Võ Thuật - Kiếm Hiệp",
+        "Khoa Học - Viễn Tưởng",
         "Hài Hước",
-        "Cổ Trang",
-        "Chiến Tranh",
-        "Hài Việt",
-        "Tâm Lý",
-        "Tình Cảm"};
+        "Phiêu  Lưu - Hành Động",
+        "Hình Sự - Chiến Tranh",
+        "Tâm Lý - Tình Cảm",
+        "Tài Liệu - Khám Phá",
+        "Kinh Dị - Ma"};
             this.dropdown_theloai.Location = new System.Drawing.Point(0, 0);
             this.dropdown_theloai.Margin = new System.Windows.Forms.Padding(0);
             this.dropdown_theloai.Name = "dropdown_theloai";
@@ -135,7 +135,7 @@
             this.dropdown_theloai.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.dropdown_theloai.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dropdown_theloai.selectedIndex = -1;
-            this.dropdown_theloai.Size = new System.Drawing.Size(150, 47);
+            this.dropdown_theloai.Size = new System.Drawing.Size(139, 47);
             this.dropdown_theloai.TabIndex = 6;
             this.dropdown_theloai.onItemSelected += new System.EventHandler(this.dropdown_theloai_onItemSelected);
             // 
@@ -187,14 +187,14 @@
             this.btn_chieurap.IconVisible = true;
             this.btn_chieurap.IconZoom = 60D;
             this.btn_chieurap.IsTab = false;
-            this.btn_chieurap.Location = new System.Drawing.Point(424, -1);
+            this.btn_chieurap.Location = new System.Drawing.Point(413, -1);
             this.btn_chieurap.Margin = new System.Windows.Forms.Padding(0);
             this.btn_chieurap.Name = "btn_chieurap";
             this.btn_chieurap.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(46)))));
             this.btn_chieurap.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btn_chieurap.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_chieurap.selected = false;
-            this.btn_chieurap.Size = new System.Drawing.Size(183, 48);
+            this.btn_chieurap.Size = new System.Drawing.Size(181, 48);
             this.btn_chieurap.TabIndex = 3;
             this.btn_chieurap.Text = "Phim Chiếu Rạp";
             this.btn_chieurap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -223,7 +223,7 @@
             this.btn_phimkhac.IconVisible = true;
             this.btn_phimkhac.IconZoom = 60D;
             this.btn_phimkhac.IsTab = false;
-            this.btn_phimkhac.Location = new System.Drawing.Point(287, 0);
+            this.btn_phimkhac.Location = new System.Drawing.Point(276, 0);
             this.btn_phimkhac.Margin = new System.Windows.Forms.Padding(0);
             this.btn_phimkhac.Name = "btn_phimkhac";
             this.btn_phimkhac.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(46)))));
@@ -236,7 +236,7 @@
             this.btn_phimkhac.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_phimkhac.Textcolor = System.Drawing.Color.Black;
             this.btn_phimkhac.TextFont = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_phimkhac.Click += new System.EventHandler(this.btn_phimmoi_Click);
+            this.btn_phimkhac.Click += new System.EventHandler(this.btn_phimkhac_Click);
             // 
             // btn_phimle
             // 
@@ -260,7 +260,7 @@
             this.btn_phimle.IconVisible = true;
             this.btn_phimle.IconZoom = 60D;
             this.btn_phimle.IsTab = false;
-            this.btn_phimle.Location = new System.Drawing.Point(150, -1);
+            this.btn_phimle.Location = new System.Drawing.Point(139, -1);
             this.btn_phimle.Margin = new System.Windows.Forms.Padding(0);
             this.btn_phimle.Name = "btn_phimle";
             this.btn_phimle.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(46)))));

@@ -104,12 +104,6 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Install_Adblock.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Install_Adblock.Designer.cs">
-      <DependentUpon>Install_Adblock.cs</DependentUpon>
-    </Compile>
     <Compile Include="Movie_module\FrmVLC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,9 +156,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Install_Adblock.resx">
-      <DependentUpon>Install_Adblock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movie_module\FrmVLC.resx">
       <DependentUpon>FrmVLC.cs</DependentUpon>
