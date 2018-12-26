@@ -27,8 +27,13 @@ namespace MultiMedia.Movie_module
         public Movie()
         {
             InitializeComponent();
-            btn_back.Enabled = false;
-            btn_forward.Enabled = false;
+            //btn_back.Enabled = false;
+            //btn_forward.Enabled = false;
+            ActiveTaskBarFilm();
+            dropdown_theloai.NomalColor = Color.FromArgb(36, 129, 77);
+            dropdown_theloai.ForeColor = Color.White;
+            url_origin = "http://phimvietsubhd.com/the-loai/co-trang-than-thoai-6.html?page=";
+            LoadFilm(url_origin+"1");
         }
 
 

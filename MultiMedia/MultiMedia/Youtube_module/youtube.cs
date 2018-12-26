@@ -18,7 +18,7 @@ namespace MultiMedia.Youtube_module
     public partial class youtube : UserControl
     {
         int pagenumber = 1;
-        //string link = "";
+        string text_search = "";
         List<item_ytb> itemYTBs ;
         List<VideoInformation> listYTB;
         public youtube()
@@ -31,28 +31,35 @@ namespace MultiMedia.Youtube_module
             //    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
             //    col.HeaderCell.Style.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
             //}
-            //SearchYoutube();
+            SearchYoutube();
             btn_back.Enabled=false;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            btn_forward.Enabled = true;
-            if(pagenumber==1)
-                btn_back.Enabled = false; 
-            else btn_back.Enabled = true;
-            while (flowLayoutPanel1.Controls.Count > 0) flowLayoutPanel1.Controls.RemoveAt(0);
-            SearchYoutube(txtSearch.Text.ToString());
+            if (txtSearch.Text.Trim().ToString() == null || txtSearch.Text.Trim().ToString() == "")
+            {
+                MessageBox.Show("Vui lòng nhập nội dung tìm kiếm!","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.None);
+            }
+            else
+            {
+                pagenumber = 1;
+                btn_forward.Enabled = true;
+                btn_back.Enabled = false;
+                while (flowLayoutPanel1.Controls.Count > 0) flowLayoutPanel1.Controls.RemoveAt(0);
+                text_search = txtSearch.Text.ToString();
+                SearchYoutube();
+            }
         }
-        private void SearchYoutube(string text)
+        private void SearchYoutube()
         {
             VideoSearch items = new VideoSearch();
             itemYTBs = new List<item_ytb>();
             try
             {
-                int numberYTB = items.SearchQuery(text, pagenumber).Count;
+                int numberYTB = items.SearchQuery(text_search, pagenumber).Count;
                 listYTB = new List<VideoInformation>();
-                listYTB = items.SearchQuery(text, pagenumber);
+                listYTB = items.SearchQuery(text_search, pagenumber);
                 for (int i = 0; i < numberYTB; i++)
                 {
                     item_ytb itemytb = new item_ytb();
@@ -186,13 +193,15 @@ namespace MultiMedia.Youtube_module
         private void btn_back_Click(object sender, EventArgs e)
         {
             pagenumber--;
-            btnSearch_Click(sender, e);
+            SearchYoutube();
+            if (pagenumber == 1)
+                btn_back.Enabled = false;
         }
 
         private void btn_forward_Click(object sender, EventArgs e)
         {
             pagenumber++;
-            btnSearch_Click(sender, e);
+            SearchYoutube();
         }
     }
 }

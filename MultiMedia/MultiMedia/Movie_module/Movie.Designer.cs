@@ -134,7 +134,7 @@
             this.dropdown_theloai.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(46)))));
             this.dropdown_theloai.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.dropdown_theloai.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dropdown_theloai.selectedIndex = -1;
+            this.dropdown_theloai.selectedIndex = 0;
             this.dropdown_theloai.Size = new System.Drawing.Size(139, 47);
             this.dropdown_theloai.TabIndex = 6;
             this.dropdown_theloai.onItemSelected += new System.EventHandler(this.dropdown_theloai_onItemSelected);

@@ -626,7 +626,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(182, 26);
             this.label2.TabIndex = 15;
-            this.label2.Text = "Truyền hình VTV";
+            this.label2.Text = "Truyền hình VTC";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel11
