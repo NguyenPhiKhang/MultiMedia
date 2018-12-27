@@ -19,8 +19,9 @@ namespace MultiMedia.Youtube_module
     {
         int pagenumber = 1;
         string text_search = "";
-        List<item_ytb> itemYTBs ;
-        List<VideoInformation> listYTB;
+        List<item_ytb> itemYTBs = new List<item_ytb>();
+        List<VideoInformation> listYTB = new List<VideoInformation>();
+        item_ytb itemytb;
         public youtube()
         {
             InitializeComponent();
@@ -46,23 +47,23 @@ namespace MultiMedia.Youtube_module
                 pagenumber = 1;
                 btn_forward.Enabled = true;
                 btn_back.Enabled = false;
-                while (flowLayoutPanel1.Controls.Count > 0) flowLayoutPanel1.Controls.RemoveAt(0);
                 text_search = txtSearch.Text.ToString();
                 SearchYoutube();
             }
         }
         private void SearchYoutube()
         {
+            while (flowLayoutPanel1.Controls.Count > 0) flowLayoutPanel1.Controls.RemoveAt(0);
             VideoSearch items = new VideoSearch();
-            itemYTBs = new List<item_ytb>();
+            itemYTBs.Clear();
             try
             {
-                int numberYTB = items.SearchQuery(text_search, pagenumber).Count;
-                listYTB = new List<VideoInformation>();
+                listYTB.Clear();
                 listYTB = items.SearchQuery(text_search, pagenumber);
+                int numberYTB = listYTB.Count;
                 for (int i = 0; i < numberYTB; i++)
                 {
-                    item_ytb itemytb = new item_ytb();
+                    itemytb = new item_ytb();
                     byte[] bytes = Encoding.Default.GetBytes(listYTB[i].Title);
                     listYTB[i].Title = Encoding.UTF8.GetString(bytes);
                     itemytb.lbl_title.Text = listYTB[i].Title.ToString();
@@ -79,8 +80,10 @@ namespace MultiMedia.Youtube_module
                     itemYTBs.Add(itemytb);
                     flowLayoutPanel1.Controls.Add(itemytb);
                 }
+                itemytb.Dispose();
             }
             catch { MessageBox.Show("Vui lòng kết nối mạng!"); };
+
         }
         int tag;
         private void Btn_image_Click(object sender, EventArgs e)

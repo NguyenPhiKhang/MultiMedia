@@ -18,7 +18,6 @@ namespace MultiMedia.TV_module
     {
         List<string> listLink = new List<string>();
         List<Bunifu.Framework.UI.BunifuImageButton> imgButton = new List<Bunifu.Framework.UI.BunifuImageButton>();
-        Movie_module.FrmVLC frmVlc= new Movie_module.FrmVLC("0");
         string url;
         //BackgroundWorker bw;
         public TV()
@@ -39,7 +38,7 @@ namespace MultiMedia.TV_module
         {
             Bunifu.Framework.UI.BunifuImageButton a = sender as Bunifu.Framework.UI.BunifuImageButton;
             int b = Convert.ToInt32(a.Tag.ToString());
-            frmVlc = new Movie_module.FrmVLC(listLink[b]);
+            Movie_module.FrmVLC frmVlc = new Movie_module.FrmVLC(listLink[b]);
             frmVlc.lbl_name_video.Text = "Bạn đang xem kênh " + imgButton[b].Name.ToString();
             //frmVlc.time_movie.Enabled = false;
             //frmVlc.time_movie.MaximumValue = 100;
@@ -48,7 +47,6 @@ namespace MultiMedia.TV_module
             frmVlc.btn_Stop.Visible = false;
             frmVlc.btn_play_vlc.Visible = false;
             frmVlc.Show();
-
         }
         void AddListLink()
         {
@@ -84,8 +82,8 @@ namespace MultiMedia.TV_module
             listLink.Add(url);//vtc13
             listLink.Add("http://test.xemtiviso.net/tvnet2.php?id=vtc-vtc14");//vtc14
             listLink.Add("http://test.xemtiviso.net/tvnet2.php?id=vtc-vtc16");//vtc16
-            listLink.Add("http://cdn3.vtcplay.vn:1935/VTC/smil:VinhLong1HD.smil/playlist.m3u8");//thvl1
-            listLink.Add("http://cdn3.vtcplay.vn:1935/VTC/smil:VinhLong2HD.smil/playlist.m3u8");//thvl2
+            listLink.Add(/* http://cdn3.vtcplay.vn:1935/VTC/smil:VinhLong1HD.smil/playlist.m3u8 */"http://test.xemtiviso.net/tvnet2.php?id=diaphuong-vinhlong1");//thvl1
+            listLink.Add("http://test.xemtiviso.net/tvnet2.php?id=diaphuong-vinhlong2");//thvl2
             listLink.Add("http://test.xemtiviso.net/tvnet2.php?id=diaphuong-hanoi1");//hanoi1
             listLink.Add("http://test.xemtiviso.net/tvnet2.php?id=diaphuong-hanoi2");//hanoi2
             listLink.Add("http://test.xemtiviso.net/tvnet2.php?id=diaphuong-dongnai1");//dongnai1

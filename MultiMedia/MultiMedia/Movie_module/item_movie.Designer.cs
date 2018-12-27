@@ -29,24 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(item_movie));
-            this.lbl_name = new System.Windows.Forms.Label();
             this.btn_avatar = new Bunifu.Framework.UI.BunifuImageButton();
             this.lbl_status = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lbl_realname = new System.Windows.Forms.Label();
             this.lbl_url = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lbl_name = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btn_avatar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbl_name
-            // 
-            this.lbl_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(171)))), ((int)(((byte)(26)))));
-            this.lbl_name.Location = new System.Drawing.Point(0, 265);
-            this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(226, 41);
-            this.lbl_name.TabIndex = 6;
-            this.lbl_name.Text = "Đảo Hải Tặc - 1998";
-            this.lbl_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_avatar
             // 
@@ -54,6 +43,7 @@
             this.btn_avatar.Image = ((System.Drawing.Image)(resources.GetObject("btn_avatar.Image")));
             this.btn_avatar.ImageActive = null;
             this.btn_avatar.Location = new System.Drawing.Point(0, 0);
+            this.btn_avatar.Margin = new System.Windows.Forms.Padding(0);
             this.btn_avatar.Name = "btn_avatar";
             this.btn_avatar.Size = new System.Drawing.Size(226, 262);
             this.btn_avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -95,16 +85,27 @@
             this.lbl_url.TabIndex = 12;
             this.lbl_url.Visible = false;
             // 
+            // lbl_name
+            // 
+            this.lbl_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(171)))), ((int)(((byte)(26)))));
+            this.lbl_name.Location = new System.Drawing.Point(0, 262);
+            this.lbl_name.Name = "lbl_name";
+            this.lbl_name.Size = new System.Drawing.Size(226, 41);
+            this.lbl_name.TabIndex = 13;
+            this.lbl_name.Text = "Đảo Hải Tặc - 1998";
+            this.lbl_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // item_movie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.lbl_url);
             this.Controls.Add(this.lbl_status);
             this.Controls.Add(this.btn_avatar);
             this.Controls.Add(this.lbl_realname);
-            this.Controls.Add(this.lbl_name);
             this.Name = "item_movie";
             this.Size = new System.Drawing.Size(226, 325);
             ((System.ComponentModel.ISupportInitialize)(this.btn_avatar)).EndInit();
@@ -114,10 +115,10 @@
         }
 
         #endregion
-        public System.Windows.Forms.Label lbl_name;
         public Bunifu.Framework.UI.BunifuImageButton btn_avatar;
         public Bunifu.Framework.UI.BunifuCustomLabel lbl_status;
         public System.Windows.Forms.Label lbl_realname;
         public Bunifu.Framework.UI.BunifuCustomLabel lbl_url;
+        public System.Windows.Forms.Label lbl_name;
     }
 }

@@ -22,8 +22,8 @@ namespace MultiMedia.Movie_module
         public int numberPage = 1;
         //public int numberFilm;
         //public String keyword = "keyword";
-        item_movie item_Movie;
         List<item_movie> itemMovies = new List<item_movie>();
+        item_movie item_Movie;
         public Movie()
         {
             InitializeComponent();
@@ -97,7 +97,6 @@ namespace MultiMedia.Movie_module
                     item_Movie.btn_avatar.Tag = i.ToString();
                     item_Movie.btn_avatar.Click += btnAvatar_Click;
                     flowLayoutPanel1.Controls.Add(item_Movie);
-
                     itemMovies.Add(item_Movie);
                 }
             }
@@ -129,7 +128,6 @@ namespace MultiMedia.Movie_module
             bw.DoWork += Bw_DoWork;
             bw.RunWorkerAsync();
         }
-
         private void Bw_DoWork(object sender, DoWorkEventArgs e)
         {
             HtmlWeb htmlWeb = new HtmlWeb()
