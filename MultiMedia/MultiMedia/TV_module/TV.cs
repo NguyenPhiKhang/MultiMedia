@@ -66,16 +66,15 @@ namespace MultiMedia.TV_module
             listLink.Add("http://test.xemtiviso.net/tvnet2.php?id=vtc-vtc1");//vtc1
             listLink.Add("http://test.xemtiviso.net/tvnet2.php?id=vtc-vtc2");//vtc2
             listLink.Add("http://test.xemtiviso.net/tvnet2.php?id=vtc-vtc3");//vtc3
-            url = FindLinkVTC("https://www.vtc.gov.vn/kenh/vtc4");
-            listLink.Add(url);//vtc4
-            url = FindLinkVTC("https://www.vtc.gov.vn/kenh/vtc5");
-            listLink.Add(url);//vtc5
+            //url = FindLinkVTC("https://www.vtc.gov.vn/kenh/vtc4");
+            //listLink.Add(url);//vtc4
+            //url = FindLinkVTC("https://www.vtc.gov.vn/kenh/vtc5");
+            //listLink.Add(url);//vtc5
             listLink.Add("http://test.xemtiviso.net/tvnet2.php?id=vtc-vtc6");//vtc6
             listLink.Add("http://test.xemtiviso.net/tvnet2.php?id=vtc-vtc7");//vtc7
             url = FindLinkVTC("https://www.vtc.gov.vn/kenh/vtc8");
             listLink.Add(url);//vtc8
-            url = FindLinkVTC("https://www.vtc.gov.vn/kenh/vtc9");
-            listLink.Add(url);//vtc9
+            listLink.Add("http://test.xemtiviso.net/tvnet2.php?id=vtc-vtc9");//vtc9
             listLink.Add("http://test.xemtiviso.net/tvnet2.php?id=vtc-vtc10");//vtc10
             listLink.Add("http://test.xemtiviso.net/tvnet2.php?id=vtc-vtc11");//vtc11
             url = FindLinkVTC("https://www.vtc.gov.vn/kenh/vtc13");
@@ -180,8 +179,8 @@ namespace MultiMedia.TV_module
             imgButton.Add(vtc1);
             imgButton.Add(vtc2);
             imgButton.Add(vtc3);
-            imgButton.Add(vtc4);
-            imgButton.Add(vtc5);
+            //imgButton.Add(vtc4);
+            //imgButton.Add(vtc5);
             imgButton.Add(vtc6);
             imgButton.Add(vtc7);
             imgButton.Add(vtc8);
@@ -281,11 +280,10 @@ namespace MultiMedia.TV_module
                 HtmlAgilityPack.HtmlDocument doc = htmlweb.Load(url);
                 string parsedtext = doc.ParsedText;
                 String[] a = parsedtext.Split(new string[] { "src: " }, StringSplitOptions.None);
-                String[] b = a[5].Split(new string[] { "'" }, StringSplitOptions.None);
+                String[] b = a[6].Split(new string[] { "'" }, StringSplitOptions.None);
                 return b[1];
             }
-            catch { /*MessageBox.Show("Vui lòng kết nối lại mạng!");*/ };
-            return "0";
+            catch { return "0"; };
         }
         //string[] FindLinkTV(String url)
         //{

@@ -40,8 +40,6 @@
             this.vtc1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.vtc2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.vtc3 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.vtc4 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.vtc5 = new Bunifu.Framework.UI.BunifuImageButton();
             this.vtc6 = new Bunifu.Framework.UI.BunifuImageButton();
             this.vtc7 = new Bunifu.Framework.UI.BunifuImageButton();
             this.vtc8 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -167,8 +165,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.vtc1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vtc2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vtc3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vtc4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vtc5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vtc6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vtc7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vtc8)).BeginInit();
@@ -364,25 +360,22 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.vtc9, 0, 4);
             this.tableLayoutPanel3.Controls.Add(this.vtc1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.vtc2, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.vtc3, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.vtc4, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.vtc5, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.vtc6, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.vtc7, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.vtc8, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.vtc10, 1, 4);
-            this.tableLayoutPanel3.Controls.Add(this.vtc11, 0, 5);
-            this.tableLayoutPanel3.Controls.Add(this.vtc14, 0, 6);
-            this.tableLayoutPanel3.Controls.Add(this.vtc16, 1, 6);
-            this.tableLayoutPanel3.Controls.Add(this.vtc13, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.vtc6, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.vtc7, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.vtc8, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.vtc9, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.vtc10, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.vtc11, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.vtc13, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.vtc14, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.vtc16, 1, 5);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 369);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 7;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel3.RowCount = 6;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -399,9 +392,9 @@
             this.vtc9.Image = ((System.Drawing.Image)(resources.GetObject("vtc9.Image")));
             this.vtc9.ImageActive = null;
             this.vtc9.InitialImage = null;
-            this.vtc9.Location = new System.Drawing.Point(3, 219);
+            this.vtc9.Location = new System.Drawing.Point(3, 195);
             this.vtc9.Name = "vtc9";
-            this.vtc9.Size = new System.Drawing.Size(85, 45);
+            this.vtc9.Size = new System.Drawing.Size(85, 58);
             this.vtc9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.vtc9.TabIndex = 24;
             this.vtc9.TabStop = false;
@@ -417,7 +410,7 @@
             this.vtc1.InitialImage = null;
             this.vtc1.Location = new System.Drawing.Point(3, 3);
             this.vtc1.Name = "vtc1";
-            this.vtc1.Size = new System.Drawing.Size(85, 45);
+            this.vtc1.Size = new System.Drawing.Size(85, 58);
             this.vtc1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.vtc1.TabIndex = 15;
             this.vtc1.TabStop = false;
@@ -433,7 +426,7 @@
             this.vtc2.InitialImage = null;
             this.vtc2.Location = new System.Drawing.Point(94, 3);
             this.vtc2.Name = "vtc2";
-            this.vtc2.Size = new System.Drawing.Size(85, 45);
+            this.vtc2.Size = new System.Drawing.Size(85, 58);
             this.vtc2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.vtc2.TabIndex = 16;
             this.vtc2.TabStop = false;
@@ -447,46 +440,14 @@
             this.vtc3.Image = ((System.Drawing.Image)(resources.GetObject("vtc3.Image")));
             this.vtc3.ImageActive = null;
             this.vtc3.InitialImage = null;
-            this.vtc3.Location = new System.Drawing.Point(3, 57);
+            this.vtc3.Location = new System.Drawing.Point(3, 67);
             this.vtc3.Name = "vtc3";
-            this.vtc3.Size = new System.Drawing.Size(85, 45);
+            this.vtc3.Size = new System.Drawing.Size(85, 58);
             this.vtc3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.vtc3.TabIndex = 17;
             this.vtc3.TabStop = false;
             this.vtc3.Tag = "";
             this.vtc3.Zoom = 10;
-            // 
-            // vtc4
-            // 
-            this.vtc4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.vtc4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.vtc4.Image = ((System.Drawing.Image)(resources.GetObject("vtc4.Image")));
-            this.vtc4.ImageActive = null;
-            this.vtc4.InitialImage = null;
-            this.vtc4.Location = new System.Drawing.Point(94, 57);
-            this.vtc4.Name = "vtc4";
-            this.vtc4.Size = new System.Drawing.Size(85, 45);
-            this.vtc4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.vtc4.TabIndex = 18;
-            this.vtc4.TabStop = false;
-            this.vtc4.Tag = "";
-            this.vtc4.Zoom = 10;
-            // 
-            // vtc5
-            // 
-            this.vtc5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.vtc5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.vtc5.Image = ((System.Drawing.Image)(resources.GetObject("vtc5.Image")));
-            this.vtc5.ImageActive = null;
-            this.vtc5.InitialImage = null;
-            this.vtc5.Location = new System.Drawing.Point(3, 111);
-            this.vtc5.Name = "vtc5";
-            this.vtc5.Size = new System.Drawing.Size(85, 45);
-            this.vtc5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.vtc5.TabIndex = 19;
-            this.vtc5.TabStop = false;
-            this.vtc5.Tag = "";
-            this.vtc5.Zoom = 10;
             // 
             // vtc6
             // 
@@ -495,9 +456,9 @@
             this.vtc6.Image = ((System.Drawing.Image)(resources.GetObject("vtc6.Image")));
             this.vtc6.ImageActive = null;
             this.vtc6.InitialImage = null;
-            this.vtc6.Location = new System.Drawing.Point(94, 111);
+            this.vtc6.Location = new System.Drawing.Point(94, 67);
             this.vtc6.Name = "vtc6";
-            this.vtc6.Size = new System.Drawing.Size(85, 45);
+            this.vtc6.Size = new System.Drawing.Size(85, 58);
             this.vtc6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.vtc6.TabIndex = 20;
             this.vtc6.TabStop = false;
@@ -511,9 +472,9 @@
             this.vtc7.Image = ((System.Drawing.Image)(resources.GetObject("vtc7.Image")));
             this.vtc7.ImageActive = null;
             this.vtc7.InitialImage = null;
-            this.vtc7.Location = new System.Drawing.Point(3, 165);
+            this.vtc7.Location = new System.Drawing.Point(3, 131);
             this.vtc7.Name = "vtc7";
-            this.vtc7.Size = new System.Drawing.Size(85, 45);
+            this.vtc7.Size = new System.Drawing.Size(85, 58);
             this.vtc7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.vtc7.TabIndex = 21;
             this.vtc7.TabStop = false;
@@ -527,9 +488,9 @@
             this.vtc8.Image = ((System.Drawing.Image)(resources.GetObject("vtc8.Image")));
             this.vtc8.ImageActive = null;
             this.vtc8.InitialImage = null;
-            this.vtc8.Location = new System.Drawing.Point(94, 165);
+            this.vtc8.Location = new System.Drawing.Point(94, 131);
             this.vtc8.Name = "vtc8";
-            this.vtc8.Size = new System.Drawing.Size(85, 45);
+            this.vtc8.Size = new System.Drawing.Size(85, 58);
             this.vtc8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.vtc8.TabIndex = 22;
             this.vtc8.TabStop = false;
@@ -543,9 +504,9 @@
             this.vtc10.Image = ((System.Drawing.Image)(resources.GetObject("vtc10.Image")));
             this.vtc10.ImageActive = null;
             this.vtc10.InitialImage = null;
-            this.vtc10.Location = new System.Drawing.Point(94, 219);
+            this.vtc10.Location = new System.Drawing.Point(94, 195);
             this.vtc10.Name = "vtc10";
-            this.vtc10.Size = new System.Drawing.Size(85, 45);
+            this.vtc10.Size = new System.Drawing.Size(85, 58);
             this.vtc10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.vtc10.TabIndex = 23;
             this.vtc10.TabStop = false;
@@ -559,9 +520,9 @@
             this.vtc11.Image = ((System.Drawing.Image)(resources.GetObject("vtc11.Image")));
             this.vtc11.ImageActive = null;
             this.vtc11.InitialImage = null;
-            this.vtc11.Location = new System.Drawing.Point(3, 273);
+            this.vtc11.Location = new System.Drawing.Point(3, 259);
             this.vtc11.Name = "vtc11";
-            this.vtc11.Size = new System.Drawing.Size(85, 45);
+            this.vtc11.Size = new System.Drawing.Size(85, 58);
             this.vtc11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.vtc11.TabIndex = 25;
             this.vtc11.TabStop = false;
@@ -575,9 +536,9 @@
             this.vtc14.Image = ((System.Drawing.Image)(resources.GetObject("vtc14.Image")));
             this.vtc14.ImageActive = null;
             this.vtc14.InitialImage = null;
-            this.vtc14.Location = new System.Drawing.Point(3, 327);
+            this.vtc14.Location = new System.Drawing.Point(3, 323);
             this.vtc14.Name = "vtc14";
-            this.vtc14.Size = new System.Drawing.Size(85, 48);
+            this.vtc14.Size = new System.Drawing.Size(85, 59);
             this.vtc14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.vtc14.TabIndex = 27;
             this.vtc14.TabStop = false;
@@ -591,9 +552,9 @@
             this.vtc16.Image = ((System.Drawing.Image)(resources.GetObject("vtc16.Image")));
             this.vtc16.ImageActive = null;
             this.vtc16.InitialImage = null;
-            this.vtc16.Location = new System.Drawing.Point(94, 327);
+            this.vtc16.Location = new System.Drawing.Point(94, 323);
             this.vtc16.Name = "vtc16";
-            this.vtc16.Size = new System.Drawing.Size(85, 48);
+            this.vtc16.Size = new System.Drawing.Size(85, 59);
             this.vtc16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.vtc16.TabIndex = 28;
             this.vtc16.TabStop = false;
@@ -607,9 +568,9 @@
             this.vtc13.Image = ((System.Drawing.Image)(resources.GetObject("vtc13.Image")));
             this.vtc13.ImageActive = null;
             this.vtc13.InitialImage = null;
-            this.vtc13.Location = new System.Drawing.Point(94, 273);
+            this.vtc13.Location = new System.Drawing.Point(94, 259);
             this.vtc13.Name = "vtc13";
-            this.vtc13.Size = new System.Drawing.Size(85, 45);
+            this.vtc13.Size = new System.Drawing.Size(85, 58);
             this.vtc13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.vtc13.TabIndex = 26;
             this.vtc13.TabStop = false;
@@ -2420,8 +2381,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.vtc1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vtc2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vtc3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vtc4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vtc5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vtc6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vtc7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vtc8)).EndInit();
@@ -2590,8 +2549,6 @@
         private Bunifu.Framework.UI.BunifuImageButton vtc1;
         private Bunifu.Framework.UI.BunifuImageButton vtc2;
         private Bunifu.Framework.UI.BunifuImageButton vtc3;
-        private Bunifu.Framework.UI.BunifuImageButton vtc4;
-        private Bunifu.Framework.UI.BunifuImageButton vtc5;
         private Bunifu.Framework.UI.BunifuImageButton vtc9;
         private Bunifu.Framework.UI.BunifuImageButton vtc6;
         private Bunifu.Framework.UI.BunifuImageButton vtc7;
