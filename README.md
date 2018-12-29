@@ -42,8 +42,7 @@ Hình 7. Giao diện hiển thị video Youtube
 Hình 8. Giao diện Bóng đá
 #### Do chỉ tường thuật trực tiếp bóng đá nên khi chưa đúng giờ chiếu thì form hiện thị sẽ màn hình đen. Ngoài ra, bạn có thể xem nhiều trận cùng giờ.
 
-// Video Demo
-      - https://drive.google.com/drive/u/1/folders/1vLK5g_WF3aKjXFxYg_M68td6HiZErd8E
-      
-// File Setup và Key bản quyền phần mềm
-      - https://drive.google.com/drive/u/1/folders/1ejuBBMuO43Cbd9tPRTY9hwkgajjfaHpO
+### Video Demo
+* https://drive.google.com/drive/u/1/folders/1vLK5g_WF3aKjXFxYg_M68td6HiZErd8E
+### File Setup và Key bản quyền phần mềm
+* https://drive.google.com/drive/u/1/folders/1ejuBBMuO43Cbd9tPRTY9hwkgajjfaHpO
