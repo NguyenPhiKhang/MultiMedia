@@ -19,6 +19,7 @@ Hình 2. Giao diện Cinema
 ![untitled3](https://user-images.githubusercontent.com/45101536/50521765-cdf48780-0af9-11e9-83f9-f2f89f72ab21.png)
 Hình 3. Giao diện hiển thị phim
 #### Ngoài ra, bạn có thể xem nhiều phim cùng lúc.
+#### Đối với phim tập thì chỉ xem được tập 1 của phim.
 ### Chức năng xem TV :
 * Hiển thị kênh truyền hình theo từng nhóm : Truyền Hình VTV, Truyền Hình VTC, Kênh địa phương, kênh nước ngoài,…
 * Tự động load chất lượng tốt nhất với đường truyền mạng để xem.
