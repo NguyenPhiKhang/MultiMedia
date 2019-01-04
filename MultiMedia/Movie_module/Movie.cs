@@ -40,7 +40,8 @@ namespace MultiMedia.Movie_module
             dropdown_theloai.NomalColor = Color.FromArgb(36, 129, 77);
             dropdown_theloai.ForeColor = Color.White;
             url_origin = "http://www.hdvnn.net/the-loai/hanh-dong/trang-";
-            LoadFilm(url_origin+"1.html");
+            _url = url_origin + "1.html";
+            LoadFilm(_url);
         }
 
 
@@ -145,6 +146,14 @@ namespace MultiMedia.Movie_module
                 frmVLC.Show();
             }));
         }
+        void ShowThongBao()
+        {
+            Invoke(new Action(() =>
+            {
+                Movie_module.ThongBao tb = new Movie_module.ThongBao();
+                tb.Show();
+            }));
+        }
         private void Bw_DoWork(object sender, DoWorkEventArgs e)
         {
             HtmlAgilityPack.HtmlDocument document1 = htmlWeb.Load(itemMovies[tag].lbl_url.Text.ToString());
@@ -161,7 +170,6 @@ namespace MultiMedia.Movie_module
             IWebDriver driver = new ChromeDriver(chromedriverServer, option);
             for (int i=links_server.Count-1;i>=0;i--)
             {
-
                 driver.Url = links_server[i];
                 Thread.Sleep(500);
                 IWebElement link_element;
@@ -170,6 +178,8 @@ namespace MultiMedia.Movie_module
                 {
                     link_element = driver.FindElement(By.XPath("//div[@class='jw-media jw-reset']/video"));
                     linkvideofilm = link_element.GetAttribute("src").Trim();
+                    if (linkvideofilm == null || linkvideofilm == "")
+                        goto _next;
                     ShowVLC(linkvideofilm);
                     driver.Quit();
                     driver.Dispose();
@@ -184,6 +194,8 @@ namespace MultiMedia.Movie_module
                         driver.Url = link_element.GetAttribute("src").Trim().ToString();
                         link_element = driver.FindElement(By.XPath("//div[@class='jw-media jw-reset']/video"));
                         linkvideofilm = link_element.GetAttribute("src").Trim();
+                        if (linkvideofilm == null || linkvideofilm == "")
+                            goto _next;
                         ShowVLC(linkvideofilm);
                         driver.Quit();
                         driver.Dispose();
@@ -191,14 +203,11 @@ namespace MultiMedia.Movie_module
                     }
                     catch { }
                 }
+                _next:;
             }
-            Invoke(new Action(() =>
-            {
-                Movie_module.ThongBao tb = new Movie_module.ThongBao();
-                tb.Show();
-            }));
             driver.Quit();
             driver.Dispose();
+            ShowThongBao();
         }
 
         private void dropdown_theloai_onItemSelected(object sender, EventArgs e)
