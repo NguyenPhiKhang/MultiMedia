@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E1C84FEC-CC4B-4E0A-8237-14B207A66293}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MultiMedia</RootNamespace>
+    <AssemblyName>MultiMedia</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>.\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.8.10.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.8.10\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="libvideo, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\VideoLibrary.2.0.3\lib\netstandard1.1\libvideo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Vlc.DotNet.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vlc.DotNet.Core.2.2.1\lib\net45\Vlc.DotNet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Core.Interops, Version=2.2.1.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vlc.DotNet.Core.Interops.2.2.1\lib\net45\Vlc.DotNet.Core.Interops.dll</HintPath>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Forms, Version=2.2.1.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vlc.DotNet.Forms.2.2.1\lib\net45\Vlc.DotNet.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="YoutubeSearch, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YoutubeSearch.dll.1.1\lib\YoutubeSearch.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Football_module\Football.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Football_module\Football.Designer.cs">
+      <DependentUpon>Football.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Football_module\ItemMatch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Football_module\ItemMatch.Designer.cs">
+      <DependentUpon>ItemMatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movie_module\FrmVLC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movie_module\FrmVLC.Designer.cs">
+      <DependentUpon>FrmVLC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movie_module\item_movie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Movie_module\item_movie.Designer.cs">
+      <DependentUpon>item_movie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movie_module\Movie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Movie_module\Movie.Designer.cs">
+      <DependentUpon>Movie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movie_module\ThongBao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movie_module\ThongBao.Designer.cs">
+      <DependentUpon>ThongBao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TV_module\TV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TV_module\TV.Designer.cs">
+      <DependentUpon>TV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Youtube_module\item_ytb.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Youtube_module\item_ytb.Designer.cs">
+      <DependentUpon>item_ytb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Youtube_module\youtube.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Youtube_module\youtube.Designer.cs">
+      <DependentUpon>youtube.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Football_module\Football.resx">
+      <DependentUpon>Football.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Football_module\ItemMatch.resx">
+      <DependentUpon>ItemMatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movie_module\FrmVLC.resx">
+      <DependentUpon>FrmVLC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movie_module\item_movie.resx">
+      <DependentUpon>item_movie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movie_module\Movie.resx">
+      <DependentUpon>Movie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movie_module\ThongBao.resx">
+      <DependentUpon>ThongBao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TV_module\TV.resx">
+      <DependentUpon>TV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Youtube_module\item_ytb.resx">
+      <DependentUpon>item_ytb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Youtube_module\youtube.resx">
+      <DependentUpon>youtube.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\MultiMedia.Youtube_module.Video.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxAXVLC">
+      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AXVLC">
+      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5a50274e9e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7da71df7759cfda71d9de0d37a3495b5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\74-742441_preamps-white-search-icon-svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\219-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1024px-Yellow_icon.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5856b1184f6ae202fedf2789.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\84729531-a-black-and-white-silhouette-of-a-pause-button.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avengersleagueoflegens_ox__W1000xh0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Film-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\football.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Green-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green-circle-md.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-down-arrow-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-downloading-updates-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sort-left-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sort-right-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_186726.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_357679.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\One-Piece-748-800x533-800x533.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause_lead_flow.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-icon-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tag_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volume-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_back_1152661.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\youtube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ytb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\binhdinh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\binhphuoc1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car-toon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Collapse_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discovery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dulich.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\english.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expand_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forward_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giadinh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hatinh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\htv1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\htv2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\htv3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\htv4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\htv7hd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\htv9hd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\htvthethao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\khanhhoa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kiengiang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lamdong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\langson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\longan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mtvviet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nhac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pause_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phimbo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phimhd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phunu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Play_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quangnam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\soctrang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tag2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tayninh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thuanviethd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tivi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tpcantho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\travinh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tv2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vinhlong2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtc1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtc4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtc7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtc8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtc9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtc10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtc11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtc14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtc16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtv1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtv2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtv3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtv4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtv5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtv6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtv7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtv8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vtv9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\animalplanet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trafficlight-green-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disney.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hbo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\axn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ANTV.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Selenium.Chrome.WebDriver.2.43\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.2.43\build\Selenium.Chrome.WebDriver.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.2.43\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.2.43\build\Selenium.Chrome.WebDriver.targets'))" />
+  </Target>
+</Project>
