@@ -9,23 +9,23 @@
 Hình 1. Giao diện ban đầu
 ## Hướng dẫn sử dụng các chức năng của phần mềm MultiMedia
 ### Chức năng xem phim :
-* Load phim theo thể loại : Cổ Trang – Thần Thoại, Hoạt Hình, Thuyết Minh, Hài Hước, Kinh Dị - Ma,…
-* Hiển thị theo loại phim : Phim chiếu rạp, Phim lẻ.
+* Load phim theo thể loại : Hành động, Hoạt hình, Thần thoại, Hình sự, Anime, Phiêu lưu,…
+* Hiển thị theo loại phim : Phim lẻ, Phim mới, Phim chiếu rạp.
 * Tìm kiếm phim bạn muốn.
 * Xem phim với chất lượng tốt nhất.
-![untitled2](https://user-images.githubusercontent.com/45101536/50521571-e7e19a80-0af8-11e9-9adf-014daebbe4dc.png)
+![image](https://user-images.githubusercontent.com/45101536/50675469-f5c77c00-1020-11e9-89f9-ee1f10248949.png)
 Hình 2. Giao diện Cinema
 #### Tùy vào tốc độ mạng và cấu hình của máy, nên khi nhấn vào phim thì tốc độ hiển thị phim trung bình 15s-30s.
-![untitled3](https://user-images.githubusercontent.com/45101536/50521765-cdf48780-0af9-11e9-83f9-f2f89f72ab21.png)
+![image](https://user-images.githubusercontent.com/45101536/50675625-dc72ff80-1021-11e9-86b8-7ffba7874369.png)
 Hình 3. Giao diện hiển thị phim
 #### Ngoài ra, bạn có thể xem nhiều phim cùng lúc.
-#### Đối với phim tập thì chỉ xem được tập 1 của phim.
+#### Đối với phim tập thì chỉ xem được 1 tập của phim.
 ### Chức năng xem TV :
 * Hiển thị kênh truyền hình theo từng nhóm : Truyền Hình VTV, Truyền Hình VTC, Kênh địa phương, kênh nước ngoài,…
 * Tự động load chất lượng tốt nhất với đường truyền mạng để xem.
-![untitled4](https://user-images.githubusercontent.com/45101536/50523257-abff0300-0b01-11e9-976c-ee22a2f225f1.png)
+![image](https://user-images.githubusercontent.com/45101536/50675687-34116b00-1022-11e9-9a16-396213e24fa8.png)
 Hình 4. Giao diện TiVi
-![untitled5](https://user-images.githubusercontent.com/45101536/50522000-43ad2300-0afb-11e9-8c7f-751a35a3edc5.png)
+![image](https://user-images.githubusercontent.com/45101536/50675758-98342f00-1022-11e9-8653-7f6fb41b2112.png)
 Hình 5. Giao diện hiển thị kênh tivi
 #### Ngoài ra, bạn có thể xem nhiều kênh cùng lúc.
 ### Chức năng xem Youtube :
