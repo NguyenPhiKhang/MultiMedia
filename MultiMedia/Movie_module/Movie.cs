@@ -157,11 +157,15 @@ namespace MultiMedia.Movie_module
         private void Bw_DoWork(object sender, DoWorkEventArgs e)
         {
             HtmlAgilityPack.HtmlDocument document1 = htmlWeb.Load(itemMovies[tag].lbl_url.Text.ToString());
-            var list_server = document1.DocumentNode.SelectNodes("//div[@class='server']/div[2]/ul/li").ToList();
-            foreach(var item in list_server)
+            try
             {
-                links_server.Add(item.SelectSingleNode(".//a").Attributes["href"].Value.ToString());
+                var list_server = document1.DocumentNode.SelectNodes("//div[@class='server']/div[2]/ul/li").ToList();
+                foreach (var item in list_server)
+                {
+                    links_server.Add(item.SelectSingleNode(".//a").Attributes["href"].Value.ToString());
+                }
             }
+            catch { }
 
             var chromedriverServer = ChromeDriverService.CreateDefaultService();
             chromedriverServer.HideCommandPromptWindow = true;
