@@ -8,7 +8,7 @@
 ![untitled1](https://user-images.githubusercontent.com/45101536/50521437-4c502a00-0af8-11e9-8ad7-b332cb9ec691.png)
 Hình 1. Giao diện ban đầu
 ## Hướng dẫn sử dụng các chức năng của phần mềm MultiMedia
-### Lưu ý: để xem được video, bạn cần cài đặt phần mềm VLC MEIDA PLAYER (Có link cuối trang)
+### Lưu ý: để xem được video, bạn cần cài đặt phần mềm VLC MEDIA PLAYER (Có link cuối trang)
 ### Chức năng xem phim :
 * Load phim theo thể loại : Hành động, Hoạt hình, Thần thoại, Hình sự, Anime, Phiêu lưu,…
 * Hiển thị theo loại phim : Phim lẻ, Phim mới, Phim chiếu rạp.
