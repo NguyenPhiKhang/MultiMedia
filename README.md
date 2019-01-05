@@ -8,7 +8,6 @@
 ![untitled1](https://user-images.githubusercontent.com/45101536/50521437-4c502a00-0af8-11e9-8ad7-b332cb9ec691.png)
 Hình 1. Giao diện ban đầu
 ## Hướng dẫn sử dụng các chức năng của phần mềm MultiMedia
-### Lưu ý: để xem được video, bạn cần cài đặt phần mềm VLC MEDIA PLAYER (Có link cuối trang)
 ### Chức năng xem phim :
 * Load phim theo thể loại : Hành động, Hoạt hình, Thần thoại, Hình sự, Anime, Phiêu lưu,…
 * Hiển thị theo loại phim : Phim lẻ, Phim mới, Phim chiếu rạp.
@@ -40,11 +39,14 @@ Hình 7. Giao diện hiển thị video Youtube
 ### Chức năng xem Bóng đá :
 * Hiển thị danh sách lịch thi đấu bóng đá trong ngày.
 * Xem trực tuyến khi đến khung giờ quy định.
-![untitled8](https://user-images.githubusercontent.com/45101536/50522941-1c0c8980-0b00-11e9-8908-0c756b8271ca.png)
+![image](https://user-images.githubusercontent.com/45101536/50726811-b42ff180-1144-11e9-8b38-4888ec2ca94a.png)
 Hình 8. Giao diện Bóng đá
-#### Do chỉ tường thuật trực tiếp bóng đá nên khi chưa đúng giờ chiếu thì form hiện thị sẽ màn hình đen. Ngoài ra, bạn có thể xem nhiều trận cùng giờ.
+![image](https://user-images.githubusercontent.com/45101536/50726825-e04b7280-1144-11e9-8c57-990182227ac0.png)
+Hình 9. Giao diện hiển thị bóng đá
+#### Tuy nhiên, do chỉ tường thuật trực tiếp bóng đá nên khi chưa đúng giờ chiếu thì form hiển thị sẽ màn hình đen. Ngoài ra, bạn có thể xem nhiều trận cùng giờ.
 
 ### Video Demo
 * https://drive.google.com/drive/u/1/folders/1vLK5g_WF3aKjXFxYg_M68td6HiZErd8E
-### File Setup và Key bản quyền phần mềm và File Hướng dẫn cài đặt VLC
+### File Setup và Key bản quyền phần mềm
 * https://drive.google.com/drive/u/1/folders/1ejuBBMuO43Cbd9tPRTY9hwkgajjfaHpO
+## Lưu ý: Để xem được video, bạn phải cài đặt tất cả phần mềm khi nhấn vào file Setup.bat
