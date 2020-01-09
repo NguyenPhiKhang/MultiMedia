@@ -1,9 +1,21 @@
 # MultiMedia
+## 🤝 Member:
+<pre>
+<b>1. Nguyễn Phi Khang</b>     - 17520616
+<b>2. Trương Công Tấn Phát</b> - 17520884
+</pre>
+
+## 👩‍💼 Teacher: Huỳnh Tuấn Anh
+---
+
+## Tính năng
 -	Xây dựng một phần mềm có thể xem phim, xem bóng đá, xem Tivi, xem youtube.
 -	Phần mềm hổ trợ tìm kiếm các phim, hiển thị các thể loại phim và xem trực tuyến.
 -	Phần mềm hỗ trợ xem lịch thi đấu và xem trực tiếp các trận bóng đá.
 -	Phần mềm hổ trợ xem hơn 100 kênh Tivi bao gồm các kênh của truyền hình cáp, có thể xem trực tuyến.
 -	Phần mềm hổ trợ xem youtube phố biến hiện nay.
+
+---
 
 ![untitled1](https://user-images.githubusercontent.com/45101536/50521437-4c502a00-0af8-11e9-8ad7-b332cb9ec691.png)
 Hình 1. Giao diện ban đầu
