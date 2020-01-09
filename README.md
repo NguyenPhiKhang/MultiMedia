@@ -5,7 +5,7 @@
 <b>2. Trương Công Tấn Phát</b> - 17520884
 </pre>
 
-## 👩‍💼 Teacher: Huỳnh Tuấn Anh
+## 👨‍💼 Teacher: Huỳnh Tuấn Anh
 ---
 
 ## Tính năng
